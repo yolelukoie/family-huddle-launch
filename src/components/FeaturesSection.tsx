@@ -4,8 +4,7 @@ import {
   Footprints, 
   Sparkles, 
   Palette, 
-  Globe, 
-  Wallet 
+  Globe
 } from "lucide-react";
 
 const features = [
@@ -50,13 +49,6 @@ const features = [
     description: "Use the app comfortably in your own language – Family Huddle supports multiple languages.",
     iconBg: "bg-[hsl(210,80%,92%)]",
     iconColor: "text-icon-blue",
-  },
-  {
-    icon: Wallet,
-    title: "Simple, transparent pricing",
-    description: "All features for one low price – no hidden extras. No ads, one simple subscription for the whole huddle.",
-    iconBg: "bg-[hsl(15,80%,92%)]",
-    iconColor: "text-icon-coral",
   },
 ];
 
