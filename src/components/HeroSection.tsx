@@ -17,7 +17,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="pt-24 md:pt-32">
       {/* Full-width Video Container */}
-      <div className="relative w-full aspect-square bg-muted animate-scale-in">
+      <div className="relative w-full animate-scale-in">
         <video 
           ref={videoRef}
           className="w-full h-full object-contain"
