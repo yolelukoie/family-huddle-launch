@@ -51,7 +51,7 @@ const HowItWorksSection = () => {
             {steps.map((step, index) => (
               <div
                 key={step.title}
-                className="relative bg-card rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1"
+                className="relative bg-card rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1 card-accent"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Step Number */}
