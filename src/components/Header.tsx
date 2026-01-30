@@ -5,8 +5,8 @@ import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "How it works", href: "#how-it-works" },
   { label: "For families & friends", href: "#for-families" },
+  { label: "How it works", href: "#how-it-works" },
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
 ];
