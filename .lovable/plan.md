@@ -1,85 +1,41 @@
 
-## Redesign Color Scheme to Match App Style
 
-### Analysis of the App Screenshot
-The app uses a cohesive, calming cyan/sky-blue color palette:
-- **Background**: Soft sky blue tint (not grey or cream)
-- **Cards**: White with subtle cyan left-border accents
-- **Buttons**: Soft, gradient-like cyan tones - NOT harsh solid colors
-- **Overall feel**: Monochromatic cyan theme with everything flowing together
+## Responsive Video Max-Height for Large Screens
 
-### Current Problem
-The website uses warm cream/grey backgrounds with high-contrast turquoise and coral buttons - creating a jarring "50 shades of grey" effect with striking accent colors.
+### What We'll Do
+Add a responsive max-height constraint to the hero video that only activates on larger screens (desktop/laptop). This will:
+- Keep the current full-width behavior on mobile and tablet
+- Limit the video height on large screens so it doesn't exceed the visible viewport
+- Keep the video fully visible (no cropping) using `object-contain`
 
-### Design Changes
+### The Change
 
-**1. Background & Base Colors**
-- Change from warm cream (`35 45% 97%`) to soft sky blue (`195 50% 97%`)
-- Cards get a pure white with very subtle blue tint
-- Section backgrounds use light cyan instead of grey
+**File:** `src/components/HeroSection.tsx`
 
-**2. Buttons - Soft Gradients Instead of Solid Colors**
-- Primary buttons: Gentle cyan gradient (light to medium cyan)
-- Secondary/Outline buttons: Very light cyan background with cyan border
-- Remove the harsh coral accent - replace with a deeper cyan or keep monochromatic
-- Add subtle gradient CSS utilities for button styling
+Update the video container (line 20) to include a responsive max-height:
 
-**3. Cards & Sections**
-- Cards: White with subtle cyan shadow tint
-- Add left-border accent in cyan (like the app screenshot)
-- Softer, blue-tinted shadows
+```tsx
+// Current:
+<div className="relative w-full animate-scale-in">
 
-**4. Text Colors**
-- Keep dark text but with slight blue undertone for harmony
-- Muted text gets a blue-grey instead of warm grey
-
-### Files to Modify
-
-| File | Changes |
-|------|---------|
-| `src/index.css` | Update all CSS variables to cyan-based palette, add gradient utilities |
-| `src/components/ui/button.tsx` | Add gradient button variant |
-| `src/components/HeroSection.tsx` | Update button styling to use gradients |
-| `src/components/PricingSection.tsx` | Update button styling and card accents |
-| `src/components/FeaturesSection.tsx` | Add left-border accents to cards |
-| `src/components/HowItWorksSection.tsx` | Update card styling |
-| `src/components/Header.tsx` | Update button to match new style |
-| `src/components/Footer.tsx` | Update background to match |
-
-### Technical Details
-
-**New Color Variables (HSL format)**
-```text
-/* Sky blue background palette */
---background: 195 60% 97%;      /* Soft sky blue tint */
---card: 195 40% 99%;             /* Near white with blue hint */
---section-alt: 195 55% 94%;      /* Light cyan sections */
-
-/* Cyan primary - softer, more like the app */
---primary: 190 75% 50%;          /* Balanced cyan */
---primary-light: 190 70% 92%;    /* For light button backgrounds */
-
-/* Remove coral, use deeper cyan for accents */
---accent: 190 80% 42%;           /* Deeper cyan instead of coral */
-
-/* Blue-tinted neutrals */
---muted: 195 30% 92%;
---muted-foreground: 200 20% 40%;
---border: 195 40% 88%;
+// Updated:
+<div className="relative w-full animate-scale-in lg:max-h-[85vh]">
 ```
 
-**New Gradient Utilities**
-```text
-.btn-gradient-primary {
-  background: linear-gradient(135deg, hsl(190 75% 55%), hsl(190 80% 45%));
-}
+And update the video element (line 23) to respect this constraint:
 
-.btn-soft {
-  background: hsl(190 70% 94%);
-  border: 1px solid hsl(190 60% 80%);
-  color: hsl(190 80% 35%);
-}
+```tsx
+// Current:
+className="w-full h-full object-contain"
+
+// Updated:
+className="w-full h-full object-contain lg:max-h-[85vh]"
 ```
 
-### Result
-The website will feel cohesive and calming with everything in the same cyan/blue color family - matching the app's friendly, approachable aesthetic.
+### How It Works
+- **Mobile/Tablet:** No max-height applied — video displays at full natural size
+- **Large screens (lg: 1024px+):** Video height capped at 85% of the viewport height, width scales proportionally to maintain aspect ratio
+
+### Technical Note
+The `85vh` value leaves some breathing room (15% of viewport) so users can see there's more content below. This can be adjusted to `80vh` or `90vh` based on your preference.
+
