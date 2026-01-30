@@ -60,8 +60,9 @@ const Header = () => {
           <div className="hidden md:block">
             <Button
               size="sm"
+              variant="gradient"
               onClick={() => scrollToSection("#pricing")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+              className="font-medium"
             >
               Download
             </Button>
@@ -96,7 +97,8 @@ const Header = () => {
               ))}
               <div className="pt-2 px-3">
                 <Button
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+                  variant="gradient"
+                  className="w-full font-medium"
                   onClick={() => scrollToSection("#pricing")}
                 >
                   Download

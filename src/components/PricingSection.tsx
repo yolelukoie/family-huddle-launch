@@ -25,7 +25,7 @@ const PricingSection = () => {
           </div>
 
           {/* Pricing Card */}
-          <div className="bg-card rounded-3xl p-8 md:p-10 shadow-soft-xl border border-border max-w-md mx-auto">
+          <div className="bg-card rounded-3xl p-8 md:p-10 shadow-soft-xl border border-border max-w-md mx-auto card-accent">
             <div className="text-center mb-8">
               <h3 className="font-display font-bold text-xl text-foreground mb-2">
                 Family Huddle Premium
@@ -55,7 +55,8 @@ const PricingSection = () => {
             {/* CTA Button */}
             <Button
               asChild
-              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base py-6 rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all hover:-translate-y-0.5"
+              variant="gradient"
+              className="w-full font-semibold text-base py-6 rounded-xl"
             >
               <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
                 Start using Family Huddle
@@ -67,9 +68,9 @@ const PricingSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Button
               asChild
-              variant="outline"
+              variant="soft"
               size="lg"
-              className="font-medium text-base px-8 py-6 rounded-xl border-2 hover:bg-muted"
+              className="font-medium text-base px-8 py-6 rounded-xl"
             >
               <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
                 Download for Android
@@ -77,9 +78,9 @@ const PricingSection = () => {
             </Button>
             <Button
               asChild
-              variant="outline"
+              variant="soft"
               size="lg"
-              className="font-medium text-base px-8 py-6 rounded-xl border-2 hover:bg-muted"
+              className="font-medium text-base px-8 py-6 rounded-xl"
             >
               <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
                 Download for iPhone

@@ -73,7 +73,8 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base px-8 py-6 rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all hover:-translate-y-0.5"
+                variant="gradient"
+                className="font-semibold text-base px-8 py-6 rounded-xl"
               >
                 <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
                   Download for Android
@@ -82,7 +83,8 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base px-8 py-6 rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all hover:-translate-y-0.5"
+                variant="soft"
+                className="font-semibold text-base px-8 py-6 rounded-xl"
               >
                 <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
                   Download for iPhone

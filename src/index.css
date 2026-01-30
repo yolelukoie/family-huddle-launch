@@ -4,47 +4,47 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
-/* Family Huddle Design System - Warm, playful, Pixar-inspired */
+/* Family Huddle Design System - Calming cyan/sky-blue palette */
 
 @layer base {
   :root {
-    /* Warm cream background like golden hour lighting */
-    --background: 35 45% 97%;
-    --foreground: 220 30% 18%;
+    /* Sky blue background - soft and calming */
+    --background: 195 60% 97%;
+    --foreground: 200 30% 18%;
 
-    /* Cards with warm white */
-    --card: 40 40% 99%;
-    --card-foreground: 220 30% 18%;
+    /* Cards with near-white blue tint */
+    --card: 195 40% 99%;
+    --card-foreground: 200 30% 18%;
 
-    --popover: 40 40% 99%;
-    --popover-foreground: 220 30% 18%;
+    --popover: 195 40% 99%;
+    --popover-foreground: 200 30% 18%;
 
-    /* Vibrant turquoise/cyan - like the hoodie in the video */
-    --primary: 180 70% 45%;
+    /* Balanced cyan primary */
+    --primary: 190 75% 50%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft warm secondary */
-    --secondary: 35 30% 93%;
-    --secondary-foreground: 220 25% 25%;
+    /* Soft cyan secondary */
+    --secondary: 195 50% 94%;
+    --secondary-foreground: 200 30% 25%;
 
-    /* Muted warm tones */
-    --muted: 35 25% 91%;
-    --muted-foreground: 220 15% 45%;
+    /* Blue-tinted muted tones */
+    --muted: 195 30% 92%;
+    --muted-foreground: 200 20% 40%;
 
-    /* Warm coral/peach accent - like the house */
-    --accent: 15 80% 58%;
+    /* Deeper cyan accent (replacing coral) */
+    --accent: 190 80% 42%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 25% 88%;
-    --input: 35 25% 88%;
-    --ring: 180 70% 45%;
+    --border: 195 40% 88%;
+    --input: 195 40% 88%;
+    --ring: 190 75% 50%;
 
     --radius: 0.75rem;
 
-    /* Colorful icon palette - matching the video's playful style */
+    /* Colorful icon palette - keeping playful style */
     --icon-turquoise: 180 70% 45%;
     --icon-coral: 15 80% 58%;
     --icon-yellow: 45 95% 55%;
@@ -53,55 +53,55 @@
     --icon-pink: 340 75% 60%;
     --icon-blue: 210 80% 55%;
 
-    /* Section backgrounds */
-    --section-alt: 35 35% 95%;
-    --feature-icon-bg: 180 70% 92%;
-    --feature-icon-color: 180 70% 40%;
+    /* Section backgrounds - light cyan */
+    --section-alt: 195 55% 94%;
+    --feature-icon-bg: 190 70% 92%;
+    --feature-icon-color: 190 70% 40%;
 
-    /* Shadows with warmth */
-    --shadow-sm: 0 1px 2px 0 hsl(30 30% 20% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(30 30% 20% / 0.08), 0 2px 4px -2px hsl(30 30% 20% / 0.05);
-    --shadow-lg: 0 10px 15px -3px hsl(30 30% 20% / 0.08), 0 4px 6px -4px hsl(30 30% 20% / 0.04);
-    --shadow-xl: 0 20px 25px -5px hsl(30 30% 20% / 0.1), 0 8px 10px -6px hsl(30 30% 20% / 0.08);
+    /* Cyan-tinted shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(200 40% 50% / 0.06);
+    --shadow-md: 0 4px 6px -1px hsl(200 40% 50% / 0.08), 0 2px 4px -2px hsl(200 40% 50% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(200 40% 50% / 0.08), 0 4px 6px -4px hsl(200 40% 50% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(200 40% 50% / 0.1), 0 8px 10px -6px hsl(200 40% 50% / 0.08);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 195 40% 98%;
+    --sidebar-foreground: 200 25% 26%;
+    --sidebar-primary: 190 75% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 50% 94%;
+    --sidebar-accent-foreground: 200 30% 18%;
+    --sidebar-border: 195 40% 88%;
+    --sidebar-ring: 190 75% 50%;
   }
 
   .dark {
-    --background: 220 30% 10%;
-    --foreground: 35 30% 95%;
+    --background: 200 30% 10%;
+    --foreground: 195 30% 95%;
 
-    --card: 220 30% 12%;
-    --card-foreground: 35 30% 95%;
+    --card: 200 30% 12%;
+    --card-foreground: 195 30% 95%;
 
-    --popover: 220 30% 12%;
-    --popover-foreground: 35 30% 95%;
+    --popover: 200 30% 12%;
+    --popover-foreground: 195 30% 95%;
 
-    --primary: 180 60% 50%;
+    --primary: 190 65% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 25% 18%;
-    --secondary-foreground: 35 25% 90%;
+    --secondary: 200 25% 18%;
+    --secondary-foreground: 195 25% 90%;
 
-    --muted: 220 25% 18%;
-    --muted-foreground: 35 20% 60%;
+    --muted: 200 25% 18%;
+    --muted-foreground: 195 20% 60%;
 
-    --accent: 15 70% 55%;
+    --accent: 190 70% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 25% 20%;
-    --input: 220 25% 20%;
-    --ring: 180 60% 50%;
+    --border: 200 25% 20%;
+    --input: 200 25% 20%;
+    --ring: 190 65% 50%;
 
     --icon-turquoise: 180 60% 55%;
     --icon-coral: 15 70% 60%;
@@ -111,18 +111,18 @@
     --icon-pink: 340 65% 65%;
     --icon-blue: 210 70% 60%;
 
-    --section-alt: 220 30% 12%;
-    --feature-icon-bg: 180 50% 18%;
-    --feature-icon-color: 180 60% 65%;
+    --section-alt: 200 30% 12%;
+    --feature-icon-bg: 190 50% 18%;
+    --feature-icon-color: 190 60% 65%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 200 30% 10%;
+    --sidebar-foreground: 195 30% 95%;
+    --sidebar-primary: 190 65% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 200 25% 15%;
+    --sidebar-accent-foreground: 195 30% 95%;
+    --sidebar-border: 200 25% 20%;
+    --sidebar-ring: 190 65% 50%;
   }
 }
 
@@ -165,11 +165,34 @@
     box-shadow: var(--shadow-xl);
   }
 
-  .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)));
-  }
-
   .section-alt {
     background-color: hsl(var(--section-alt));
+  }
+
+  /* Soft gradient buttons - matching app style */
+  .btn-gradient {
+    background: linear-gradient(135deg, hsl(190 70% 55%), hsl(190 75% 45%));
+    color: white;
+    border: none;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(135deg, hsl(190 70% 50%), hsl(190 75% 40%));
+  }
+
+  .btn-soft {
+    background: hsl(190 70% 94%);
+    border: 1px solid hsl(190 60% 80%);
+    color: hsl(190 80% 35%);
+  }
+
+  .btn-soft:hover {
+    background: hsl(190 70% 90%);
+    border-color: hsl(190 60% 70%);
+  }
+
+  /* Card with left accent border */
+  .card-accent {
+    border-left: 3px solid hsl(var(--primary));
   }
 }
