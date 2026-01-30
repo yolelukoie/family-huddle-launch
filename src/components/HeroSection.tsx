@@ -1,4 +1,4 @@
-import { Play } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -8,22 +8,17 @@ const HeroSection = () => {
     <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Video Placeholder */}
+          {/* Promo Video */}
           <div className="relative mb-10 md:mb-12 rounded-2xl overflow-hidden shadow-soft-xl bg-muted aspect-video max-w-3xl mx-auto animate-scale-in">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
-              <button
-                className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary/90 hover:bg-primary text-primary-foreground flex items-center justify-center transition-all hover:scale-105 shadow-soft-lg"
-                aria-label="Play video"
-              >
-                <Play className="w-8 h-8 md:w-10 md:h-10 ml-1" fill="currentColor" />
-              </button>
-            </div>
-            {/* Placeholder text */}
-            <div className="absolute bottom-4 left-4 right-4 text-center">
-              <p className="text-xs text-muted-foreground bg-background/80 backdrop-blur-sm rounded-lg py-2 px-4 inline-block">
-                Video placeholder – replace with your promo video
-              </p>
-            </div>
+            <video 
+              className="w-full h-full object-cover rounded-2xl"
+              controls
+              preload="metadata"
+              playsInline
+            >
+              <source src="/videos/promo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           {/* Text Content */}
