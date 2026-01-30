@@ -66,10 +66,7 @@ const Refund = () => {
               4. Billing Errors and Exceptional Cases
             </h2>
             <p className="text-muted-foreground mb-4">
-              If you believe you have been incorrectly charged (for example, due to technical issues, duplicate payments, or unauthorized charges), please contact us as soon as possible at:
-            </p>
-            <p className="text-muted-foreground mb-4">
-              Email: <a href="mailto:y.olelukoie@gmail.com" className="text-primary hover:underline">y.olelukoie@gmail.com</a>
+              If you believe you have been incorrectly charged (for example, due to technical issues, duplicate payments, or unauthorized charges), please contact us as soon as possible.
             </p>
             <p className="text-muted-foreground mb-6">
               We will review your request and, where appropriate, work with the payment provider or app store to correct the issue. In some cases this may include issuing a refund or credit, in our reasonable discretion and subject to the policies of the relevant payment provider or app store.
