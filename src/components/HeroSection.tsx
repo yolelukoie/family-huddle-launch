@@ -83,7 +83,7 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                variant="soft"
+                variant="gradientAlt"
                 className="font-semibold text-base px-8 py-6 rounded-xl"
               >
                 <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
