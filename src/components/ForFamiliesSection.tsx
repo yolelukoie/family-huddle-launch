@@ -1,15 +1,15 @@
 import { Home, Users, Check } from "lucide-react";
 
 const familyBullets = [
-  { text: "Share responsibility for chores, homework, and routines.", bold: false },
-  { text: "Let kids and teens take ownership by assigning tasks too, not just receiving them.", bold: true },
-  { text: "Turn \"Did you do it?\" into \"Let's check it off together.\"", bold: false },
+  { text: "Share responsibility for chores, homework, and routines.", boldPart: null },
+  { text: "Let kids and teens take ownership by assigning tasks too, not just receiving them.", boldPart: "take ownership by assigning tasks too" },
+  { text: "Turn \"Did you do it?\" into \"Let's check it off together.\"", boldPart: null },
 ];
 
 const friendsBullets = [
-  { text: "Support each other with fitness, study, or creative goals.", bold: false },
-  { text: "Create shared challenges with small daily tasks.", bold: false },
-  { text: "Keep each other accountable in a friendly, playful way.", bold: false },
+  { text: "Create shared challenges with small daily tasks.", boldPart: null },
+  { text: "Support each other with fitness, study, or creative goals.", boldPart: "Support each other" },
+  { text: "Keep each other accountable in a friendly, playful way.", boldPart: null },
 ];
 
 const ForFamiliesSection = () => {
@@ -20,7 +20,7 @@ const ForFamiliesSection = () => {
           {/* Section Header */}
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-foreground">
-              Built for real families and real friend groups
+              Built for families and friend groups
             </h2>
           </div>
 
@@ -43,7 +43,13 @@ const ForFamiliesSection = () => {
                       <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-muted-foreground text-sm leading-relaxed">
-                      {bullet.bold ? <strong className="text-foreground">{bullet.text}</strong> : bullet.text}
+                      {bullet.boldPart ? (
+                        <>
+                          {bullet.text.split(bullet.boldPart)[0]}
+                          <strong className="text-foreground">{bullet.boldPart}</strong>
+                          {bullet.text.split(bullet.boldPart)[1]}
+                        </>
+                      ) : bullet.text}
                     </span>
                   </li>
                 ))}
@@ -67,7 +73,13 @@ const ForFamiliesSection = () => {
                       <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-muted-foreground text-sm leading-relaxed">
-                      {bullet.bold ? <strong className="text-foreground">{bullet.text}</strong> : bullet.text}
+                      {bullet.boldPart ? (
+                        <>
+                          {bullet.text.split(bullet.boldPart)[0]}
+                          <strong className="text-foreground">{bullet.boldPart}</strong>
+                          {bullet.text.split(bullet.boldPart)[1]}
+                        </>
+                      ) : bullet.text}
                     </span>
                   </li>
                 ))}
