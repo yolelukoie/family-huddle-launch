@@ -4,58 +4,65 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
-/* Family Huddle Design System - Warm, friendly, modern */
+/* Family Huddle Design System - Warm, playful, Pixar-inspired */
 
 @layer base {
   :root {
-    /* Warm off-white background */
-    --background: 40 33% 98%;
-    --foreground: 220 25% 15%;
+    /* Warm cream background like golden hour lighting */
+    --background: 35 45% 97%;
+    --foreground: 220 30% 18%;
 
-    /* Cards with subtle warmth */
-    --card: 0 0% 100%;
-    --card-foreground: 220 25% 15%;
+    /* Cards with warm white */
+    --card: 40 40% 99%;
+    --card-foreground: 220 30% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 15%;
+    --popover: 40 40% 99%;
+    --popover-foreground: 220 30% 18%;
 
-    /* Warm teal primary - growth, togetherness */
-    --primary: 168 65% 38%;
+    /* Vibrant turquoise/cyan - like the hoodie in the video */
+    --primary: 180 70% 45%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft warm gray secondary */
-    --secondary: 40 20% 94%;
+    /* Soft warm secondary */
+    --secondary: 35 30% 93%;
     --secondary-foreground: 220 25% 25%;
 
-    /* Muted tones */
-    --muted: 40 15% 92%;
+    /* Muted warm tones */
+    --muted: 35 25% 91%;
     --muted-foreground: 220 15% 45%;
 
-    /* Coral accent for CTAs */
-    --accent: 15 85% 60%;
+    /* Warm coral/peach accent - like the house */
+    --accent: 15 80% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 168 65% 38%;
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 180 70% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom colors */
-    --hero-gradient-start: 168 65% 38%;
-    --hero-gradient-end: 180 55% 45%;
-    --section-alt: 40 25% 96%;
-    --feature-icon-bg: 168 65% 95%;
-    --feature-icon-color: 168 65% 35%;
+    /* Colorful icon palette - matching the video's playful style */
+    --icon-turquoise: 180 70% 45%;
+    --icon-coral: 15 80% 58%;
+    --icon-yellow: 45 95% 55%;
+    --icon-green: 145 60% 45%;
+    --icon-purple: 270 60% 60%;
+    --icon-pink: 340 75% 60%;
+    --icon-blue: 210 80% 55%;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(220 25% 15% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(220 25% 15% / 0.08), 0 2px 4px -2px hsl(220 25% 15% / 0.05);
-    --shadow-lg: 0 10px 15px -3px hsl(220 25% 15% / 0.08), 0 4px 6px -4px hsl(220 25% 15% / 0.04);
-    --shadow-xl: 0 20px 25px -5px hsl(220 25% 15% / 0.1), 0 8px 10px -6px hsl(220 25% 15% / 0.08);
+    /* Section backgrounds */
+    --section-alt: 35 35% 95%;
+    --feature-icon-bg: 180 70% 92%;
+    --feature-icon-color: 180 70% 40%;
+
+    /* Shadows with warmth */
+    --shadow-sm: 0 1px 2px 0 hsl(30 30% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(30 30% 20% / 0.08), 0 2px 4px -2px hsl(30 30% 20% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(30 30% 20% / 0.08), 0 4px 6px -4px hsl(30 30% 20% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(30 30% 20% / 0.1), 0 8px 10px -6px hsl(30 30% 20% / 0.08);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -68,37 +75,45 @@
   }
 
   .dark {
-    --background: 220 25% 10%;
-    --foreground: 40 20% 95%;
+    --background: 220 30% 10%;
+    --foreground: 35 30% 95%;
 
-    --card: 220 25% 12%;
-    --card-foreground: 40 20% 95%;
+    --card: 220 30% 12%;
+    --card-foreground: 35 30% 95%;
 
-    --popover: 220 25% 12%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 220 30% 12%;
+    --popover-foreground: 35 30% 95%;
 
-    --primary: 168 55% 45%;
+    --primary: 180 60% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 40 20% 90%;
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 35 25% 90%;
 
-    --muted: 220 20% 18%;
-    --muted-foreground: 40 15% 60%;
+    --muted: 220 25% 18%;
+    --muted-foreground: 35 20% 60%;
 
-    --accent: 15 75% 55%;
+    --accent: 15 70% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 168 55% 45%;
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 180 60% 50%;
 
-    --section-alt: 220 25% 12%;
-    --feature-icon-bg: 168 55% 20%;
-    --feature-icon-color: 168 55% 65%;
+    --icon-turquoise: 180 60% 55%;
+    --icon-coral: 15 70% 60%;
+    --icon-yellow: 45 85% 60%;
+    --icon-green: 145 50% 50%;
+    --icon-purple: 270 50% 65%;
+    --icon-pink: 340 65% 65%;
+    --icon-blue: 210 70% 60%;
+
+    --section-alt: 220 30% 12%;
+    --feature-icon-bg: 180 50% 18%;
+    --feature-icon-color: 180 60% 65%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;

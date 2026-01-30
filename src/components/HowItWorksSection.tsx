@@ -5,21 +5,29 @@ const steps = [
     icon: Users,
     title: "Create your huddle",
     description: "Invite your family members or friends and build a shared space for your goals, routines, and projects.",
+    iconBg: "bg-[hsl(180,70%,92%)]",
+    iconColor: "text-icon-turquoise",
   },
   {
     icon: Target,
     title: "Set goals and rewards",
     description: "Decide what you're working toward – a clean house, exam success, fitness streak, a trip – and plan a reward you'll enjoy together when you reach it.",
+    iconBg: "bg-[hsl(15,80%,92%)]",
+    iconColor: "text-icon-coral",
   },
   {
     icon: ListTodo,
     title: "Assign tasks to each other",
     description: "Everyone in the group can create, assign, accept, or decline tasks. Kids can ask parents for help, parents can delegate chores, friends can challenge each other – it's fully egalitarian.",
+    iconBg: "bg-[hsl(270,60%,92%)]",
+    iconColor: "text-icon-purple",
   },
   {
     icon: TrendingUp,
     title: "Do small steps every day",
     description: "Complete tasks, keep your streaks alive, and watch your character and your group progress grow over time.",
+    iconBg: "bg-[hsl(145,60%,90%)]",
+    iconColor: "text-icon-green",
   },
 ];
 
@@ -52,8 +60,8 @@ const HowItWorksSection = () => {
                 </div>
 
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-feature-icon-bg flex items-center justify-center mb-4">
-                  <step.icon className="w-6 h-6 text-feature-icon-color" />
+                <div className={`w-12 h-12 rounded-xl ${step.iconBg} flex items-center justify-center mb-4`}>
+                  <step.icon className={`w-6 h-6 ${step.iconColor}`} />
                 </div>
 
                 {/* Content */}

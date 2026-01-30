@@ -65,6 +65,15 @@ export default {
           "icon-bg": "hsl(var(--feature-icon-bg))",
           "icon-color": "hsl(var(--feature-icon-color))",
         },
+        icon: {
+          turquoise: "hsl(var(--icon-turquoise))",
+          coral: "hsl(var(--icon-coral))",
+          yellow: "hsl(var(--icon-yellow))",
+          green: "hsl(var(--icon-green))",
+          purple: "hsl(var(--icon-purple))",
+          pink: "hsl(var(--icon-pink))",
+          blue: "hsl(var(--icon-blue))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
