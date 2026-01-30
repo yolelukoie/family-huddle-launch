@@ -17,10 +17,10 @@ const HeroSection = () => {
   return (
     <section id="home" className="pt-24 md:pt-32">
       {/* Full-width Video Container */}
-      <div className="relative w-full animate-scale-in">
+      <div className="relative w-full animate-scale-in lg:max-h-[85vh]">
         <video 
           ref={videoRef}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain lg:max-h-[85vh]"
           autoPlay
           muted
           loop
