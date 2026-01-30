@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -38,10 +39,13 @@ const Footer = () => {
             </a>
           </p>
 
-          {/* Copyright */}
-          <p className="text-center text-xs text-muted-foreground mt-6">
-            © {new Date().getFullYear()} Family Huddle. All rights reserved.
-          </p>
+          {/* Logo & Copyright */}
+          <div className="flex flex-col items-center gap-3 mt-8">
+            <img src={logo} alt="Family Huddle" className="w-10 h-10" />
+            <p className="text-center text-xs text-muted-foreground">
+              © {new Date().getFullYear()} Family Huddle. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
