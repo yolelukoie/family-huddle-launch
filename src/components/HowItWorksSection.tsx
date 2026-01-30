@@ -4,28 +4,28 @@ const steps = [
   {
     icon: Users,
     title: "Create your huddle",
-    description: "Invite your family members or friends and build a shared space for your goals, routines, and projects.",
+    description: "Invite your family or friends and build a shared space for goals, routines, and projects.",
     iconBg: "bg-[hsl(180,70%,92%)]",
     iconColor: "text-icon-turquoise",
   },
   {
     icon: Target,
     title: "Set goals and rewards",
-    description: "Decide what you're working toward – a clean house, exam success, fitness streak, a trip – and plan a reward you'll enjoy together when you reach it.",
+    description: "Decide what you're working toward and plan a reward you'll enjoy together when you reach it.",
     iconBg: "bg-[hsl(15,80%,92%)]",
     iconColor: "text-icon-coral",
   },
   {
     icon: ListTodo,
     title: "Assign tasks to each other",
-    description: "Everyone in the group can create, assign, accept, or decline tasks. Kids can ask parents for help, parents can delegate chores, friends can challenge each other – it's fully egalitarian.",
+    description: "<strong>Everyone can create, send, accept, or decline tasks.</strong> Kids can invite parents to help, parents can delegate chores, friends can challenge each other – no one is \"just being managed\".",
     iconBg: "bg-[hsl(270,60%,92%)]",
     iconColor: "text-icon-purple",
   },
   {
     icon: TrendingUp,
     title: "Do small steps every day",
-    description: "Complete tasks, keep your streaks alive, and watch your character and your group progress grow over time.",
+    description: "Complete tasks, keep your streaks alive, and watch your group progress grow over time.",
     iconBg: "bg-[hsl(145,60%,90%)]",
     iconColor: "text-icon-green",
   },
@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
               Turn everyday tasks into shared victories
             </h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-              Family Huddle helps you turn big dreams into tiny daily actions. Create a group with your family or friends, set shared goals, and break them down into small tasks that anyone can take on. Check off tasks, collect points, and see your progress grow together.
+              Family Huddle turns big dreams into tiny daily actions. Create a group with your family or friends, break goals into small tasks anyone can take on, and see your shared progress grow over time.
             </p>
           </div>
 
@@ -68,9 +68,10 @@ const HowItWorksSection = () => {
                 <h3 className="font-display font-semibold text-lg text-foreground mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
+                <p 
+                  className="text-sm text-muted-foreground leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: step.description }}
+                />
               </div>
             ))}
           </div>

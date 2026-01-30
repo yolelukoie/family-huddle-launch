@@ -12,21 +12,21 @@ const features = [
   {
     icon: Users2,
     title: "Equal roles for everyone",
-    description: "Every member can assign tasks, accept or decline them, and create goals – no 'admin only' control. It's truly collaborative and egalitarian.",
+    description: "<strong>Every member can create goals, send tasks, and accept or decline requests – there's no \"admin only\" control.</strong> Family Huddle is built to be truly collaborative and egalitarian.",
     iconBg: "bg-[hsl(180,70%,92%)]",
     iconColor: "text-icon-turquoise",
   },
   {
     icon: Trophy,
     title: "Goals with planned rewards",
-    description: "Set clear goals and decide in advance how you'll celebrate. Knowing the reward helps you stay motivated through the small daily steps.",
+    description: "Set clear goals and decide in advance how you'll celebrate. Knowing the reward keeps you motivated.",
     iconBg: "bg-[hsl(45,95%,90%)]",
     iconColor: "text-icon-yellow",
   },
   {
     icon: Footprints,
     title: "Habit-building through small steps",
-    description: "Break big goals into tiny, realistic actions. Family Huddle helps you focus on what you can do today, not just on the distant result.",
+    description: "Break big goals into tiny, realistic actions. Focus on what you can do today, not just the distant result.",
     iconBg: "bg-[hsl(145,60%,90%)]",
     iconColor: "text-icon-green",
   },
@@ -47,14 +47,14 @@ const features = [
   {
     icon: Globe,
     title: "Multi-language support",
-    description: "Family Huddle currently supports multiple languages, so each person can comfortably use the app in their own language.",
+    description: "Use the app comfortably in your own language – Family Huddle supports multiple languages.",
     iconBg: "bg-[hsl(210,80%,92%)]",
     iconColor: "text-icon-blue",
   },
   {
     icon: Wallet,
     title: "Simple, transparent pricing",
-    description: "All features for one low price – no ads, no hidden extras.",
+    description: "All features for one low price – no hidden extras. No ads, one simple subscription for the whole huddle.",
     iconBg: "bg-[hsl(15,80%,92%)]",
     iconColor: "text-icon-coral",
   },
@@ -91,9 +91,10 @@ const FeaturesSection = () => {
                 <h3 className="font-display font-semibold text-lg text-foreground mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
+                <p 
+                  className="text-sm text-muted-foreground leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: feature.description }}
+                />
               </div>
             ))}
           </div>
