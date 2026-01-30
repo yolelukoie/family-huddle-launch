@@ -1,17 +1,15 @@
 import { Home, Users, Check } from "lucide-react";
 
 const familyBullets = [
-  "Share responsibility for chores, homework, and routines.",
-  "Let kids take ownership by assigning tasks too, not just receiving them.",
-  "Turn 'Did you do it?' into 'Let's check it off together.'",
-  "Celebrate progress with planned family rewards when you reach a goal.",
+  { text: "Share responsibility for chores, homework, and routines.", bold: false },
+  { text: "Let kids and teens take ownership by assigning tasks too, not just receiving them.", bold: true },
+  { text: "Turn \"Did you do it?\" into \"Let's check it off together.\"", bold: false },
 ];
 
 const friendsBullets = [
-  "Support each other with fitness, study, or creative goals.",
-  "Create shared challenges with small daily tasks.",
-  "Keep each other accountable in a friendly, playful way.",
-  "Use it for language learning, side projects, or any habit you want to build together.",
+  { text: "Support each other with fitness, study, or creative goals.", bold: false },
+  { text: "Create shared challenges with small daily tasks.", bold: false },
+  { text: "Keep each other accountable in a friendly, playful way.", bold: false },
 ];
 
 const ForFamiliesSection = () => {
@@ -45,7 +43,7 @@ const ForFamiliesSection = () => {
                       <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-muted-foreground text-sm leading-relaxed">
-                      {bullet}
+                      {bullet.bold ? <strong className="text-foreground">{bullet.text}</strong> : bullet.text}
                     </span>
                   </li>
                 ))}
@@ -69,7 +67,7 @@ const ForFamiliesSection = () => {
                       <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-muted-foreground text-sm leading-relaxed">
-                      {bullet}
+                      {bullet.bold ? <strong className="text-foreground">{bullet.text}</strong> : bullet.text}
                     </span>
                   </li>
                 ))}

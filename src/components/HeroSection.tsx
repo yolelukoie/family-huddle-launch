@@ -60,12 +60,12 @@ const HeroSection = () => {
               <span className="text-primary">big wins together</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-              A shared task and goals app for families and friends who want to support each other, build habits, and celebrate progress as a team.
+            <p className="text-lg md:text-xl max-w-2xl mx-auto text-balance">
+              <strong className="text-foreground">An equal space where kids, teens, and adults set goals and support each other's routines.</strong>
             </p>
 
             <p className="text-base text-muted-foreground max-w-xl mx-auto">
-              Create shared goals, assign tasks to each other, and watch your characters grow with every small step you take.
+              Everyone can create tasks, accept or decline them, and celebrate small steps together.
             </p>
 
             {/* Download Buttons */}
