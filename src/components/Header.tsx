@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -32,8 +33,9 @@ const Header = () => {
               e.preventDefault();
               scrollToSection("#home");
             }}
-            className="font-display font-bold text-xl text-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-2 font-display font-bold text-xl text-foreground hover:text-primary transition-colors"
           >
+            <img src={logo} alt="Family Huddle" className="w-8 h-8" />
             Family Huddle
           </a>
 
