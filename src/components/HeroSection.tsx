@@ -1,27 +1,59 @@
-
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { Volume2, VolumeX } from "lucide-react";
 
 const HeroSection = () => {
   const downloadUrl = "https://family-huddle-app.web.app/";
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleSound = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   return (
-    <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Promo Video */}
-          <div className="relative mb-10 md:mb-12 rounded-2xl overflow-hidden shadow-soft-xl bg-muted aspect-video max-w-3xl mx-auto animate-scale-in">
-            <video 
-              className="w-full h-full object-cover rounded-2xl"
-              controls
-              preload="metadata"
-              playsInline
-            >
-              <source src="/videos/promo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+    <section id="home" className="pt-24 md:pt-32">
+      {/* Full-width Video Container */}
+      <div className="relative w-full aspect-square bg-muted animate-scale-in">
+        <video 
+          ref={videoRef}
+          className="w-full h-full object-contain"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/videos/promo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Sound Toggle Button */}
+        <Button
+          onClick={toggleSound}
+          size="sm"
+          variant="secondary"
+          className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm hover:bg-background/90 shadow-soft-lg"
+        >
+          {isMuted ? (
+            <>
+              <VolumeX className="w-4 h-4 mr-2" />
+              Turn on sound
+            </>
+          ) : (
+            <>
+              <Volume2 className="w-4 h-4 mr-2" />
+              Mute
+            </>
+          )}
+        </Button>
+      </div>
 
-          {/* Text Content */}
+      {/* Text Content */}
+      <div className="container mx-auto px-4 sm:px-6 py-16 md:py-24">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight text-balance">
               Family Huddle – small steps,{" "}
