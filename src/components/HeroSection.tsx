@@ -35,7 +35,7 @@ const HeroSection = () => {
           onClick={toggleSound}
           size="sm"
           variant="secondary"
-          className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm hover:bg-background/90 shadow-soft-lg"
+          className="absolute bottom-2 right-4 md:bottom-4 bg-background/80 backdrop-blur-sm hover:bg-background/90 shadow-soft-lg"
         >
           {isMuted ? (
             <>
