@@ -180,6 +180,16 @@
     background: linear-gradient(135deg, hsl(190 70% 50%), hsl(190 75% 40%));
   }
 
+  .btn-gradient-alt {
+    background: linear-gradient(315deg, hsl(190 70% 55%), hsl(190 75% 45%));
+    color: white;
+    border: none;
+  }
+
+  .btn-gradient-alt:hover {
+    background: linear-gradient(315deg, hsl(190 70% 50%), hsl(190 75% 40%));
+  }
+
   .btn-soft {
     background: hsl(190 70% 94%);
     border: 1px solid hsl(190 60% 80%);

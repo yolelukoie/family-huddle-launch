@@ -68,7 +68,7 @@ const PricingSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Button
               asChild
-              variant="soft"
+              variant="gradient"
               size="lg"
               className="font-medium text-base px-8 py-6 rounded-xl"
             >
@@ -78,7 +78,7 @@ const PricingSection = () => {
             </Button>
             <Button
               asChild
-              variant="soft"
+              variant="gradientAlt"
               size="lg"
               className="font-medium text-base px-8 py-6 rounded-xl"
             >
