@@ -26,6 +26,12 @@ const Footer = () => {
             >
               Refund Policy
             </Link>
+            <Link
+              to="/delete-account"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Delete Account
+            </Link>
           </div>
 
           {/* Contact Text */}
