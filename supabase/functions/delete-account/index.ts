@@ -56,67 +56,139 @@ Deno.serve(async (req) => {
     console.log(`Starting account deletion for user: ${userId}`);
 
     // Delete user data from all related tables
-    // The order matters due to foreign key constraints
-    // Adjust these table names based on your actual schema
+    // Order matters due to foreign key constraints
 
-    // 1. Delete chat messages
-    const { error: messagesError } = await supabaseAdmin
-      .from("messages")
+    // 1. Delete celebration_events
+    const { error: celebrationError } = await supabaseAdmin
+      .from("celebration_events")
       .delete()
       .eq("user_id", userId);
-    
-    if (messagesError) {
-      console.log("Messages deletion error (table may not exist):", messagesError.message);
+    if (celebrationError) {
+      console.log("celebration_events deletion error:", celebrationError.message);
     }
 
-    // 2. Delete tasks
-    const { error: tasksError } = await supabaseAdmin
-      .from("tasks")
+    // 2. Delete chat_messages
+    const { error: chatMessagesError } = await supabaseAdmin
+      .from("chat_messages")
       .delete()
       .eq("user_id", userId);
-    
-    if (tasksError) {
-      console.log("Tasks deletion error (table may not exist):", tasksError.message);
+    if (chatMessagesError) {
+      console.log("chat_messages deletion error:", chatMessagesError.message);
     }
 
-    // 3. Delete goals
+    // 3. Delete device_tokens
+    const { error: deviceTokensError } = await supabaseAdmin
+      .from("device_tokens")
+      .delete()
+      .eq("user_id", userId);
+    if (deviceTokensError) {
+      console.log("device_tokens deletion error:", deviceTokensError.message);
+    }
+
+    // 4. Delete goals
     const { error: goalsError } = await supabaseAdmin
       .from("goals")
       .delete()
       .eq("user_id", userId);
-    
     if (goalsError) {
-      console.log("Goals deletion error (table may not exist):", goalsError.message);
+      console.log("goals deletion error:", goalsError.message);
     }
 
-    // 4. Delete huddle memberships
-    const { error: membershipsError } = await supabaseAdmin
-      .from("huddle_members")
+    // 5. Delete task_categories
+    const { error: taskCategoriesError } = await supabaseAdmin
+      .from("task_categories")
       .delete()
       .eq("user_id", userId);
-    
-    if (membershipsError) {
-      console.log("Huddle memberships deletion error (table may not exist):", membershipsError.message);
+    if (taskCategoriesError) {
+      console.log("task_categories deletion error:", taskCategoriesError.message);
     }
 
-    // 5. Delete notification settings
-    const { error: notificationsError } = await supabaseAdmin
-      .from("notification_settings")
+    // 6. Delete task_events (actor_id)
+    const { error: taskEventsActorError } = await supabaseAdmin
+      .from("task_events")
+      .delete()
+      .eq("actor_id", userId);
+    if (taskEventsActorError) {
+      console.log("task_events (actor_id) deletion error:", taskEventsActorError.message);
+    }
+
+    // 7. Delete task_events (recipient_id)
+    const { error: taskEventsRecipientError } = await supabaseAdmin
+      .from("task_events")
+      .delete()
+      .eq("recipient_id", userId);
+    if (taskEventsRecipientError) {
+      console.log("task_events (recipient_id) deletion error:", taskEventsRecipientError.message);
+    }
+
+    // 8. Delete user_badges
+    const { error: userBadgesError } = await supabaseAdmin
+      .from("user_badges")
       .delete()
       .eq("user_id", userId);
-    
-    if (notificationsError) {
-      console.log("Notification settings deletion error (table may not exist):", notificationsError.message);
+    if (userBadgesError) {
+      console.log("user_badges deletion error:", userBadgesError.message);
     }
 
-    // 6. Delete user profile
+    // 9. Delete user_character_images
+    const { error: userCharacterImagesError } = await supabaseAdmin
+      .from("user_character_images")
+      .delete()
+      .eq("user_id", userId);
+    if (userCharacterImagesError) {
+      console.log("user_character_images deletion error:", userCharacterImagesError.message);
+    }
+
+    // 10. Delete user_families
+    const { error: userFamiliesError } = await supabaseAdmin
+      .from("user_families")
+      .delete()
+      .eq("user_id", userId);
+    if (userFamiliesError) {
+      console.log("user_families deletion error:", userFamiliesError.message);
+    }
+
+    // 11. Delete user_fcm_tokens
+    const { error: userFcmTokensError } = await supabaseAdmin
+      .from("user_fcm_tokens")
+      .delete()
+      .eq("user_id", userId);
+    if (userFcmTokensError) {
+      console.log("user_fcm_tokens deletion error:", userFcmTokensError.message);
+    }
+
+    // 12. Delete files from character-images bucket (avatars/<user_id>-*)
+    try {
+      const { data: files, error: listError } = await supabaseAdmin.storage
+        .from("character-images")
+        .list("avatars", {
+          search: `${userId}-`,
+        });
+
+      if (listError) {
+        console.log("Storage list error:", listError.message);
+      } else if (files && files.length > 0) {
+        const filePaths = files.map((file) => `avatars/${file.name}`);
+        const { error: removeError } = await supabaseAdmin.storage
+          .from("character-images")
+          .remove(filePaths);
+        if (removeError) {
+          console.log("Storage remove error:", removeError.message);
+        } else {
+          console.log(`Deleted ${files.length} file(s) from storage`);
+        }
+      }
+    } catch (storageErr) {
+      console.log("Storage deletion error:", storageErr);
+    }
+
+    // 13. Delete user profile (primary key is user's auth id)
     const { error: profileError } = await supabaseAdmin
       .from("profiles")
       .delete()
       .eq("id", userId);
-    
     if (profileError) {
-      console.log("Profile deletion error (table may not exist):", profileError.message);
+      console.log("profiles deletion error:", profileError.message);
     }
 
     // 7. Finally, delete the auth user
