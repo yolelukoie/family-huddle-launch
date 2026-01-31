@@ -52,8 +52,8 @@ const Terms = () => {
               You may use the Service only if:
             </p>
             <ul className="list-disc list-inside text-muted-foreground mb-4 space-y-2">
-              <li>you are at least 18 years old, or</li>
-              <li>you are a minor using the Service with the permission and supervision of a parent or legal guardian.</li>
+              <li>you are at least 13 years old,</li>
+              <li>if you are between 13 and 18 years old, you are using the Service with the permission and supervision of a parent or legal guardian.</li>
             </ul>
             <p className="text-muted-foreground mb-6">
               Parents and legal guardians are responsible for the actions of minors who use the Service under their supervision.
