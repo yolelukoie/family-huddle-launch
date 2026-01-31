@@ -86,7 +86,7 @@ const Privacy = () => {
             </p>
             <ul className="list-disc list-inside text-muted-foreground mb-6 space-y-2">
               <li>Access and update your personal information</li>
-              <li>Delete your account and associated data</li>
+              <li>Delete your account and associated data at: <a href="https://familyhuddletasks.com/delete-account" className="text-primary hover:underline">familyhuddletasks.com/delete-account</a></li>
               <li>Opt out of push notifications</li>
               <li>Leave family groups at any time</li>
             </ul>
