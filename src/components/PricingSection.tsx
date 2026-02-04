@@ -32,7 +32,7 @@ const PricingSection = () => {
               </h3>
               <div className="flex items-baseline justify-center gap-1">
                 <span className="font-display font-bold text-5xl text-primary">
-                  US$4.99
+                  US$4.90
                 </span>
               </div>
               <p className="text-muted-foreground mt-1">per month</p>
