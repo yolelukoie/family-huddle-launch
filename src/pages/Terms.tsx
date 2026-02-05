@@ -15,13 +15,13 @@ const Terms = () => {
           </Link>
           
           <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-2">
-            Terms of Service
+            Terms of Use – Family Huddle
           </h1>
-          <p className="text-sm text-muted-foreground mb-8">Last updated: 29 January 2026</p>
+          <p className="text-sm text-muted-foreground mb-8">Last updated: 31 January 2026</p>
           
           <div className="bg-card rounded-2xl p-6 md:p-8 shadow-soft border border-border">
             <p className="text-muted-foreground mb-4">
-              These Terms of Service ("Terms") govern your use of the Family Huddle application and any related services (together, the "Service"). The Service is owned and operated by Yana Sklyar, Tel Aviv, Israel ("we", "us", "our").
+              These Terms of Use ("Terms") govern your use of the Family Huddle application and any related services (together, the "Service"). The Service is owned and operated by Yana Sklyar, Tel Aviv, Israel ("we", "us", "our").
             </p>
             <p className="text-muted-foreground mb-4">
               By creating an account or using the Service, you agree to these Terms. If you do not agree, please do not use the Service.
@@ -93,7 +93,7 @@ const Terms = () => {
               4.1 Pricing and Free Trial
             </h3>
             <p className="text-muted-foreground mb-4">
-              The standard price for a Family Huddle Premium subscription is US$4.90 per month. Prices may vary by region, currency, taxes, or promotions.
+              The standard price for a Family Huddle Premium subscription is $4.90 USD per month. Prices may vary by region, currency, taxes, or promotions.
             </p>
             <p className="text-muted-foreground mb-4">
               We may offer a free trial period for new Premium subscriptions. As of the date of these Terms, the free trial is four (4) days. During the trial you have full access to all Premium features without limitations.
@@ -195,10 +195,11 @@ const Terms = () => {
             </p>
             <ul className="list-disc list-inside text-muted-foreground mb-6 space-y-2">
               <li><strong>Account data:</strong> email address, name or nickname, password (stored in hashed form), language preferences.</li>
-              <li><strong>Profile and family data:</strong> family or group names, member names or nicknames, roles, and relationships you define in the app.</li>
-              <li><strong>Usage data:</strong> tasks you create or complete, schedules, streaks, achievements, app settings, and other in-app activity.</li>
-              <li><strong>Technical data:</strong> IP address, device type, operating system, app version, and basic usage analytics (for example, which screens are most used).</li>
-              <li><strong>Payment data:</strong> limited information about your subscription status, payment method type, and billing history, as provided by payment processors or app stores. We do not store your full payment card number on our servers.</li>
+              <li><strong>Profile and family data:</strong> family or group names, member names or nicknames, and relationships you define in the app.</li>
+              <li><strong>Usage data:</strong> tasks you create or complete, schedules, progress, achievements, and app settings.</li>
+              <li><strong>Notification data:</strong> push notification tokens if you enable notifications, and your device platform (web, Android, iOS).</li>
+              <li><strong>Uploaded content:</strong> profile pictures and custom character images you choose to upload.</li>
+              <li><strong>Payment data:</strong> if you subscribe to Premium, limited information about your subscription status and billing history as provided by payment processors. We do not store your full payment card number.</li>
             </ul>
 
             <h3 className="font-display font-medium text-lg text-foreground mt-6 mb-3">
@@ -363,11 +364,15 @@ const Terms = () => {
             <p className="text-muted-foreground mb-4">
               If you have any questions about these Terms or our privacy practices, you can contact:
             </p>
-            <div className="text-muted-foreground">
-              <p>Owner: Yana Sklyar</p>
-              <p>Location: Tel Aviv, Israel</p>
-              <p>Email: <a href="mailto:support@familyhuddletasks.com" className="text-primary hover:underline">support@familyhuddletasks.com</a></p>
-            </div>
+            <ul className="list-none text-muted-foreground space-y-2">
+              <li><strong>Owner:</strong> Yana Sklyar</li>
+              <li><strong>Location:</strong> Tel Aviv, Israel</li>
+              <li><strong>Email:</strong>{" "}
+                <a href="mailto:support@familyhuddletasks.com" className="text-primary hover:underline">
+                  support@familyhuddletasks.com
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
