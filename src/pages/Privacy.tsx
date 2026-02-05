@@ -15,9 +15,9 @@ const Privacy = () => {
           </Link>
           
           <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-2">
-            Privacy Policy
+            Privacy Policy – Family Huddle
           </h1>
-          <p className="text-sm text-muted-foreground mb-8">Last updated: December 2024</p>
+          <p className="text-sm text-muted-foreground mb-8">Last updated: 31 January 2026</p>
           
           <div className="bg-card rounded-2xl p-6 md:p-8 shadow-soft border border-border">
             <h2 className="font-display font-semibold text-xl text-foreground mb-4">
@@ -27,10 +27,12 @@ const Privacy = () => {
               We collect information you provide directly to us, including:
             </p>
             <ul className="list-disc list-inside text-muted-foreground mb-6 space-y-2">
-              <li>Account information (email address, display name, date of birth)</li>
-              <li>Profile information (avatar, gender preference for character display)</li>
+              <li>Account information (email address, display name)</li>
+              <li>Profile information (avatar, gender preference for character display, language preference)</li>
               <li>Family and task data you create within the app</li>
               <li>Chat messages shared within your family groups</li>
+              <li>Custom images you upload (profile pictures, character images)</li>
+              <li>Push notification tokens (if you enable notifications)</li>
             </ul>
 
             <h2 className="font-display font-semibold text-xl text-foreground mt-8 mb-4">
@@ -86,7 +88,7 @@ const Privacy = () => {
             </p>
             <ul className="list-disc list-inside text-muted-foreground mb-6 space-y-2">
               <li>Access and update your personal information</li>
-              <li>Delete your account and associated data at: <a href="https://familyhuddletasks.com/delete-account" className="text-primary hover:underline">familyhuddletasks.com/delete-account</a></li>
+              <li>Delete your account and associated data through the app's Personal Settings page</li>
               <li>Opt out of push notifications</li>
               <li>Leave family groups at any time</li>
             </ul>
@@ -102,7 +104,10 @@ const Privacy = () => {
               9. Contact Us
             </h2>
             <p className="text-muted-foreground">
-              If you have questions about this Privacy Policy, please contact us through the app's support channels.
+              If you have questions about this Privacy Policy, please contact us at{" "}
+              <a href="mailto:support@familyhuddletasks.com" className="text-primary hover:underline">
+                support@familyhuddletasks.com
+              </a>
             </p>
           </div>
         </div>
