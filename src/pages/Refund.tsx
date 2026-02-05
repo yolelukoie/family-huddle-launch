@@ -31,7 +31,7 @@ const Refund = () => {
               1. Subscriptions and Billing
             </h2>
             <p className="text-muted-foreground mb-4">
-              Family Huddle Premium is billed on a recurring monthly basis. The current price is 14 NIS per month (price may vary by region, currency, or promotion). Subscriptions renew automatically at the end of each billing period unless cancelled.
+              Family Huddle Premium is billed on a recurring monthly basis. The current price is US$4.90 per month (price may vary by region, currency, or promotion). Subscriptions renew automatically at the end of each billing period unless cancelled.
             </p>
             <p className="text-muted-foreground mb-6">
               You can cancel your subscription at any time through the platform where you subscribed (for example, in-app store, web payment page, or payment provider account). After cancellation, you will continue to have access to Premium features until the end of your current paid billing period.
