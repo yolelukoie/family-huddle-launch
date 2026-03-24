@@ -8,6 +8,8 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Refund from "./pages/Refund";
 import DeleteAccount from "./pages/DeleteAccount";
+import ResetPassword from "./pages/ResetPassword";
+import AppLinkTest from "./pages/AppLinkTest";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/refund" element={<Refund />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
+          <Route path="/auth/reset" element={<ResetPassword />} />
+          <Route path="/auth/app-link-test" element={<AppLinkTest />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
