@@ -71,3 +71,22 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Supabase Configuration (Family Huddle)
+
+Before password reset works, configure the following in your **Supabase Dashboard → Authentication → URL Configuration**:
+
+- **Site URL**: `https://familyhuddletasks.com`
+- **Redirect URLs**: Add `https://familyhuddletasks.com/auth/reset`
+
+## Android App Links
+
+The file `public/.well-known/assetlinks.json` is a placeholder for Android App Links verification.
+
+**⚠️ You MUST replace `PASTE_SHA256_FINGERPRINT_HERE`** in that file with the real SHA-256 certificate fingerprint from your Android app signing key. You can get it by running:
+
+```sh
+keytool -list -v -keystore your-keystore.jks -alias your-alias
+```
+
+Or from the Google Play Console under **Setup → App signing → App signing key certificate**.
