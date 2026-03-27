@@ -8,6 +8,8 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Refund from "./pages/Refund";
 import DeleteAccount from "./pages/DeleteAccount";
+import Auth from "./pages/Auth";
+import AuthCallback from "./pages/AuthCallback";
 import ResetPassword from "./pages/ResetPassword";
 import AppLinkTest from "./pages/AppLinkTest";
 import NotFound from "./pages/NotFound";
