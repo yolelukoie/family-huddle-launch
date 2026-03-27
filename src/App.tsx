@@ -28,6 +28,8 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/refund" element={<Refund />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/auth/callback" element={<AuthCallback />} />
           <Route path="/auth/reset" element={<ResetPassword />} />
           <Route path="/auth/app-link-test" element={<AppLinkTest />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
