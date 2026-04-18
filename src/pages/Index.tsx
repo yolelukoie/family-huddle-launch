@@ -5,6 +5,7 @@ import ForFamiliesSection from "@/components/ForFamiliesSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import Footer from "@/components/Footer";
+import OtherAppPromo from "@/components/OtherAppPromo";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <HowItWorksSection />
         <FeaturesSection />
         <PricingSection />
+        <OtherAppPromo />
       </main>
       <Footer />
     </div>
