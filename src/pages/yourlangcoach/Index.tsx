@@ -5,6 +5,7 @@ import YLCHero from "@/components/yourlangcoach/YLCHero";
 import YLCHowItWorks from "@/components/yourlangcoach/YLCHowItWorks";
 import YLCFeatures from "@/components/yourlangcoach/YLCFeatures";
 import YLCPricing from "@/components/yourlangcoach/YLCPricing";
+import FamilyHuddlePromo from "@/components/yourlangcoach/FamilyHuddlePromo";
 
 const META_DESCRIPTION =
   "YourLangCoach is a language-learning app created by a language coach, with AI-guided practice, spaced repetition, a personal dictionary, and a workbook for flexible self-learning.";
@@ -35,6 +36,7 @@ const YourLangCoachIndex = () => {
         <YLCHowItWorks />
         <YLCFeatures />
         <YLCPricing />
+        <FamilyHuddlePromo />
       </main>
       <YLCFooter />
     </div>
