@@ -121,7 +121,7 @@ export const PRICING = {
     "Subscriptions renew automatically until canceled. Manage or cancel through the store where you purchased your subscription.",
 };
 
-export const EFFECTIVE_DATE = "[INSERT DATE]";
+export const EFFECTIVE_DATE = "18.04.2026";
 
 export const TERMS_TEXT = `Terms of Use
 Effective date: ${EFFECTIVE_DATE}
