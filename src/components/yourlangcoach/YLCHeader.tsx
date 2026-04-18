@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 import { ANDROID_URL } from "@/lib/yourlangcoach/content";
+import ylcLogo from "@/assets/yourlangcoach-logo.png";
 
 const YLCHeader = () => {
   return (
     <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link to="/yourlangcoach" className="flex items-center gap-2.5 group">
-          {/* TODO: replace logo with real asset (e.g. <img src="/yourlangcoach-logo.svg" />) */}
-          <span className="ylc-logo-mark w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold">
-            Y
-          </span>
+          <img
+            src={ylcLogo}
+            alt="YourLangCoach logo"
+            className="w-9 h-9 rounded-xl object-cover"
+          />
           <span className="font-display font-semibold text-base tracking-tight text-[hsl(220,20%,92%)]">
             YourLangCoach
           </span>

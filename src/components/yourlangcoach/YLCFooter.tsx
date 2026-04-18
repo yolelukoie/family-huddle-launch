@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
+import ylcLogo from "@/assets/yourlangcoach-logo.png";
 
 const YLCFooter = () => {
   return (
@@ -8,9 +9,11 @@ const YLCFooter = () => {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div>
             <Link to="/yourlangcoach" className="flex items-center gap-2.5 mb-3">
-              <span className="ylc-logo-mark w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold">
-                Y
-              </span>
+              <img
+                src={ylcLogo}
+                alt="YourLangCoach logo"
+                className="w-9 h-9 rounded-xl object-cover"
+              />
               <span className="font-display font-semibold text-base tracking-tight text-[hsl(220,20%,92%)]">
                 YourLangCoach
               </span>
@@ -55,7 +58,7 @@ const YLCFooter = () => {
         </div>
 
         <div className="mt-10 pt-6 border-t border-[hsl(220,20%,15%)] text-xs text-[hsl(220,10%,50%)]">
-          © {new Date().getFullYear()} Yana Sklyar. All rights reserved.
+          © {new Date().getFullYear()} Family Huddle. All rights reserved.
         </div>
       </div>
     </footer>
