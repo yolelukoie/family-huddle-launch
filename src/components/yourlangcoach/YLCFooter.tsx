@@ -55,7 +55,7 @@ const YLCFooter = () => {
         </div>
 
         <div className="mt-10 pt-6 border-t border-[hsl(220,20%,15%)] text-xs text-[hsl(220,10%,50%)]">
-          © {new Date().getFullYear()} Yana Sklyar. All rights reserved.
+          © {new Date().getFullYear()} Family Huddle. All rights reserved.
         </div>
       </div>
     </footer>
