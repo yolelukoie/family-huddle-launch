@@ -206,3 +206,249 @@
     border-left: 3px solid hsl(var(--primary));
   }
 }
+
+/* ==========================================================================
+   YourLangCoach — scoped dark/elegant theme
+   Applied only inside .ylc-theme wrapper. Does not affect Family Huddle.
+   ========================================================================== */
+.ylc-theme {
+  background: hsl(222 35% 5%);
+  color: hsl(220 20% 92%);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.ylc-theme ::selection {
+  background: hsl(235 70% 55% / 0.4);
+  color: hsl(220 25% 98%);
+}
+
+/* Header */
+.ylc-header {
+  background: hsl(222 35% 5% / 0.7);
+  border-bottom: 1px solid hsl(220 20% 12%);
+}
+
+/* Footer */
+.ylc-footer {
+  background: hsl(222 35% 4%);
+}
+
+/* Logo mark */
+.ylc-logo-mark {
+  background: linear-gradient(135deg, hsl(235 85% 65%), hsl(265 75% 65%));
+  color: hsl(0 0% 100%);
+  box-shadow: 0 4px 16px -4px hsl(235 85% 65% / 0.5);
+}
+
+/* Eyebrow label */
+.ylc-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: hsl(235 60% 75%);
+  font-weight: 500;
+}
+
+/* Gradient accent text */
+.ylc-text-gradient {
+  background: linear-gradient(135deg, hsl(235 90% 75%), hsl(275 80% 75%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Buttons */
+.ylc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ylc-btn-primary {
+  background: linear-gradient(135deg, hsl(235 85% 62%), hsl(265 75% 62%));
+  color: hsl(0 0% 100%);
+  box-shadow: 0 8px 24px -8px hsl(235 85% 62% / 0.6);
+}
+.ylc-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px -8px hsl(235 85% 62% / 0.7);
+  filter: brightness(1.08);
+}
+
+.ylc-btn-secondary {
+  background: hsl(220 20% 12%);
+  color: hsl(220 20% 92%);
+  border: 1px solid hsl(220 20% 18%);
+}
+.ylc-btn-secondary:hover {
+  background: hsl(220 20% 15%);
+  border-color: hsl(235 60% 50%);
+}
+
+/* Card surface */
+.ylc-card {
+  background: linear-gradient(180deg, hsl(222 30% 8%), hsl(222 32% 6%));
+  border: 1px solid hsl(220 20% 13%);
+  box-shadow: 0 4px 20px -8px hsl(0 0% 0% / 0.5);
+  transition: all 0.25s ease;
+}
+.ylc-card:hover {
+  border-color: hsl(235 40% 30%);
+  box-shadow: 0 8px 32px -8px hsl(235 80% 50% / 0.25);
+  transform: translateY(-2px);
+}
+
+.ylc-card-highlight {
+  border-color: hsl(235 60% 45%);
+  background: linear-gradient(180deg, hsl(235 30% 10%), hsl(222 32% 6%));
+  box-shadow: 0 0 0 1px hsl(235 70% 55% / 0.3), 0 8px 32px -8px hsl(235 80% 50% / 0.4);
+}
+
+/* Icon wrapper */
+.ylc-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, hsl(235 60% 18%), hsl(265 50% 18%));
+  color: hsl(235 90% 78%);
+  border: 1px solid hsl(235 40% 25%);
+}
+
+/* Numbered step badge */
+.ylc-step-number {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: hsl(222 35% 5%);
+  border: 1px solid hsl(235 50% 35%);
+  color: hsl(235 90% 78%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bullet dot */
+.ylc-bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, hsl(235 90% 70%), hsl(265 80% 70%));
+  flex-shrink: 0;
+}
+
+/* Badges */
+.ylc-badge {
+  background: linear-gradient(135deg, hsl(235 85% 62%), hsl(265 75% 62%));
+  color: hsl(0 0% 100%);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ylc-badge-soft {
+  background: hsl(220 20% 12%);
+  color: hsl(235 70% 78%);
+  border: 1px solid hsl(235 40% 30%);
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Radial glow accents */
+.ylc-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  z-index: 0;
+}
+.ylc-glow-1 {
+  top: -150px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, hsl(235 85% 55% / 0.5), transparent 70%);
+}
+.ylc-glow-2 {
+  top: 50px;
+  right: -150px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, hsl(275 75% 55% / 0.4), transparent 70%);
+}
+.ylc-glow-3 {
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, hsl(235 80% 50% / 0.25), transparent 70%);
+}
+
+/* Prose for legal pages */
+.ylc-prose {
+  color: hsl(220 15% 78%);
+  line-height: 1.7;
+}
+.ylc-prose h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: hsl(220 25% 95%);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.ylc-prose h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(220 25% 92%);
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+.ylc-prose p {
+  margin-bottom: 1rem;
+}
+.ylc-prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.ylc-prose li {
+  margin-bottom: 0.4rem;
+}
+.ylc-prose a {
+  color: hsl(235 90% 75%);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ylc-prose a:hover {
+  color: hsl(235 95% 85%);
+}
+.ylc-prose strong {
+  color: hsl(220 25% 92%);
+  font-weight: 600;
+}
+.ylc-prose .not-prose {
+  margin: 1.5rem 0;
+}
