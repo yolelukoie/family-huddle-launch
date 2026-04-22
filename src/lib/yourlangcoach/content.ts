@@ -97,7 +97,8 @@ export const PRICING = {
       name: "YourLangCoach Premium",
       price: "US$9.99",
       period: "/ month",
-      tagline: "Full access to all core learning features.",
+      tagline:
+        "Full access to all core learning features. Includes 90 voice minutes per billing cycle.",
       highlight: false,
     },
     {
@@ -112,7 +113,7 @@ export const PRICING = {
       price: "US$14.99",
       period: "/ month",
       tagline:
-        "Extended voice access for learners who want much more speaking practice.",
+        "Extended Voice for learners who want much more speaking practice. Includes 600 voice minutes per billing cycle.",
       fairUse: true,
       highlight: false,
     },
