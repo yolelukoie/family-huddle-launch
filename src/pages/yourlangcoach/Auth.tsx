@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { ylcSupabase as supabase } from "@/integrations/supabase/ylc-client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,7 +11,7 @@ import ylcLogo from "@/assets/yourlangcoach-logo.png";
 type View = "sign-in" | "sign-up" | "forgot";
 
 const CALLBACK_URL = "https://familyhuddletasks.com/yourlangcoach/auth/callback";
-const RESET_URL = "https://familyhuddletasks.com/yourlangcoach/auth/reset";
+const RESET_URL = "https://familyhuddletasks.com/yourlangcoach/auth/confirm";
 
 const YLCAuth = () => {
   const [view, setView] = useState<View>("sign-in");

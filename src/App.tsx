@@ -20,6 +20,7 @@ import YLCRefund from "./pages/yourlangcoach/Refund";
 import YLCDeleteAccount from "./pages/yourlangcoach/DeleteAccount";
 import YLCAuth from "./pages/yourlangcoach/Auth";
 import YLCAuthCallback from "./pages/yourlangcoach/AuthCallback";
+import YLCAuthConfirm from "./pages/yourlangcoach/AuthConfirm";
 import YLCResetPassword from "./pages/yourlangcoach/ResetPassword";
 
 const queryClient = new QueryClient();
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/yourlangcoach/delete-account" element={<YLCDeleteAccount />} />
           <Route path="/yourlangcoach/auth" element={<YLCAuth />} />
           <Route path="/yourlangcoach/auth/callback" element={<YLCAuthCallback />} />
+          <Route path="/yourlangcoach/auth/confirm" element={<YLCAuthConfirm />} />
           <Route path="/yourlangcoach/auth/reset" element={<YLCResetPassword />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
