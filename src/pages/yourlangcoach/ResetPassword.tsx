@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { useState, useEffect } from "react";
+import { ylcSupabase } from "@/integrations/supabase/ylc-client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, AlertTriangle, ExternalLink } from "lucide-react";
+import { CheckCircle2, AlertTriangle } from "lucide-react";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
 
 type PageState = "loading" | "ready" | "success" | "error";
@@ -17,60 +17,57 @@ const YLCResetPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [formError, setFormError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [showFallback, setShowFallback] = useState(false);
-  const deepLinkAttempted = useRef(false);
 
   useEffect(() => {
     const establishSession = async () => {
       try {
         const url = new URL(window.location.href);
+        const tokenHash = url.searchParams.get("token_hash");
+        const type = url.searchParams.get("type");
         const code = url.searchParams.get("code");
         const hashParams = new URLSearchParams(url.hash.substring(1));
         const accessToken = hashParams.get("access_token");
         const refreshToken = hashParams.get("refresh_token");
-        const type = url.searchParams.get("type") || hashParams.get("type");
 
-        if (code) {
-          const { error } = await supabase.auth.exchangeCodeForSession(code);
+        if (tokenHash && type) {
+          // Modern Supabase recovery link format
+          const { error } = await ylcSupabase.auth.verifyOtp({
+            token_hash: tokenHash,
+            type: type as any,
+          });
+          if (error) throw error;
+        } else if (code) {
+          // Legacy PKCE flow
+          const { error } = await ylcSupabase.auth.exchangeCodeForSession(code);
           if (error) throw error;
         } else if (accessToken && refreshToken) {
-          const { error } = await supabase.auth.setSession({
+          // Legacy hash-token flow
+          const { error } = await ylcSupabase.auth.setSession({
             access_token: accessToken,
             refresh_token: refreshToken,
           });
           if (error) throw error;
-        } else if (type !== "recovery") {
-          const { data: { session } } = await supabase.auth.getSession();
+        } else {
+          // No tokens in URL — see if /auth/confirm already established a session
+          const { data: { session } } = await ylcSupabase.auth.getSession();
           if (!session) {
-            throw new Error("No recovery credentials found");
+            throw new Error(
+              "No recovery session found. Please request a new password-reset email from the app."
+            );
           }
         }
 
         setPageState("ready");
-
-        if (!deepLinkAttempted.current) {
-          deepLinkAttempted.current = true;
-          attemptDeepLink();
-          setTimeout(() => setShowFallback(true), 1200);
-        }
       } catch (err: any) {
         setPageState("error");
         setErrorMessage(
-          err?.message || "This link is invalid or expired. Request a new reset email.",
+          err?.message || "This link is invalid or expired. Request a new reset email."
         );
       }
     };
 
     establishSession();
   }, []);
-
-  const attemptDeepLink = () => {
-    window.location.href = window.location.href;
-  };
-
-  const handleOpenApp = () => {
-    attemptDeepLink();
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,7 +84,7 @@ const YLCResetPassword = () => {
 
     setSubmitting(true);
     try {
-      const { error } = await supabase.auth.updateUser({ password: newPassword });
+      const { error } = await ylcSupabase.auth.updateUser({ password: newPassword });
       if (error) throw error;
       setPageState("success");
     } catch (err: any) {
@@ -137,68 +134,54 @@ const YLCResetPassword = () => {
                 Password updated successfully!
               </p>
               <p className="text-sm text-muted-foreground">
-                You can now open the app and log in with your new password.
+                You can now return to the YourLangCoach app and sign in with your new password.
               </p>
-              <Button onClick={handleOpenApp} className="w-full" variant="gradient">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Open the YourLangCoach app
-              </Button>
             </div>
           )}
 
           {pageState === "ready" && (
-            <>
-              <div className="text-center space-y-3">
-                <Button onClick={handleOpenApp} className="w-full" variant="gradient" size="lg">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Open the YourLangCoach app
-                </Button>
-                <p className="text-xs text-muted-foreground">
-                  If the app doesn't open, you can reset your password below.
-                </p>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <p className="text-sm text-muted-foreground text-center">
+                Choose a new password for your YourLangCoach account.
+              </p>
+
+              <div className="space-y-2">
+                <Label htmlFor="new-password">New password</Label>
+                <Input
+                  id="new-password"
+                  type="password"
+                  placeholder="Minimum 8 characters"
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  required
+                  minLength={8}
+                />
               </div>
 
-              {showFallback && (
-                <form onSubmit={handleSubmit} className="space-y-4 pt-2 border-t border-border">
-                  <div className="space-y-2">
-                    <Label htmlFor="new-password">New password</Label>
-                    <Input
-                      id="new-password"
-                      type="password"
-                      placeholder="Minimum 8 characters"
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                      required
-                      minLength={8}
-                    />
-                  </div>
+              <div className="space-y-2">
+                <Label htmlFor="confirm-password">Confirm password</Label>
+                <Input
+                  id="confirm-password"
+                  type="password"
+                  placeholder="Re-enter your password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                  minLength={8}
+                />
+              </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="confirm-password">Confirm password</Label>
-                    <Input
-                      id="confirm-password"
-                      type="password"
-                      placeholder="Re-enter your password"
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      required
-                      minLength={8}
-                    />
-                  </div>
-
-                  {formError && (
-                    <Alert variant="destructive">
-                      <AlertTriangle className="h-4 w-4" />
-                      <AlertDescription>{formError}</AlertDescription>
-                    </Alert>
-                  )}
-
-                  <Button type="submit" className="w-full" disabled={submitting}>
-                    {submitting ? "Updating…" : "Update password"}
-                  </Button>
-                </form>
+              {formError && (
+                <Alert variant="destructive">
+                  <AlertTriangle className="h-4 w-4" />
+                  <AlertDescription>{formError}</AlertDescription>
+                </Alert>
               )}
-            </>
+
+              <Button type="submit" className="w-full" variant="gradient" disabled={submitting}>
+                {submitting ? "Updating…" : "Update password"}
+              </Button>
+            </form>
           )}
         </CardContent>
       </Card>
