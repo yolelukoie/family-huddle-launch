@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ylcSupabase as supabase } from "@/integrations/supabase/ylc-client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertTriangle, Mail, KeyRound } from "lucide-react";
+import { AlertTriangle, Mail, KeyRound, CheckCircle2 } from "lucide-react";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
 
 type View = "sign-in" | "sign-up" | "forgot";
