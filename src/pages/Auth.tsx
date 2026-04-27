@@ -91,6 +91,14 @@ const Auth = () => {
         </CardHeader>
 
         <CardContent className="space-y-4">
+          {confirmed && view === "sign-in" && (
+            <Alert className="border-primary/40 bg-primary/10 text-foreground">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              <AlertTitle>Account confirmed</AlertTitle>
+              <AlertDescription>You can open the app now.</AlertDescription>
+            </Alert>
+          )}
+
           {/* Forgot password view */}
           {view === "forgot" && (
             resetSent ? (
