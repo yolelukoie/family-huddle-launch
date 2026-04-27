@@ -20,6 +20,15 @@ const YLCAuth = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [resetSent, setResetSent] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("confirmed") === "1") {
+      setConfirmed(true);
+      setView("sign-in");
+    }
+  }, []);
 
   const handleGoogle = async () => {
     await supabase.auth.signInWithOAuth({
