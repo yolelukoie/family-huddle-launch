@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.familyhuddle.app",
       "sha256_cert_fingerprints": [
-        "25:67:C7:B9:25:60:F0:DC:27:5D:61:27:95:C4:19:2B:DD:A9:6C:05:0E:88:09:AE:C2:97:59:A3:22:6C:2B:8D"
+        "25:67:C7:B9:25:60:F0:DC:27:5D:61:27:95:C4:19:2B:DD:A9:6C:05:0E:88:09:AE:C2:97:59:A3:22:6C:2B:8D",
+        "34:40:57:83:B4:DC:CF:09:40:EA:11:C1:04:43:30:1C:1C:37:14:FC:31:8D:00:F2:E0:AE:01:65:E7:FD:1B:AC"
       ]
     }
   }
