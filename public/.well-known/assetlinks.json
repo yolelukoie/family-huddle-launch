@@ -9,5 +9,19 @@
         "34:40:57:83:B4:DC:CF:09:40:EA:11:C1:04:43:30:1C:1C:37:14:FC:31:8D:00:F2:E0:AE:01:65:E7:FD:1B:AC"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.yourlangcoach.app",
+      "sha256_cert_fingerprints": [
+        "34:40:57:83:B4:DC:CF:09:40:EA:11:C1:04:43:30:1C:1C:37:14:FC:31:8D:00:F2:E0:AE:01:65:E7:FD:1B:AC"
+      ]
+    }
   }
+]
 ]
