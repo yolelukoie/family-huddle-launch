@@ -1,9 +1,15 @@
 {
   "applinks": {
     "apps": [],
-    "details": [{
-      "appID": "CSSUGZW7XP.com.yourlangcoach.app",
-      "paths": ["/yourlangcoach/auth/reset"]
-    }]
+    "details": [
+      {
+        "appID": "CSSUGZW7XP.com.yourlangcoach.app",
+        "paths": ["/yourlangcoach/auth/reset", "/yourlangcoach/auth/callback"]
+      },
+      {
+        "appID": "CSSUGZW7XP.com.familyhuddle.app",
+        "paths": ["/auth/callback", "/auth/reset"]
+      }
+    ]
   }
 }
