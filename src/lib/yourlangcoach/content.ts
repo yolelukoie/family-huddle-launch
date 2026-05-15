@@ -122,7 +122,7 @@ export const PRICING = {
     "Subscriptions renew automatically until canceled. Manage or cancel through the store where you purchased your subscription.",
 };
 
-export const EFFECTIVE_DATE = "18.04.2026";
+export const EFFECTIVE_DATE = "15.05.2026";
 
 export const TERMS_TEXT = `Terms of Use
 Effective date: ${EFFECTIVE_DATE}
@@ -239,44 +239,76 @@ This may include:
 
 A. Account Information
 - email address
-- login-related account data
+- login-related account data (including identifiers from Sign in with Apple and other authentication providers)
+- your display name (if you provide one, or as supplied by Sign in with Apple on first login)
 
-B. Content You Create in the App
+B. Learning Profile
+- target language, native language, language level, interests, and goals you enter during onboarding or in Settings
+- correction and difficulty preferences
+
+C. Content You Create in the App
 - words and phrases saved in your dictionary
 - workbook uploads and materials
-- practice inputs and learning-related entries you choose to add
+- chat messages exchanged with Anna (the AI tutor)
+- voice recordings you make in the app when using voice input
+- grammar notes and learning history generated from your practice
 
-C. Technical and Service Data
+D. Technical and Service Data
 - basic app and device information needed to operate, secure, and improve the Service
 - logs, diagnostics, and performance data where applicable
+
+We collect this information directly from you (when you sign up, complete onboarding, send messages, add words, record audio, or upload materials), automatically as part of normal app operation (logs, diagnostics), and from authentication providers when you sign in (e.g. Sign in with Apple).
 
 2. How We Use Information
 We use information to:
 - create and manage your account;
 - provide the Service;
 - save your learning progress and content;
-- power AI-assisted features and practice flows;
+- power AI-assisted features and practice flows (see Section 3);
 - improve app functionality, reliability, and performance;
 - respond to support requests;
 - comply with legal obligations.
 
-3. AI Processing
-Some content you enter may be processed through AI features in order to provide language practice, explanations, coaching, or review support.
+3. AI Processing and Third-Party AI Providers
+To power Anna (the AI tutor), generate dictionary cards, transcribe your voice, and read text aloud, the Service sends certain content to OpenAI, L.L.C. ("OpenAI"), a third-party AI provider, via OpenAI's API.
+
+What we send to OpenAI:
+- your chat messages and recent conversation history;
+- your learning profile (display name, target language, level, interests, goals) so Anna can personalize replies;
+- words you add to your dictionary and grammar notes from previous practice;
+- voice recordings you make in the app (sent to OpenAI's Whisper service for transcription);
+- text you ask Anna to read aloud (sent to OpenAI's text-to-speech service).
+
+What we do NOT send to OpenAI: your email address, your password, your payment information, or device identifiers.
+
+Consent: Before any of the AI-powered features can be used, the app asks you to review what is sent and grant explicit consent. You can review what is shared and the date you consented at any time in Settings → AI & Data.
+
+OpenAI's processing of this content: OpenAI processes content sent through its API in accordance with its API Data Usage Policy. Under that policy, content submitted through the API is not used to train OpenAI's models. OpenAI may retain API content for a limited period for abuse and safety monitoring. For details, see OpenAI's Privacy Policy at https://openai.com/policies/privacy-policy and OpenAI's API Data Usage Policies at https://openai.com/policies/api-data-usage-policies.
+
+We require that OpenAI provide equivalent or greater protection for your information than this Privacy Policy describes, as set out in OpenAI's API terms.
 
 4. Sharing
 We do not sell your personal information.
 
-We may share limited information with service providers only where needed to operate the Service, such as hosting, authentication, infrastructure, analytics, customer support, or AI processing providers, subject to appropriate contractual or operational safeguards.
+We share limited information with service providers only where needed to operate the Service. Each provider is contractually required to protect your information at a standard equivalent to or greater than what this Privacy Policy describes, and to use it only for the purposes for which we engage them.
+
+These providers include:
+- OpenAI — AI processing for chat, dictionary card generation, voice transcription, and text-to-speech (see Section 3).
+- Supabase — authentication, database hosting, and serverless functions used to operate the Service.
+- Apple and Google — sign-in, push notifications, and in-app purchase / subscription processing on their respective platforms.
+- RevenueCat — subscription management.
 
 We may also disclose information if required by law, to protect rights and safety, or in connection with a business transfer such as a merger, acquisition, or sale of assets.
 
 5. Data Retention
 We keep information for as long as reasonably necessary to provide the Service, maintain your account, comply with legal obligations, resolve disputes, and enforce agreements.
 
+Voice recordings transmitted to OpenAI for transcription are discarded after transcription and are not retained by us in their original audio form.
+
 If you request account deletion, we will delete or de-identify your account data within a reasonable period, except where retention is required for legal, security, fraud-prevention, or legitimate operational reasons.
 
 6. Account Deletion
-You can request deletion of your account and associated data through the method described on our Delete Account page.
+You can request deletion of your account and associated data through the method described on our Delete Account page. Withdrawing AI consent or requesting account deletion will stop further data being sent to OpenAI from your account.
 
 7. Children
 The Service is designed to be suitable for all ages. However, if local law requires parental or guardian consent for certain users, that consent must be obtained before use.
@@ -285,16 +317,17 @@ The Service is designed to be suitable for all ages. However, if local law requi
 We use reasonable technical and organizational measures to protect information. However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.
 
 9. International Use
-Your information may be processed in countries other than your own, depending on the service providers and infrastructure used to operate the Service.
+Your information may be processed in countries other than your own, including the United States (where OpenAI and certain other providers operate), depending on the service providers and infrastructure used to operate the Service.
 
 10. Your Rights
-Depending on where you live, you may have rights to access, correct, delete, or object to certain processing of your information. To make a request, contact us at ${SUPPORT_EMAIL}.
+Depending on where you live, you may have rights to access, correct, delete, or object to certain processing of your information, including the right to withdraw consent to AI processing. To make a request, contact us at ${SUPPORT_EMAIL}.
 
 11. Changes to This Policy
 We may update this Privacy Policy from time to time. The updated version will be posted with a revised effective date.
 
 12. Contact
 If you have questions about this Privacy Policy, contact:
+
 ${SUPPORT_EMAIL}`;
 
 export const REFUND_TEXT = `Refund Policy
