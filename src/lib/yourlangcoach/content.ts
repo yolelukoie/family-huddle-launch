@@ -270,20 +270,20 @@ We use information to:
 - comply with legal obligations.
 
 3. AI Processing and Third-Party AI Providers
-To power Anna (the AI tutor), generate dictionary cards, transcribe your voice, and read text aloud, the Service sends certain content to OpenAI, L.L.C. ("OpenAI"), a third-party AI provider, via OpenAI's API.
+To power Anna (the AI tutor), generate dictionary cards, transcribe your voice, and read text aloud, the Service sends certain content to OpenAI, L.L.C. ("OpenAI"), a third-party AI provider, via OpenAI's API. Voice transcription uses OpenAI's Whisper service; spoken playback uses OpenAI's text-to-speech service.
 
 What we send to OpenAI:
 - your chat messages and recent conversation history;
-- your learning profile (display name, target language, level, interests, goals) so Anna can personalize replies;
-- words you add to your dictionary and grammar notes from previous practice;
-- voice recordings you make in the app (sent to OpenAI's Whisper service for transcription);
-- text you ask Anna to read aloud (sent to OpenAI's text-to-speech service).
+- your profile (name, target language, level, interests, goals) so Anna can personalize replies;
+- words you add to your dictionary and grammar notes from previous chats;
+- voice recordings (transcribed and discarded — not used for training);
+- text you ask Anna to read aloud.
 
 What we do NOT send to OpenAI: your email address, your password, your payment information, or device identifiers.
 
-Consent: Before any of the AI-powered features can be used, the app asks you to review what is sent and grant explicit consent. You can review what is shared and the date you consented at any time in Settings → AI & Data.
+Consent: Before any of the AI-powered features can be used, the app asks you to review what is sent and grant explicit consent. You can review what is shared and the date you consented at any time in Settings → AI & Data, and you can decline at any point.
 
-OpenAI's processing of this content: OpenAI processes content sent through its API in accordance with its API Data Usage Policy. Under that policy, content submitted through the API is not used to train OpenAI's models. OpenAI may retain API content for a limited period for abuse and safety monitoring. For details, see OpenAI's Privacy Policy at https://openai.com/policies/privacy-policy and OpenAI's API Data Usage Policies at https://openai.com/policies/api-data-usage-policies.
+OpenAI's processing of this content: OpenAI processes content submitted through its API in accordance with its API Data Usage Policy. Under that policy, content submitted through the API is not used to train OpenAI's models. OpenAI may retain API content for a limited period for abuse and safety monitoring. For details, see OpenAI's Privacy Policy at https://openai.com/policies/privacy-policy and OpenAI's API Data Usage Policies at https://openai.com/policies/api-data-usage-policies.
 
 We require that OpenAI provide equivalent or greater protection for your information than this Privacy Policy describes, as set out in OpenAI's API terms.
 
