@@ -73,14 +73,17 @@ const HeroSection = () => {
             {/* Download Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button
-                asChild
                 size="lg"
                 variant="gradient"
                 className="font-semibold text-base px-8 py-6 rounded-xl"
+                onClick={() =>
+                  toast({
+                    title: "Coming soon",
+                    description: FH_ANDROID_MESSAGE,
+                  })
+                }
               >
-                <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
-                  Download for Android
-                </a>
+                Download for Android
               </Button>
               <Button
                 asChild
@@ -88,7 +91,11 @@ const HeroSection = () => {
                 variant="gradientAlt"
                 className="font-semibold text-base px-8 py-6 rounded-xl"
               >
-                <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={FH_APPLE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Download for iPhone
                 </a>
               </Button>
