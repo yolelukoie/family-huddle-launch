@@ -59,7 +59,7 @@ const YLCPricing = () => {
                 )}
 
                 <a
-                  href={ANDROID_URL}
+                  href={IPHONE_URL}
                   className={`mt-6 ylc-btn ${
                     plan.highlight ? "ylc-btn-primary" : "ylc-btn-secondary"
                   } px-5 py-3 rounded-xl text-sm font-medium text-center`}
