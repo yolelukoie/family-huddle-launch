@@ -13,7 +13,7 @@ const benefits = [
 ];
 
 const PricingSection = () => {
-  const downloadUrl = "https://family-huddle-app.web.app/";
+  const { toast } = useToast();
 
   return (
     <section id="pricing" className="py-16 md:py-24">
