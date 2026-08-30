@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { PRICING, ANDROID_URL } from "@/lib/yourlangcoach/content";
+import { PRICING, IPHONE_URL } from "@/lib/yourlangcoach/content";
 
 const YLCPricing = () => {
   return (
