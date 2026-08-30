@@ -1,9 +1,11 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Volume2, VolumeX } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { FH_APPLE_URL, FH_ANDROID_MESSAGE } from "@/lib/familyhuddle/content";
 
 const HeroSection = () => {
-  const downloadUrl = "https://family-huddle-app.web.app/";
+  const { toast } = useToast();
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -71,14 +73,17 @@ const HeroSection = () => {
             {/* Download Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button
-                asChild
                 size="lg"
                 variant="gradient"
                 className="font-semibold text-base px-8 py-6 rounded-xl"
+                onClick={() =>
+                  toast({
+                    title: "Coming soon",
+                    description: FH_ANDROID_MESSAGE,
+                  })
+                }
               >
-                <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
-                  Download for Android
-                </a>
+                Download for Android
               </Button>
               <Button
                 asChild
@@ -86,7 +91,11 @@ const HeroSection = () => {
                 variant="gradientAlt"
                 className="font-semibold text-base px-8 py-6 rounded-xl"
               >
-                <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={FH_APPLE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Download for iPhone
                 </a>
               </Button>

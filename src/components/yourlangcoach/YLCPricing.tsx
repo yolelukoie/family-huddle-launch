@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { PRICING, ANDROID_URL } from "@/lib/yourlangcoach/content";
+import { PRICING, IPHONE_URL } from "@/lib/yourlangcoach/content";
 
 const YLCPricing = () => {
   return (
@@ -59,7 +59,7 @@ const YLCPricing = () => {
                 )}
 
                 <a
-                  href={ANDROID_URL}
+                  href={IPHONE_URL}
                   className={`mt-6 ylc-btn ${
                     plan.highlight ? "ylc-btn-primary" : "ylc-btn-secondary"
                   } px-5 py-3 rounded-xl text-sm font-medium text-center`}

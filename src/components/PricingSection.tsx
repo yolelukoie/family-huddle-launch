@@ -1,5 +1,7 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { FH_APPLE_URL, FH_ANDROID_MESSAGE } from "@/lib/familyhuddle/content";
 
 const benefits = [
   "Full access to all features",
@@ -11,7 +13,7 @@ const benefits = [
 ];
 
 const PricingSection = () => {
-  const downloadUrl = "https://family-huddle-app.web.app/";
+  const { toast } = useToast();
 
   return (
     <section id="pricing" className="py-16 md:py-24">
@@ -58,7 +60,7 @@ const PricingSection = () => {
               variant="gradient"
               className="w-full font-semibold text-base py-6 rounded-xl"
             >
-              <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+              <a href={FH_APPLE_URL} target="_blank" rel="noopener noreferrer">
                 Start using Family Huddle
               </a>
             </Button>
@@ -67,14 +69,17 @@ const PricingSection = () => {
           {/* Additional Download Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Button
-              asChild
               variant="gradient"
               size="lg"
               className="font-medium text-base px-8 py-6 rounded-xl"
+              onClick={() =>
+                toast({
+                  title: "Coming soon",
+                  description: FH_ANDROID_MESSAGE,
+                })
+              }
             >
-              <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
-                Download for Android
-              </a>
+              Download for Android
             </Button>
             <Button
               asChild
@@ -82,7 +87,7 @@ const PricingSection = () => {
               size="lg"
               className="font-medium text-base px-8 py-6 rounded-xl"
             >
-              <a href={downloadUrl} target="_blank" rel="noopener noreferrer">
+              <a href={FH_APPLE_URL} target="_blank" rel="noopener noreferrer">
                 Download for iPhone
               </a>
             </Button>
