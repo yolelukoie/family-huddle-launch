@@ -7,8 +7,9 @@
  * - Effective date for legal pages: search "[INSERT DATE]" in this file.
  */
 
-export const ANDROID_URL = "#";
-export const IPHONE_URL = "#";
+export const ANDROID_URL =
+  "https://play.google.com/store/apps/details?id=com.yourlangcoach.app";
+export const IPHONE_URL = "https://apps.apple.com/il/app/yourlangcoach/id6765670414";
 export const SUPPORT_EMAIL = "support@familyhuddletasks.com";
 
 export const HERO = {
