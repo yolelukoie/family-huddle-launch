@@ -1,5 +1,7 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { FH_APPLE_URL, FH_ANDROID_MESSAGE } from "@/lib/familyhuddle/content";
 
 const benefits = [
   "Full access to all features",
