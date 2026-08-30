@@ -1,9 +1,11 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Volume2, VolumeX } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { FH_APPLE_URL, FH_ANDROID_MESSAGE } from "@/lib/familyhuddle/content";
 
 const HeroSection = () => {
-  const downloadUrl = "https://family-huddle-app.web.app/";
+  const { toast } = useToast();
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
