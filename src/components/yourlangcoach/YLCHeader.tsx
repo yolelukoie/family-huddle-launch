@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import { ANDROID_URL } from "@/lib/yourlangcoach/content";
+import { ChevronDown } from "lucide-react";
+import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
 
 const YLCHeader = () => {
@@ -29,12 +36,42 @@ const YLCHeader = () => {
           </a>
         </nav>
 
-        <a
-          href={ANDROID_URL}
-          className="ylc-btn ylc-btn-primary text-sm px-4 py-2 rounded-lg"
-        >
-          Download
-        </a>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button
+              className="ylc-btn ylc-btn-primary text-sm px-4 py-2 rounded-lg inline-flex items-center gap-1.5"
+              aria-label="Download YourLangCoach"
+            >
+              Download
+              <ChevronDown className="w-4 h-4" />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
+            align="end"
+            className="min-w-[10rem] bg-[hsl(222,30%,8%)] border-[hsl(220,20%,13%)] text-[hsl(220,20%,92%)]"
+          >
+            <DropdownMenuItem asChild>
+              <a
+                href={ANDROID_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer focus:bg-[hsl(235,60%,18%)] focus:text-[hsl(235,90%,78%)]"
+              >
+                Android
+              </a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a
+                href={IPHONE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer focus:bg-[hsl(235,60%,18%)] focus:text-[hsl(235,90%,78%)]"
+              >
+                iOS
+              </a>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </header>
   );
