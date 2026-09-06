@@ -1,5 +1,11 @@
-import { Check } from "lucide-react";
-import { PRICING, IPHONE_URL } from "@/lib/yourlangcoach/content";
+import { Check, ChevronDown } from "lucide-react";
+import { PRICING, ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const YLCPricing = () => {
   return (
@@ -58,14 +64,42 @@ const YLCPricing = () => {
                   </p>
                 )}
 
-                <a
-                  href={IPHONE_URL}
-                  className={`mt-6 ylc-btn ${
-                    plan.highlight ? "ylc-btn-primary" : "ylc-btn-secondary"
-                  } px-5 py-3 rounded-xl text-sm font-medium text-center`}
-                >
-                  Get started
-                </a>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button
+                      className={`mt-6 ylc-btn ${
+                        plan.highlight ? "ylc-btn-primary" : "ylc-btn-secondary"
+                      } px-5 py-3 rounded-xl text-sm font-medium text-center inline-flex items-center justify-center gap-1.5 w-full`}
+                    >
+                      Get started
+                      <ChevronDown className="w-4 h-4" />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    className="min-w-[10rem] bg-[hsl(222,30%,8%)] border-[hsl(220,20%,13%)] text-[hsl(220,20%,92%)]"
+                  >
+                    <DropdownMenuItem asChild>
+                      <a
+                        href={ANDROID_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer focus:bg-[hsl(235,60%,18%)] focus:text-[hsl(235,90%,78%)]"
+                      >
+                        Android
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <a
+                        href={IPHONE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer focus:bg-[hsl(235,60%,18%)] focus:text-[hsl(235,90%,78%)]"
+                      >
+                        iOS
+                      </a>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
 
                 <ul className="mt-6 space-y-2.5">
                   <li className="flex items-start gap-2 text-sm text-[hsl(220,12%,72%)]">
