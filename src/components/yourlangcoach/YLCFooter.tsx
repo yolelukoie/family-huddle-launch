@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
+import { useYlcLang } from "@/lib/yourlangcoach/i18n";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
 
 const YLCFooter = () => {
+  const { t } = useYlcLang();
+
   return (
     <footer className="ylc-footer border-t border-[hsl(220,20%,15%)] mt-16">
       <div className="container mx-auto px-4 sm:px-6 py-12">
@@ -19,7 +22,7 @@ const YLCFooter = () => {
               </span>
             </Link>
             <p className="text-sm text-[hsl(220,12%,60%)] max-w-sm">
-              Need help? Contact:{" "}
+              {t.footer.needHelp}{" "}
               <a
                 href={`mailto:${SUPPORT_EMAIL}`}
                 className="text-[hsl(235,90%,78%)] hover:underline"
@@ -34,31 +37,31 @@ const YLCFooter = () => {
               to="/yourlangcoach/terms"
               className="text-[hsl(220,12%,70%)] hover:text-[hsl(220,20%,92%)] transition-colors"
             >
-              Terms of Use
+              {t.footer.terms}
             </Link>
             <Link
               to="/yourlangcoach/privacy"
               className="text-[hsl(220,12%,70%)] hover:text-[hsl(220,20%,92%)] transition-colors"
             >
-              Privacy Policy
+              {t.footer.privacy}
             </Link>
             <Link
               to="/yourlangcoach/refund"
               className="text-[hsl(220,12%,70%)] hover:text-[hsl(220,20%,92%)] transition-colors"
             >
-              Refund Policy
+              {t.footer.refund}
             </Link>
             <Link
               to="/yourlangcoach/delete-account"
               className="text-[hsl(220,12%,70%)] hover:text-[hsl(220,20%,92%)] transition-colors"
             >
-              Delete Account
+              {t.footer.deleteAccount}
             </Link>
           </nav>
         </div>
 
         <div className="mt-10 pt-6 border-t border-[hsl(220,20%,15%)] text-xs text-[hsl(220,10%,50%)]">
-          © {new Date().getFullYear()} Family Huddle. All rights reserved.
+          © {new Date().getFullYear()} Family Huddle. {t.footer.rights}
         </div>
       </div>
     </footer>
