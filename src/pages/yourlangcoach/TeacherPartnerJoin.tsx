@@ -112,6 +112,22 @@ const TeacherPartnerJoinContent = () => {
     }
   };
 
+  const androidHref = partnerCode
+    ? `${ANDROID_URL}&referrer=teacher%3D${encodeURIComponent(partnerCode)}`
+    : ANDROID_URL;
+
+  const openIphoneStore = async () => {
+    if (partnerCode) {
+      try {
+        await navigator.clipboard.writeText(`YLC-T:${partnerCode}`);
+        toast.success(tj.copyCodeSuccess);
+      } catch {
+        toast.error(tj.copyError);
+      }
+    }
+    window.location.href = IPHONE_URL;
+  };
+
   return (
     <div dir={dir} className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
