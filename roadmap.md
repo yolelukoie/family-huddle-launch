@@ -7,3 +7,5 @@
 - [x] Verify desktop and mobile layout, CTA placeholders, and automated tests.
 - [x] Link the main YourLangCoach page to the Teacher Partner Program.
 - [x] Align the Teacher Partner page with YourLangCoach's purple visual language and organic layout.
+- [x] Simplify the Teacher Partner success screen and emphasize saving the personal link.
+- [x] Remove WhatsApp sharing and use the direct Google Play URL for Android.

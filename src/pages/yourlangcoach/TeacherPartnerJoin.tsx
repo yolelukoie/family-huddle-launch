@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Check, Copy, ExternalLink, Gift, Infinity as InfinityIcon, Loader2, MessageCircle } from "lucide-react";
+import { ArrowLeft, Bookmark, Check, Copy, ExternalLink, Gift, Infinity as InfinityIcon, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -82,8 +82,6 @@ const TeacherPartnerJoinContent = () => {
       toast.error(tj.copyError);
     }
   };
-
-  const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${tj.whatsappText} ${link}`)}`;
 
   const studentMessage = code
     ? `Hi! I'm inviting you to practice with me on YourLangCoach. Use my link — you'll get 30 days of Premium for free: ${referralUrl(code)}\n\nIf the app asks for a teacher code, enter: ${code}`
@@ -204,67 +202,71 @@ const TeacherPartnerJoinContent = () => {
               </form>
             </>
           ) : (
-            <div className="rounded-2xl border border-border bg-card/60 p-6 text-center md:p-10">
+            <div className="overflow-hidden rounded-2xl border border-border bg-card/60 text-center">
+              <div className="border-b border-border bg-primary/10 px-6 py-8 md:px-10">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <Check className="h-6 w-6" />
+                </div>
               <h1 className="font-display text-3xl font-semibold md:text-4xl">{tj.successTitle}</h1>
               <p className="mt-3 text-lg text-muted-foreground">{tj.successText}</p>
+              </div>
 
-              <div className="mt-8 grid gap-3 text-start sm:grid-cols-2">
-                <div className="flex items-start gap-3 rounded-xl border border-border bg-background/50 p-4">
+              <div className="p-6 md:p-10">
+                <div className="grid gap-3 text-start sm:grid-cols-2">
+                  <div className="flex items-start gap-3 rounded-xl border border-border bg-background/50 p-4">
                   <Gift className="mt-0.5 h-5 w-5 text-primary" />
                   <p className="text-sm">{tj.studentsGetA}<strong>{tj.studentsGetB}</strong>.</p>
-                </div>
-                <div className="flex items-start gap-3 rounded-xl border border-border bg-background/50 p-4">
+                  </div>
+                  <div className="flex items-start gap-3 rounded-xl border border-border bg-background/50 p-4">
                   <InfinityIcon className="mt-0.5 h-5 w-5 text-primary" />
                   <p className="text-sm">{tj.youGetA}<strong>{tj.youGetB}</strong>.</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="mt-8 text-start">
-                <p className="text-sm font-medium text-muted-foreground">{tj.linkLabel}</p>
-                <div className="mt-2 flex flex-col gap-3 sm:flex-row">
-                  <code dir="ltr" className="flex-1 overflow-x-auto rounded-lg border border-border bg-background/70 px-4 py-3 text-sm">
+                <div className="mt-6 rounded-xl border-2 border-primary/40 bg-background/70 p-4 text-start md:p-5">
+                  <div className="flex items-center gap-2 text-primary">
+                    <Bookmark className="h-5 w-5" />
+                    <p className="font-semibold">{tj.saveTitle}</p>
+                  </div>
+                  <p className="mt-1 text-sm text-muted-foreground">{tj.saveText}</p>
+                  <code dir="ltr" className="mt-4 block overflow-x-auto rounded-lg border border-border bg-background px-4 py-3 text-sm">
                     {link}
                   </code>
-                  <Button onClick={copyLink} size="lg" className="rounded-lg">
+                  <Button onClick={copyLink} size="lg" className="mt-3 w-full rounded-lg">
                     {copied ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copy}</>}
                   </Button>
+                  <p className="mt-3 text-center text-sm text-muted-foreground">
+                    {tj.codeNoteA}<strong>{code}</strong>{tj.codeNoteB}
+                  </p>
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  {tj.codeNoteA}<strong>{code}</strong>{tj.codeNoteB}
-                </p>
-              </div>
 
-              <div className="mt-8 text-start">
-                <p className="text-sm font-medium text-muted-foreground">{tj.messageLabel}</p>
-                <textarea
-                  readOnly
-                  dir="ltr"
-                  rows={5}
-                  value={studentMessage}
-                  className="mt-2 w-full resize-none rounded-lg border border-border bg-background/70 px-4 py-3 text-sm focus:outline-none"
-                />
-                <Button onClick={copyMessage} variant="secondary" className="mt-3 rounded-lg">
-                  {copiedMessage ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copyMessage}</>}
-                </Button>
-              </div>
+                <div className="mt-6 border-t border-border pt-6 text-start">
+                  <p className="font-medium">{tj.messageLabel}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{tj.messageHint}</p>
+                  <textarea
+                    readOnly
+                    dir="ltr"
+                    rows={5}
+                    value={studentMessage}
+                    className="mt-3 w-full resize-none rounded-lg border border-border bg-background/70 px-4 py-3 text-sm focus:outline-none"
+                  />
+                  <Button onClick={copyMessage} variant="secondary" className="mt-3 w-full rounded-lg sm:w-auto">
+                    {copiedMessage ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copyMessage}</>}
+                  </Button>
+                </div>
 
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <Button asChild variant="secondary" className="rounded-lg">
-                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle /> {tj.whatsapp}
-                  </a>
-                </Button>
-                <Button asChild variant="outline" className="rounded-lg">
-                  <a href={IPHONE_URL} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink /> {tj.openIphone}
-                  </a>
-                </Button>
-                <Button asChild variant="outline" className="rounded-lg">
-                  <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink /> {tj.openAndroid}
-                  </a>
-                </Button>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+                  <Button asChild variant="outline" className="rounded-lg">
+                    <a href={IPHONE_URL} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink /> {tj.openIphone}
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" className="rounded-lg">
+                    <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink /> {tj.openAndroid}
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           )}
