@@ -578,6 +578,20 @@
   border-color: hsl(var(--border));
 }
 
+.tpp-premium-code {
+  border-color: hsl(var(--tpp-amber-border));
+}
+
+.tpp-amber-text {
+  color: hsl(var(--tpp-amber-text));
+}
+
+.tpp-warning-note {
+  background-color: hsl(var(--tpp-amber-bg));
+  border-color: hsl(var(--tpp-amber-border));
+  color: hsl(38 80% 88%);
+}
+
 .tpp-theme button[class*="bg-primary"] {
   background: linear-gradient(135deg, hsl(235 85% 62%), hsl(265 75% 62%));
   color: hsl(var(--primary-foreground));
