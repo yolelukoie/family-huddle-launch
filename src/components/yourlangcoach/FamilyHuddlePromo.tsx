@@ -1,7 +1,10 @@
 import { Sparkles, ArrowRight } from "lucide-react";
 import fhLogo from "@/assets/logo.png";
+import { useYlcLang } from "@/lib/yourlangcoach/i18n";
 
 const FamilyHuddlePromo = () => {
+  const { t } = useYlcLang();
+
   return (
     <section className="py-16 px-4 sm:px-6">
       <div className="container mx-auto max-w-4xl">
@@ -10,7 +13,7 @@ const FamilyHuddlePromo = () => {
           <div className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-cyan-300/40 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-sky-300/40 blur-3xl" />
 
-          <div className="relative flex flex-col md:flex-row items-center gap-6 md:gap-10 text-center md:text-left">
+          <div className="relative flex flex-col md:flex-row items-center gap-6 md:gap-10 text-center md:text-start">
             <img
               src={fhLogo}
               alt="Family Huddle logo"
@@ -20,22 +23,20 @@ const FamilyHuddlePromo = () => {
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 text-sky-700 text-xs font-medium mb-3 border border-sky-200">
                 <Sparkles className="w-3.5 h-3.5" />
-                Also from our team
+                {t.fhPromo.badge}
               </div>
               <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-2 tracking-tight">
-                Want to see our other app, the family task hub?
+                {t.fhPromo.title}
               </h2>
-              <p className="text-slate-600 text-base sm:text-lg">
-                Meet Family Huddle — shared tasks, goals, and rewards that bring families and friends closer, together.
-              </p>
+              <p className="text-slate-600 text-base sm:text-lg">{t.fhPromo.text}</p>
             </div>
 
             <a
               href="https://familyhuddletasks.com"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-base font-semibold shrink-0 bg-gradient-to-r from-cyan-500 to-sky-500 text-white shadow-lg shadow-cyan-500/30 hover:from-cyan-600 hover:to-sky-600 transition-all hover:-translate-y-0.5"
             >
-              Check it out
-              <ArrowRight className="w-4 h-4" />
+              {t.fhPromo.cta}
+              <ArrowRight className="w-4 h-4 rtl:rotate-180" />
             </a>
           </div>
         </div>

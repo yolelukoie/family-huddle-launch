@@ -1,31 +1,31 @@
 import { MessageCircle, BookMarked, Repeat, NotebookPen } from "lucide-react";
-import { HOW_IT_WORKS, FLEX_SECTION } from "@/lib/yourlangcoach/content";
+import { useYlcLang } from "@/lib/yourlangcoach/i18n";
 
 const icons = [MessageCircle, BookMarked, Repeat, NotebookPen];
 
 const YLCHowItWorks = () => {
+  const { t } = useYlcLang();
+
   return (
     <>
       {/* Flexible self-learning */}
       <section className="py-20 md:py-24 border-t border-[hsl(220,20%,12%)]">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="ylc-eyebrow">Built for flexible self-learning</p>
+            <p className="ylc-eyebrow">{t.flex.eyebrow}</p>
             <h2 className="font-display font-semibold text-3xl md:text-4xl text-[hsl(220,25%,95%)] mt-3">
-              {FLEX_SECTION.title}
+              {t.flex.title}
             </h2>
-            <p className="text-[hsl(220,15%,70%)] mt-4">{FLEX_SECTION.intro}</p>
+            <p className="text-[hsl(220,15%,70%)] mt-4">{t.flex.intro}</p>
 
-            <ul className="mt-8 grid gap-3 max-w-xl mx-auto text-left">
-              {FLEX_SECTION.bullets.map((b) => (
+            <ul className="mt-8 grid gap-3 max-w-xl mx-auto text-start">
+              {t.flex.bullets.map((b) => (
                 <li
                   key={b}
                   className="ylc-card flex items-start gap-3 px-4 py-3 rounded-xl"
                 >
                   <span className="ylc-bullet-dot mt-2" />
-                  <span className="text-[hsl(220,15%,82%)] text-sm md:text-base">
-                    {b}
-                  </span>
+                  <span className="text-[hsl(220,15%,82%)] text-sm md:text-base">{b}</span>
                 </li>
               ))}
             </ul>
@@ -38,14 +38,14 @@ const YLCHowItWorks = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12 md:mb-14">
-              <p className="ylc-eyebrow">How it works</p>
+              <p className="ylc-eyebrow">{t.how.eyebrow}</p>
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-[hsl(220,25%,95%)] mt-3">
-                {HOW_IT_WORKS.title}
+                {t.how.title}
               </h2>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {HOW_IT_WORKS.steps.map((step, i) => {
+              {t.how.steps.map((step, i) => {
                 const Icon = icons[i];
                 return (
                   <div key={step.title} className="ylc-card rounded-2xl p-6 relative">
