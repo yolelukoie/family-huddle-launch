@@ -5,5 +5,5 @@
 - [x] Add real Workbook screenshots through the project asset flow.
 - [x] Reuse the YourLangCoach support, legal, and other-app sections.
 - [x] Verify desktop and mobile layout, CTA placeholders, and automated tests.
-- [ ] Link the main YourLangCoach page to the Teacher Partner Program.
-- [ ] Align the Teacher Partner page with YourLangCoach's purple visual language and organic layout.
+- [x] Link the main YourLangCoach page to the Teacher Partner Program.
+- [x] Align the Teacher Partner page with YourLangCoach's purple visual language and organic layout.
