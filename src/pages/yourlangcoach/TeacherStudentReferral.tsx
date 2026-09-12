@@ -11,6 +11,7 @@ import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
 const TeacherStudentReferral = () => {
   const { code = "" } = useParams();
   const cleanCode = code.trim().toUpperCase();
+  const androidHref = `${ANDROID_URL}&referrer=teacher%3D${cleanCode}`;
   const [teacherName, setTeacherName] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
@@ -105,7 +106,7 @@ const TeacherStudentReferral = () => {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button asChild size="lg" className="rounded-lg">
-              <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackClick("android")}>
+              <a href={androidHref} target="_blank" rel="noopener noreferrer" onClick={() => trackClick("android")}>
                 <Smartphone /> Get it on Google Play
               </a>
             </Button>
