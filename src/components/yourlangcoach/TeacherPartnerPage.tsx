@@ -206,6 +206,51 @@ const TeacherPartnerPage = () => {
         </section>
 
         <section className="border-b border-border py-20 md:py-28">
+          <div className="container px-4 sm:px-6">
+            <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+              <div>
+                <SectionHeading eyebrow="Spaced repetition" title="The right words, at the right time." intro="Students receive notifications on their phone and see the words they learned appear on screen at carefully spaced intervals — before they become difficult to recall. Each short review helps reinforce the memory with minimal effort." />
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {[ [Clock3, "Timed reminders"], [RefreshCw, "Spaced intervals"], [Brain, "Better retention"], [Check, "Minimal effort"] ].map(([Icon, label]) => {
+                    const ItemIcon = Icon as typeof Clock3;
+                    return <div key={label as string} className="flex items-center gap-3 border-b border-border py-3 text-sm"><ItemIcon className="text-primary" /><span>{label as string}</span></div>;
+                  })}
+                </div>
+                <p className="mt-7 font-display text-xl font-semibold text-foreground">No study plan to organize.</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">YourLangCoach brings the next small batch forward when it is time to practice.</p>
+              </div>
+              <div className="tpp-product-stage">
+                <figure className="tpp-phone tpp-phone-back">
+                  <img src={reviewSettings.url} alt="YourLangCoach spaced repetition settings showing review options and batch size" loading="lazy" />
+                </figure>
+                <figure className="tpp-phone tpp-phone-front">
+                  <img src={reviewDashboard.url} alt="YourLangCoach review dashboard with due words and review categories" loading="lazy" />
+                </figure>
+              </div>
+            </div>
+
+            <div className="tpp-review-flow mt-16" aria-label="Spaced repetition schedule">
+              <div className="tpp-review-track">
+                {spacedReviewSteps.map((step, index) => (
+                  <div key={step.label} className="tpp-review-step">
+                    <span className="tpp-review-dot">{index + 1}</span>
+                    <p className="mt-4 font-display font-semibold">{step.label}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{step.time}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="tpp-memory-destination">
+                <Brain className="h-6 w-6" />
+                <div>
+                  <p className="font-display font-semibold">Towards long-term memory</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Repeated recall helps make new vocabulary easier to remember and use.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-border py-20 md:py-28">
           <div className="container grid gap-14 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div>
               <SectionHeading eyebrow="Workbook" title="A personal workbook that never gets lost." intro="Students can keep their learning materials in one place instead of scattering them across chats, screenshots, notebooks and PDFs." />
@@ -225,31 +270,6 @@ const TeacherPartnerPage = () => {
               <figure className="tpp-phone tpp-phone-front">
                 <img src={workbookEditor.url} alt="YourLangCoach editable Workbook text entry" loading="lazy" />
               </figure>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-b border-border py-20 md:py-28">
-          <div className="container px-4 sm:px-6">
-            <SectionHeading eyebrow="Spaced repetition" title="The right words, at the right time." intro="Students see the words they learned return on screen at carefully spaced intervals — before they become difficult to recall. Each short review helps reinforce the memory with minimal effort." />
-
-            <div className="tpp-review-flow mt-12" aria-label="Spaced repetition schedule">
-              <div className="tpp-review-track">
-                {spacedReviewSteps.map((step, index) => (
-                  <div key={step.label} className="tpp-review-step">
-                    <span className="tpp-review-dot">{index + 1}</span>
-                    <p className="mt-4 font-display font-semibold">{step.label}</p>
-                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{step.time}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="tpp-memory-destination">
-                <Brain className="h-6 w-6" />
-                <div>
-                  <p className="font-display font-semibold">Towards long-term memory</p>
-                  <p className="mt-1 text-sm text-muted-foreground">Repeated recall helps make new vocabulary easier to remember and use.</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
