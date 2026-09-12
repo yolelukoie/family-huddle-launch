@@ -100,6 +100,18 @@ const TeacherPartnerJoinContent = () => {
     }
   };
 
+  const copyPartnerCode = async () => {
+    if (!partnerCode) return;
+    try {
+      await navigator.clipboard.writeText(partnerCode);
+      setCopiedPartnerCode(true);
+      toast.success(tj.copyCodeSuccess);
+      setTimeout(() => setCopiedPartnerCode(false), 2000);
+    } catch {
+      toast.error(tj.copyError);
+    }
+  };
+
   return (
     <div dir={dir} className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
