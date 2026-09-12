@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "CSSUGZW7XP.com.yourlangcoach.app",
-        "paths": ["/yourlangcoach/auth/reset", "/yourlangcoach/auth/callback"]
+        "paths": ["/yourlangcoach/auth/reset", "/yourlangcoach/auth/callback", "/yourlangcoach/t/*"]
       },
       {
         "appID": "CSSUGZW7XP.com.familyhuddle.app",
