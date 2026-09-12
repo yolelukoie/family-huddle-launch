@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import {
   ArrowDown,
   ArrowRight,
-  BellRing,
   BookOpen,
   Brain,
   Check,
