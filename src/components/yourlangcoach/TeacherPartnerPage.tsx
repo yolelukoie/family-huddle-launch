@@ -70,13 +70,6 @@ const teacherBenefits = [
   { title: "No change to your method", text: "YourLangCoach works alongside the way you already teach.", icon: GraduationCap },
 ];
 
-const useCases = [
-  ["After a Hebrew lesson", "A student adds new Hebrew words and YourLangCoach schedules reviews."],
-  ["After an English lesson", "A teacher shares a phrasal-verb PDF and the student uploads it to the Workbook."],
-  ["During conversation practice", "The student saves useful explanations and examples."],
-  ["After a grammar explanation", "The student photographs the teacher’s diagram and keeps it with their notes."],
-  ["Between lessons", "The student asks the optional AI tutor to practice recently learned vocabulary."],
-];
 
 const audiences = [
   "Private tutors",
