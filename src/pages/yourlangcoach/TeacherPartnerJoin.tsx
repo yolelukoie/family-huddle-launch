@@ -36,6 +36,7 @@ const TeacherPartnerJoinContent = () => {
   const [loading, setLoading] = useState(false);
   const [code, setCode] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [copiedMessage, setCopiedMessage] = useState(false);
 
   useEffect(() => {
     document.title = "Join the Teacher Partner Program | YourLangCoach";
@@ -83,6 +84,20 @@ const TeacherPartnerJoinContent = () => {
   };
 
   const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${tj.whatsappText} ${link}`)}`;
+
+  const studentMessage = code
+    ? `Hi! I'm inviting you to practice with me on YourLangCoach. Use my link — you'll get 30 days of Premium for free: ${referralUrl(code)}\n\nIf the app asks for a teacher code, enter: ${code}`
+    : "";
+
+  const copyMessage = async () => {
+    try {
+      await navigator.clipboard.writeText(studentMessage);
+      setCopiedMessage(true);
+      setTimeout(() => setCopiedMessage(false), 2000);
+    } catch {
+      toast.error(tj.copyError);
+    }
+  };
 
   return (
     <div dir={dir} className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
@@ -218,6 +233,21 @@ const TeacherPartnerJoinContent = () => {
                   {tj.codeNoteA}<strong>{code}</strong>{tj.codeNoteB}
                 </p>
               </div>
+
+              <div className="mt-8 text-start">
+                <p className="text-sm font-medium text-muted-foreground">{tj.messageLabel}</p>
+                <textarea
+                  readOnly
+                  dir="ltr"
+                  rows={5}
+                  value={studentMessage}
+                  className="mt-2 w-full resize-none rounded-lg border border-border bg-background/70 px-4 py-3 text-sm focus:outline-none"
+                />
+                <Button onClick={copyMessage} variant="secondary" className="mt-3 rounded-lg">
+                  {copiedMessage ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copyMessage}</>}
+                </Button>
+              </div>
+
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <Button asChild variant="secondary" className="rounded-lg">
