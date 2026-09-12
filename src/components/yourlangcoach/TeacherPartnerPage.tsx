@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowDown,
@@ -66,6 +67,10 @@ const PartnerCTA = ({ className = "" }: { className?: string }) => {
 const TeacherPartnerContent = () => {
   const { t, dir } = useYlcLang();
   const tp = t.tpp;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div dir={dir} className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
