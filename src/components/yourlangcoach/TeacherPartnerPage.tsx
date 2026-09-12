@@ -100,7 +100,7 @@ const faqs = [
 ];
 
 const SectionHeading = ({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) => (
-  <div className="max-w-3xl mb-10 md:mb-14">
+  <div className="tpp-section-heading max-w-3xl mb-10 md:mb-14">
     <p className="ylc-eyebrow">{eyebrow}</p>
     <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-foreground md:text-5xl">{title}</h2>
     {intro && <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">{intro}</p>}
@@ -135,18 +135,18 @@ const TeacherPartnerPage = () => {
       <main>
         <section className="tpp-hero overflow-hidden border-b border-border">
           <div className="container px-4 pb-14 pt-16 sm:px-6 md:pb-20 md:pt-24">
-            <div className="mx-auto max-w-5xl text-center">
+            <div className="max-w-4xl">
               <p className="ylc-eyebrow">Teacher Partner Program · Israel</p>
-              <h1 className="mx-auto mt-5 max-w-4xl text-balance font-display text-4xl font-semibold leading-[1.08] sm:text-5xl md:text-7xl">
+              <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-semibold leading-[1.08] sm:text-5xl md:text-7xl">
                 What happens in your lesson shouldn&apos;t disappear when the lesson ends.
               </h1>
-              <p className="mx-auto mt-7 max-w-3xl text-balance text-lg leading-relaxed text-muted-foreground md:text-xl">
+              <p className="mt-7 max-w-3xl text-balance text-lg leading-relaxed text-muted-foreground md:text-xl">
                 Give your students a smarter way to keep learning between lessons — with <strong className="font-semibold text-foreground">1 month of YourLangCoach Premium, completely free.</strong>
               </p>
-              <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-muted-foreground">
+              <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
                 Turn words, explanations, examples and lesson materials into ongoing learning through spaced repetition, optional AI-powered practice and a personal Workbook.
               </p>
-              <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <PartnerCTA />
                 <Button asChild variant="outline" size="lg" className="rounded-lg">
                   <a href="#how-it-works">See how it works <ArrowDown /></a>
@@ -163,7 +163,7 @@ const TeacherPartnerPage = () => {
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-center text-sm text-muted-foreground">Teacher + Student + YourLangCoach</p>
+              <p className="mt-6 text-sm text-muted-foreground">Teacher + Student + YourLangCoach</p>
             </div>
           </div>
         </section>
