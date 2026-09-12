@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import {
   ArrowDown,
   ArrowRight,
-  BellRing,
   BookOpen,
   Brain,
   Check,
@@ -230,22 +229,7 @@ const TeacherPartnerPage = () => {
 
         <section className="border-b border-border py-20 md:py-28">
           <div className="container px-4 sm:px-6">
-            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-              <SectionHeading eyebrow="Spaced repetition" title="The right words, at the right time." intro="Students see the words they learned return on screen at carefully spaced intervals — before they become difficult to recall. Each short review helps reinforce the memory with minimal effort." />
-              <div className="tpp-review-preview" aria-label="Example spaced repetition reminder">
-                <div className="flex items-center gap-3">
-                  <div className="ylc-icon-wrap"><BellRing /></div>
-                  <div>
-                    <p className="text-xs font-medium uppercase text-primary">Ready for review</p>
-                    <p className="mt-1 font-display text-lg font-semibold">10 words from your lesson</p>
-                  </div>
-                </div>
-                <div className="mt-5 grid grid-cols-2 gap-2 text-sm sm:grid-cols-3">
-                  {["לצלם", "לקום", "להמליץ"].map((word) => <span key={word} className="rounded-lg border border-border bg-background px-3 py-2 text-center">{word}</span>)}
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">No study plan to organize. YourLangCoach brings the next small batch forward when it is time to practice.</p>
-              </div>
-            </div>
+            <SectionHeading eyebrow="Spaced repetition" title="The right words, at the right time." intro="Students see the words they learned return on screen at carefully spaced intervals — before they become difficult to recall. Each short review helps reinforce the memory with minimal effort." />
 
             <div className="tpp-review-flow mt-12" aria-label="Spaced repetition schedule">
               <div className="tpp-review-track">
