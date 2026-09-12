@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Bookmark, Check, Copy, ExternalLink, Gift, Infinity as InfinityIcon, Loader2 } from "lucide-react";
+import { ArrowLeft, Bookmark, Check, Copy, Crown, ExternalLink, Gift, Infinity as InfinityIcon, Key, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -37,6 +37,8 @@ const TeacherPartnerJoinContent = () => {
   const [code, setCode] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [copiedMessage, setCopiedMessage] = useState(false);
+  const [partnerCode, setPartnerCode] = useState<string | null>(null);
+  const [copiedPartnerCode, setCopiedPartnerCode] = useState(false);
 
   useEffect(() => {
     document.title = "Join the Teacher Partner Program | YourLangCoach";
@@ -61,6 +63,7 @@ const TeacherPartnerJoinContent = () => {
     try {
       const result = await submitTeacherSignup(parsed.data);
       setCode(result.referralCode);
+      setPartnerCode(result.partnerCode ?? null);
       if (result.alreadyRegistered) {
         toast.info(tj.alreadyRegistered);
       }
@@ -92,6 +95,18 @@ const TeacherPartnerJoinContent = () => {
       await navigator.clipboard.writeText(studentMessage);
       setCopiedMessage(true);
       setTimeout(() => setCopiedMessage(false), 2000);
+    } catch {
+      toast.error(tj.copyError);
+    }
+  };
+
+  const copyPartnerCode = async () => {
+    if (!partnerCode) return;
+    try {
+      await navigator.clipboard.writeText(partnerCode);
+      setCopiedPartnerCode(true);
+      toast.success(tj.copyCodeSuccess);
+      setTimeout(() => setCopiedPartnerCode(false), 2000);
     } catch {
       toast.error(tj.copyError);
     }
@@ -254,6 +269,26 @@ const TeacherPartnerJoinContent = () => {
                     {copiedMessage ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copyMessage}</>}
                   </Button>
                 </div>
+
+                {partnerCode && (
+                  <div className="tpp-premium-code mt-6 rounded-xl border-2 bg-background/70 p-4 text-start md:p-5">
+                    <div className="flex items-center gap-2 tpp-amber-text">
+                      <Key className="h-5 w-5" />
+                      <p className="font-semibold">{tj.premiumCodeTitle}</p>
+                    </div>
+                    <p className="mt-1 text-sm text-muted-foreground">{tj.premiumCodeBody}</p>
+                    <code dir="ltr" className="mt-4 block overflow-x-auto rounded-lg border border-border bg-background px-4 py-3 text-center font-mono text-2xl font-semibold tracking-wider text-foreground">
+                      {partnerCode}
+                    </code>
+                    <Button onClick={copyPartnerCode} size="lg" variant="secondary" className="mt-3 w-full rounded-lg">
+                      {copiedPartnerCode ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copyCode}</>}
+                    </Button>
+                    <div className="tpp-warning-note mt-3 flex items-start gap-2 rounded-lg border p-3 text-sm">
+                      <Crown className="tpp-amber-text mt-0.5 h-4 w-4 shrink-0" />
+                      <p>{tj.premiumCodeWarning}</p>
+                    </div>
+                  </div>
+                )}
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
                   <Button asChild variant="outline" className="rounded-lg">

@@ -22,7 +22,11 @@ export const STUDENT_COUNTS = ["1–5", "6–15", "16–30", "30+"];
 
 export const referralUrl = (code: string) => `${TEACHER_LINK_BASE}/${code}`;
 
-export type SignupResult = { referralCode: string; alreadyRegistered: boolean };
+export type SignupResult = {
+  referralCode: string;
+  alreadyRegistered: boolean;
+  partnerCode?: string;
+};
 
 export async function submitTeacherSignup(values: TeacherSignupValues): Promise<SignupResult> {
   const parts = values.name.trim().split(/\s+/);
@@ -43,5 +47,9 @@ export async function submitTeacherSignup(values: TeacherSignupValues): Promise<
   const row = Array.isArray(data) ? data[0] : data;
   if (!row?.referral_code) throw new Error("Signup did not return a referral code");
 
-  return { referralCode: row.referral_code as string, alreadyRegistered: Boolean(row.already_registered) };
+  return {
+    referralCode: row.referral_code as string,
+    alreadyRegistered: Boolean(row.already_registered),
+    partnerCode: row.partner_code ? String(row.partner_code) : undefined,
+  };
 }

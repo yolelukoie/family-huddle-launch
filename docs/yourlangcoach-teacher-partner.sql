@@ -12,9 +12,12 @@ create table if not exists public.teachers (
   teaching_format text,
   student_count text,
   referral_code text not null unique,
+  partner_code text unique default null,
   status text not null default 'active',
   created_at timestamptz not null default now()
 );
+
+create unique index if not exists teachers_partner_code_idx on public.teachers (partner_code);
 
 grant all on public.teachers to service_role;
 alter table public.teachers enable row level security;
@@ -78,7 +81,34 @@ begin
 end;
 $$;
 
--- 4. Signup RPC (called by the website with the anon key) -----------------------
+-- 4. Partner (personal Premium) code generator --------------------------------
+create or replace function public.ylc_generate_partner_code()
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  alphabet text := 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  suffix text;
+  candidate text;
+  i int;
+begin
+  suffix := '';
+  for i in 1..10 loop
+    suffix := suffix || substr(alphabet, 1 + floor(random() * length(alphabet))::int, 1);
+  end loop;
+  candidate := 'PRO-' || suffix;
+
+  if exists (select 1 from public.teachers where partner_code = candidate) then
+    return public.ylc_generate_partner_code();
+  end if;
+
+  return candidate;
+end;
+$$;
+
+-- 5. Signup RPC (called by the website with the anon key) -----------------------
 create or replace function public.create_teacher_partner(
   _first_name text,
   _last_name text,
@@ -87,7 +117,7 @@ create or replace function public.create_teacher_partner(
   _teaching_format text default null,
   _student_count text default null
 )
-returns table (referral_code text, already_registered boolean)
+returns table (referral_code text, already_registered boolean, partner_code text)
 language plpgsql
 security definer
 set search_path = public
@@ -95,6 +125,7 @@ as $$
 declare
   existing public.teachers;
   code text;
+  p_code text;
 begin
   if coalesce(trim(_first_name), '') = '' or coalesce(trim(_email), '') = ''
      or coalesce(trim(_languages), '') = '' then
@@ -103,18 +134,25 @@ begin
 
   select * into existing from public.teachers where lower(email) = lower(trim(_email));
   if found then
-    return query select existing.referral_code, true;
+    if existing.partner_code is null then
+      p_code := public.ylc_generate_partner_code();
+      update public.teachers set partner_code = p_code where id = existing.id;
+    else
+      p_code := existing.partner_code;
+    end if;
+    return query select existing.referral_code, true, p_code;
     return;
   end if;
 
   code := public.ylc_generate_referral_code(trim(_first_name));
+  p_code := public.ylc_generate_partner_code();
 
-  insert into public.teachers (first_name, last_name, email, languages, teaching_format, student_count, referral_code)
+  insert into public.teachers (first_name, last_name, email, languages, teaching_format, student_count, referral_code, partner_code)
   values (trim(_first_name), nullif(trim(coalesce(_last_name, '')), ''), lower(trim(_email)),
           trim(_languages), nullif(trim(coalesce(_teaching_format, '')), ''),
-          nullif(trim(coalesce(_student_count, '')), ''), code);
+          nullif(trim(coalesce(_student_count, '')), ''), code, p_code);
 
-  return query select code, false;
+  return query select code, false, p_code;
 end;
 $$;
 

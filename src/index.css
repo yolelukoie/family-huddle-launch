@@ -552,6 +552,10 @@
   --input: 220 20% 15%;
   --ring: 245 82% 68%;
   --tpp-gold: 38 84% 67%;
+  --tpp-amber: 38 84% 60%;
+  --tpp-amber-text: 38 90% 72%;
+  --tpp-amber-bg: 38 84% 60% / 0.12;
+  --tpp-amber-border: 38 84% 60% / 0.45;
 }
 
 .tpp-theme .container {
@@ -572,6 +576,20 @@
 .tpp-theme .ylc-header {
   background: hsl(var(--background) / 0.88);
   border-color: hsl(var(--border));
+}
+
+.tpp-premium-code {
+  border-color: hsl(var(--tpp-amber-border));
+}
+
+.tpp-amber-text {
+  color: hsl(var(--tpp-amber-text));
+}
+
+.tpp-warning-note {
+  background-color: hsl(var(--tpp-amber-bg));
+  border-color: hsl(var(--tpp-amber-border));
+  color: hsl(38 80% 88%);
 }
 
 .tpp-theme button[class*="bg-primary"] {
