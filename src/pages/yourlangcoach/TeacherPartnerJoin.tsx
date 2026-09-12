@@ -36,6 +36,7 @@ const TeacherPartnerJoinContent = () => {
   const [loading, setLoading] = useState(false);
   const [code, setCode] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [copiedMessage, setCopiedMessage] = useState(false);
 
   useEffect(() => {
     document.title = "Join the Teacher Partner Program | YourLangCoach";

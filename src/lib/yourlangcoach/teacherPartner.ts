@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { ylcSupabase } from "@/integrations/supabase/ylc-client";
 
-export const TEACHER_LINK_BASE = "https://familyhuddletasks.com/yourlangcoach/teacher";
+export const TEACHER_LINK_BASE = "https://familyhuddletasks.com/yourlangcoach/t";
 
 export const teacherSignupSchema = z.object({
   name: z.string().trim().min(2, { message: "Please enter your name" }).max(100),
