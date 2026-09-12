@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Bookmark, Check, Copy, ExternalLink, Gift, Infinity as InfinityIcon, Loader2 } from "lucide-react";
+import { ArrowLeft, Bookmark, Check, Copy, Crown, ExternalLink, Gift, Infinity as InfinityIcon, Key, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
