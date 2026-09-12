@@ -532,36 +532,41 @@
   color: hsl(220 20% 88%);
 }
 
-/* Teacher Partner Program — warm, editorial extension of YourLangCoach */
+/* Teacher Partner Program — purple-led extension of YourLangCoach with a warm partner accent */
 .tpp-theme {
-  --background: 225 29% 6%;
-  --foreground: 42 28% 94%;
-  --card: 224 25% 9%;
-  --card-foreground: 42 28% 94%;
-  --popover: 224 25% 9%;
-  --popover-foreground: 42 28% 94%;
-  --primary: 32 86% 66%;
-  --primary-foreground: 225 29% 7%;
-  --secondary: 223 18% 14%;
-  --secondary-foreground: 42 28% 94%;
-  --muted: 223 18% 14%;
-  --muted-foreground: 218 12% 68%;
-  --accent: 32 50% 18%;
-  --accent-foreground: 35 90% 78%;
-  --border: 220 16% 18%;
-  --input: 220 16% 18%;
-  --ring: 32 86% 66%;
+  --background: 222 35% 5%;
+  --foreground: 220 20% 92%;
+  --card: 222 30% 8%;
+  --card-foreground: 220 20% 92%;
+  --popover: 222 30% 8%;
+  --popover-foreground: 220 20% 92%;
+  --primary: 245 82% 68%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 20% 12%;
+  --secondary-foreground: 220 20% 92%;
+  --muted: 220 20% 12%;
+  --muted-foreground: 220 12% 65%;
+  --accent: 253 55% 18%;
+  --accent-foreground: 245 90% 82%;
+  --border: 220 20% 15%;
+  --input: 220 20% 15%;
+  --ring: 245 82% 68%;
+  --tpp-gold: 38 84% 67%;
+}
+
+.tpp-theme .container {
+  margin-inline: auto;
 }
 
 .tpp-theme .ylc-eyebrow {
-  color: hsl(var(--primary));
+  color: hsl(var(--tpp-gold));
   letter-spacing: 0.11em;
 }
 
 .tpp-theme .ylc-icon-wrap {
   background: hsl(var(--accent));
   border-color: hsl(var(--primary) / 0.3);
-  color: hsl(var(--primary));
+  color: hsl(var(--accent-foreground));
 }
 
 .tpp-theme .ylc-header {
@@ -570,7 +575,7 @@
 }
 
 .tpp-theme button[class*="bg-primary"] {
-  background: hsl(var(--primary));
+  background: linear-gradient(135deg, hsl(235 85% 62%), hsl(265 75% 62%));
   color: hsl(var(--primary-foreground));
   box-shadow: 0 12px 30px -16px hsl(var(--primary) / 0.7);
 }
@@ -578,7 +583,8 @@
 .tpp-hero {
   background:
     linear-gradient(180deg, hsl(var(--background) / 0.3), hsl(var(--background))),
-    radial-gradient(ellipse at 50% 8%, hsl(var(--primary) / 0.14), transparent 48%);
+    radial-gradient(ellipse at 18% 8%, hsl(var(--primary) / 0.22), transparent 48%),
+    radial-gradient(ellipse at 82% 22%, hsl(var(--tpp-gold) / 0.07), transparent 34%);
 }
 
 .tpp-flow-item {
@@ -589,7 +595,7 @@
 
 .tpp-flow-focus {
   border-color: hsl(var(--primary) / 0.65);
-  color: hsl(var(--primary));
+  color: hsl(var(--accent-foreground));
   box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.12);
 }
 
@@ -599,7 +605,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--background)));
+  background: linear-gradient(145deg, hsl(var(--accent) / 0.8), hsl(var(--background)));
   border: 1px solid hsl(var(--border));
   border-radius: 0.5rem;
   overflow: hidden;
@@ -633,7 +639,7 @@
 }
 
 .tpp-offer {
-  background: linear-gradient(110deg, hsl(var(--primary) / 0.08), transparent 48%);
+  background: linear-gradient(110deg, hsl(var(--primary) / 0.11), transparent 52%);
 }
 
 @media (max-width: 640px) {
