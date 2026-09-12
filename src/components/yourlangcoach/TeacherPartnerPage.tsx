@@ -35,7 +35,7 @@ import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg.asset.json";
 import reviewSettings from "@/assets/ylc-review-settings.jpeg.asset.json";
 import { SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
 
-const SIGNUP_URL = "[TEACHER_PARTNER_SIGNUP_URL]";
+const SIGNUP_URL = "/yourlangcoach/tpp/join";
 
 const continuationSteps = [
   {
@@ -114,7 +114,7 @@ const SectionHeading = ({ eyebrow, title, intro }: { eyebrow: string; title: str
 
 const PartnerCTA = ({ className = "" }: { className?: string }) => (
   <Button asChild size="lg" className={`rounded-lg px-6 ${className}`}>
-    <a href={SIGNUP_URL}>Become a Teacher Partner <ArrowRight /></a>
+    <Link to={SIGNUP_URL}>Become a Teacher Partner <ArrowRight /></Link>
   </Button>
 );
 
