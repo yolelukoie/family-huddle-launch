@@ -552,6 +552,10 @@
   --input: 220 20% 15%;
   --ring: 245 82% 68%;
   --tpp-gold: 38 84% 67%;
+  --tpp-amber: 38 84% 60%;
+  --tpp-amber-text: 38 90% 72%;
+  --tpp-amber-bg: 38 84% 60% / 0.12;
+  --tpp-amber-border: 38 84% 60% / 0.45;
 }
 
 .tpp-theme .container {
