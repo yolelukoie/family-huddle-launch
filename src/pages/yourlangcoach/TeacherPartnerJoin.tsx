@@ -257,12 +257,12 @@ const TeacherPartnerJoinContent = () => {
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
                   <Button asChild variant="outline" className="rounded-lg">
-                    <a href={IPHONE_URL} target="_blank" rel="noopener noreferrer">
+                    <a href={IPHONE_URL}>
                       <ExternalLink /> {tj.openIphone}
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="rounded-lg">
-                    <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
+                    <a href={ANDROID_URL}>
                       <ExternalLink /> {tj.openAndroid}
                     </a>
                   </Button>
