@@ -271,8 +271,8 @@ const TeacherPartnerJoinContent = () => {
                 </div>
 
                 {partnerCode && (
-                  <div className="tpp-premium-code mt-6 rounded-xl border-2 border-amber-500/40 bg-background/70 p-4 text-start md:p-5">
-                    <div className="flex items-center gap-2 text-amber-400">
+                  <div className="tpp-premium-code mt-6 rounded-xl border-2 bg-background/70 p-4 text-start md:p-5">
+                    <div className="flex items-center gap-2 tpp-amber-text">
                       <Key className="h-5 w-5" />
                       <p className="font-semibold">{tj.premiumCodeTitle}</p>
                     </div>
@@ -283,8 +283,8 @@ const TeacherPartnerJoinContent = () => {
                     <Button onClick={copyPartnerCode} size="lg" variant="secondary" className="mt-3 w-full rounded-lg">
                       {copiedPartnerCode ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copyCode}</>}
                     </Button>
-                    <div className="tpp-warning-note mt-3 flex items-start gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-200">
-                      <Crown className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
+                    <div className="tpp-warning-note mt-3 flex items-start gap-2 rounded-lg border p-3 text-sm">
+                      <Crown className="tpp-amber-text mt-0.5 h-4 w-4 shrink-0" />
                       <p>{tj.premiumCodeWarning}</p>
                     </div>
                   </div>
