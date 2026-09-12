@@ -31,6 +31,8 @@ import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
 import workbookGrid from "@/assets/ylc-workbook-grid.jpeg.asset.json";
 import workbookEditor from "@/assets/ylc-workbook-editor.jpeg.asset.json";
+import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg.asset.json";
+import reviewSettings from "@/assets/ylc-review-settings.jpeg.asset.json";
 import { SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
 
 const SIGNUP_URL = "[TEACHER_PARTNER_SIGNUP_URL]";
