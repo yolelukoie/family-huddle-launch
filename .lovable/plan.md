@@ -1,94 +1,40 @@
+# Plan: YourLangCoach Teacher Partner Program
 
-## Plan: Add YourLangCoach section under /yourlangcoach
+## Goal
+Create `/yourlangcoach/tpp` as a conversion-focused page for language teachers in Israel. It will position YourLangCoach as support for the teacher–student relationship, not a replacement for teachers.
 
-I'll add a new product section living under the existing site, with its own routes, branding (dark/elegant), and legal pages — all without touching the Family Huddle marketing pages.
+## Page structure
+1. **Header** — YourLangCoach branding, compact section navigation, and “Become a Teacher Partner” action.
+2. **Hero** — supplied headline and supporting copy, primary/secondary actions, and a clear learning-flow visual:
+   `Lesson → New words & materials → YourLangCoach → Reviews → Better retention → Next lesson`
+3. **The problem** — scattered lesson materials and forgotten learning, followed by the between-lesson solution.
+4. **How learning continues** — four steps from learning something new through returning prepared.
+5. **Workbook** — use the two supplied real app screenshots in polished phone frames; explain editable text, uploads, saved cards, organization, and repositioning.
+6. **Spaced repetition** — a restrained review timeline without unsupported learning guarantees.
+7. **Optional AI practice** — show useful practice tasks while stating that the core learning system works without Premium AI.
+8. **Teacher benefits** — eight concise benefit cards centered on student outcomes and low teacher effort.
+9. **Partner offer** — Lifetime Premium for teachers, one free Premium month per student, no payment, commitment, or student limit.
+10. **Joining steps** — join, receive a personal link, share it.
+11. **Use cases and audience** — practical examples across languages and teacher types, with current Israel focus.
+12. **Early Partner Program** — benefits and optional feedback opportunity.
+13. **FAQ and final action** — address payment, student limits, teaching methods, languages, technical knowledge, post-trial access, and teacher use.
+14. **Existing lower-page content** — reuse “Also from our team,” legal links, account links, and “Need help?” contact details from the main YourLangCoach page.
 
-### Routes to add (in `src/App.tsx`)
-- `/yourlangcoach` → home
-- `/yourlangcoach/privacy`
-- `/yourlangcoach/terms`
-- `/yourlangcoach/refund`
-- `/yourlangcoach/delete-account`
+## Design and interaction
+- Extend the existing dark YourLangCoach visual language with warmer educational accents, clearer whitespace, editorial typography, and restrained motion.
+- Use realistic product presentation based on the supplied Workbook screenshots; no stock imagery or generic AI visuals.
+- Keep repeated cards compact and avoid nested-card layouts.
+- Make all sections and action areas fully responsive, including mobile navigation and readable timeline layouts.
+- Respect reduced-motion preferences and provide useful image alt text and accessible controls.
 
-SPA deep links already work (Lovable hosting + existing 404.html handling).
+## Links and content
+- Keep the exact placeholders requested: `[TEACHER_PARTNER_SIGNUP_URL]`, `[APP_STORE_URL]`, and `[GOOGLE_PLAY_URL]`; do not invent destinations.
+- Primary partner actions will use the teacher signup placeholder. Store links will only appear where app download context requires them.
+- Add page-specific title, description, social metadata, semantic headings, and one H1.
 
-### File structure
-```
-src/pages/yourlangcoach/
-  Index.tsx            (home: hero, how it works, features, pricing, footer)
-  Terms.tsx
-  Privacy.tsx
-  Refund.tsx
-  DeleteAccount.tsx
-
-src/components/yourlangcoach/
-  YLCHeader.tsx        (logo placeholder + nav anchors + Download CTA)
-  YLCFooter.tsx        (legal links, support email)
-  YLCHero.tsx
-  YLCHowItWorks.tsx
-  YLCFeatures.tsx
-  YLCPricing.tsx
-  YLCLegalLayout.tsx   (shared wrapper for legal pages: header + back link + prose container + footer)
-
-src/lib/yourlangcoach/
-  content.ts           (all copy as exported constants — easy to edit)
-```
-
-### Visual direction (dark/premium, distinct from Family Huddle)
-Scoped via a wrapper class `.ylc-theme` on every YourLangCoach page root. Dark base with soft glow, no global theme changes.
-
-- Background: deep slate/near-black `#0a0e1a` with subtle radial glow gradients (indigo/violet → transparent) behind hero and pricing
-- Surface cards: `#121826` with 1px subtle border `rgba(255,255,255,0.06)` and soft shadow
-- Accent: cool indigo `#7c8cff` → violet `#a78bfa` linear gradient for CTAs and accent text
-- Text: primary `#e8ecf4`, muted `#8a93a6`
-- Typography: keep existing display font for headings (lighter weight 500-600 for elegance), system body
-- Generous spacing, larger border radius (rounded-2xl/3xl), soft glow on hover
-- Icons: lucide-react, thin-stroke feel, in subtle indigo/violet tints
-
-All styled with Tailwind utilities + a small scoped CSS block in `src/index.css` under `.ylc-theme { ... }` for the radial glow backgrounds and gradient buttons. No changes to existing tokens.
-
-### Home page sections (matches provided copy exactly)
-1. Hero — title, subtitle, supporting line, two CTAs (Android/iPhone — placeholder `#` links)
-2. "Built for flexible self-learning" — bullet list with icons
-3. "How it works" — 4 numbered cards (Anna, Dictionary, Spaced repetition, Workbook)
-4. "What makes YourLangCoach different" — 5 feature cards
-5. Pricing — 3 plan cards (Premium $9.99/mo, Annual $79.99/yr highlighted as "Best value", Voice $14.99/mo with "Subject to fair use" badge visible on the card itself)
-6. Small print under pricing about auto-renewal
-7. Footer — legal links + support email
-
-### Legal pages
-Each uses `YLCLegalLayout` (dark theme, max-w-3xl prose, "Back to YourLangCoach" link). Content rendered from `content.ts` as the exact text provided, formatted with semantic `<h2>/<p>/<ul>` and `[INSERT DATE]` placeholder shown literally so it's easy to replace.
-
-- **Terms** — full text, sections 1–16
-- **Privacy** — full text, sections 1–12
-- **Refund** — full text, sections 1–6
-- **Delete Account** — full standalone page with prominent mailto CTA button:
-  `mailto:support@familyhuddletasks.com?subject=Delete%20My%20YourLangCoach%20Account`
-  Plus the explanation text about store subscriptions not auto-cancelling.
-
-### SEO / meta
-Use `react-helmet-async` if already installed; otherwise set `document.title` + dynamic meta via small `useEffect` per page (lightweight, no new deps). I'll check first and prefer the lightweight approach if helmet isn't present.
-
-Per-page titles + meta descriptions + OG tags:
-- Home: "YourLangCoach — Learn a language your way" / provided description
-- Each legal page: "YourLangCoach — Terms of Use" etc.
-
-### Logo placeholder
-Header uses a simple gradient circle + wordmark "YourLangCoach". A code comment marks the spot to drop in a real logo asset later.
-
-### Editability notes (added as comments at top of `content.ts`)
-- All copy lives in `src/lib/yourlangcoach/content.ts`
-- App store links: replace `ANDROID_URL` / `IPHONE_URL` constants
-- Logo: replace placeholder in `YLCHeader.tsx` (marked with `// TODO: replace logo`)
-- Effective date: search `[INSERT DATE]` in `content.ts`
-
-### What I will NOT touch
-- `src/pages/Index.tsx` and all existing Family Huddle components
-- Existing routes, auth flow, Supabase integration
-- Global theme tokens in `src/index.css` and `tailwind.config.ts` (only additive scoped `.ylc-theme` block)
-
-### Acceptance
-- Visit `/yourlangcoach` → dark, elegant landing with all sections + working anchor nav
-- Visit each legal route directly (refresh works via existing SPA fallback)
-- Family Huddle pages unchanged
-- Mobile responsive (single column < md, grids on md+)
+## Implementation details
+- Add a dedicated page and focused Teacher Partner components/content under the existing YourLangCoach area.
+- Add the `/yourlangcoach/tpp` route without changing existing routes.
+- Store the uploaded screenshots through the project asset flow and render them as product imagery.
+- Add only scoped Teacher Partner styles/tokens needed for this page, preserving Family Huddle and the current YourLangCoach page.
+- Validate the page in Chromium at desktop and mobile widths, including anchor navigation, layout, screenshot rendering, and CTA destinations.
