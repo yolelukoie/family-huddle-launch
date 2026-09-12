@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {
   ArrowDown,
   ArrowRight,
+  BellRing,
   BookOpen,
   Brain,
   Check,
@@ -97,6 +98,16 @@ const faqs = [
   ["Do I need technical knowledge?", "No. You simply share your invitation link."],
   ["What happens after the free month?", "Students can continue using the free features. Premium features, including AI functionality, require a subscription."],
   ["Can I use YourLangCoach myself?", "Yes. Teacher Partners receive Lifetime Premium."],
+];
+
+const spacedReviewSteps = [
+  { label: "Lesson", time: "New words learned" },
+  { label: "1st review", time: "After 20 minutes" },
+  { label: "2nd review", time: "After 1 hour" },
+  { label: "3rd review", time: "After 9 hours" },
+  { label: "4th review", time: "After 1 day" },
+  { label: "5th review", time: "After 2 days" },
+  { label: "6th review", time: "After 3 days" },
 ];
 
 const SectionHeading = ({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) => (
@@ -226,14 +237,40 @@ const TeacherPartnerPage = () => {
 
         <section className="border-b border-border py-20 md:py-28">
           <div className="container px-4 sm:px-6">
-            <SectionHeading eyebrow="Spaced repetition" title="Students don’t need more motivation. They need a system." intro="YourLangCoach brings vocabulary and learning materials back at useful intervals. The app remembers when it is time to review — so the student doesn’t have to." />
-            <div className="tpp-timeline grid gap-3 md:grid-cols-5">
-              {["Lesson", "1st review", "2nd review", "Later review", "Long-term memory"].map((item, index) => (
-                <div key={item} className="relative flex items-center gap-3 rounded-lg border border-border bg-card p-4 md:block md:text-center">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground md:mx-auto">{index + 1}</span>
-                  <p className="font-medium md:mt-3">{item}</p>
+            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+              <SectionHeading eyebrow="Spaced repetition" title="The right words, at the right time." intro="Students see the words they learned return on screen at carefully spaced intervals — before they become difficult to recall. Each short review helps reinforce the memory with minimal effort." />
+              <div className="tpp-review-preview" aria-label="Example spaced repetition reminder">
+                <div className="flex items-center gap-3">
+                  <div className="ylc-icon-wrap"><BellRing /></div>
+                  <div>
+                    <p className="text-xs font-medium uppercase text-primary">Ready for review</p>
+                    <p className="mt-1 font-display text-lg font-semibold">10 words from your lesson</p>
+                  </div>
                 </div>
-              ))}
+                <div className="mt-5 grid grid-cols-2 gap-2 text-sm sm:grid-cols-3">
+                  {["לצלם", "לקום", "להמליץ"].map((word) => <span key={word} className="rounded-lg border border-border bg-background px-3 py-2 text-center">{word}</span>)}
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">No study plan to organize. YourLangCoach brings the next small batch forward when it is time to practice.</p>
+              </div>
+            </div>
+
+            <div className="tpp-review-flow mt-12" aria-label="Spaced repetition schedule">
+              <div className="tpp-review-track">
+                {spacedReviewSteps.map((step, index) => (
+                  <div key={step.label} className="tpp-review-step">
+                    <span className="tpp-review-dot">{index + 1}</span>
+                    <p className="mt-4 font-display font-semibold">{step.label}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{step.time}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="tpp-memory-destination">
+                <Brain className="h-6 w-6" />
+                <div>
+                  <p className="font-display font-semibold">Towards long-term memory</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Repeated recall helps make new vocabulary easier to remember and use.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
