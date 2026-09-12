@@ -37,6 +37,8 @@ const TeacherPartnerJoinContent = () => {
   const [code, setCode] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [copiedMessage, setCopiedMessage] = useState(false);
+  const [partnerCode, setPartnerCode] = useState<string | null>(null);
+  const [copiedPartnerCode, setCopiedPartnerCode] = useState(false);
 
   useEffect(() => {
     document.title = "Join the Teacher Partner Program | YourLangCoach";
@@ -61,6 +63,7 @@ const TeacherPartnerJoinContent = () => {
     try {
       const result = await submitTeacherSignup(parsed.data);
       setCode(result.referralCode);
+      setPartnerCode(result.partnerCode ?? null);
       if (result.alreadyRegistered) {
         toast.info(tj.alreadyRegistered);
       }
