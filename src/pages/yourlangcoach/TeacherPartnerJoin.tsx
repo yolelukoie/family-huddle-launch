@@ -307,16 +307,31 @@ const TeacherPartnerJoinContent = () => {
                 )}
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                  <Button asChild variant="outline" className="rounded-lg">
-                    <a href={IPHONE_URL}>
-                      <ExternalLink /> {tj.openIphone}
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" className="rounded-lg">
-                    <a href={ANDROID_URL}>
-                      <ExternalLink /> {tj.openAndroid}
-                    </a>
-                  </Button>
+                  {partnerCode ? (
+                    <>
+                      <Button variant="outline" className="rounded-lg" onClick={openIphoneStore}>
+                        <ExternalLink /> {tj.openIphone}
+                      </Button>
+                      <Button asChild variant="outline" className="rounded-lg">
+                        <a href={androidHref}>
+                          <ExternalLink /> {tj.openAndroid}
+                        </a>
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button asChild variant="outline" className="rounded-lg">
+                        <a href={IPHONE_URL}>
+                          <ExternalLink /> {tj.openIphone}
+                        </a>
+                      </Button>
+                      <Button asChild variant="outline" className="rounded-lg">
+                        <a href={ANDROID_URL}>
+                          <ExternalLink /> {tj.openAndroid}
+                        </a>
+                      </Button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
