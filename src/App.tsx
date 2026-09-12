@@ -25,6 +25,7 @@ import YLCResetPassword from "./pages/yourlangcoach/ResetPassword";
 import YLCTeacherPartner from "./pages/yourlangcoach/TeacherPartner";
 import YLCTeacherPartnerJoin from "./pages/yourlangcoach/TeacherPartnerJoin";
 import YLCTeacherReferral from "./pages/yourlangcoach/TeacherReferral";
+import YLCTeacherStudentReferral from "./pages/yourlangcoach/TeacherStudentReferral";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => (
           <Route path="/yourlangcoach/tpp" element={<YLCTeacherPartner />} />
           <Route path="/yourlangcoach/tpp/join" element={<YLCTeacherPartnerJoin />} />
           <Route path="/yourlangcoach/teacher/:code" element={<YLCTeacherReferral />} />
+          <Route path="/yourlangcoach/t/:code" element={<YLCTeacherStudentReferral />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
