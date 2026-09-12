@@ -12,9 +12,12 @@ create table if not exists public.teachers (
   teaching_format text,
   student_count text,
   referral_code text not null unique,
+  partner_code text unique default null,
   status text not null default 'active',
   created_at timestamptz not null default now()
 );
+
+create unique index if not exists teachers_partner_code_idx on public.teachers (partner_code);
 
 grant all on public.teachers to service_role;
 alter table public.teachers enable row level security;
