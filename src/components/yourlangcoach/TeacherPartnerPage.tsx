@@ -70,13 +70,6 @@ const teacherBenefits = [
   { title: "No change to your method", text: "YourLangCoach works alongside the way you already teach.", icon: GraduationCap },
 ];
 
-const useCases = [
-  ["After a Hebrew lesson", "A student adds new Hebrew words and YourLangCoach schedules reviews."],
-  ["After an English lesson", "A teacher shares a phrasal-verb PDF and the student uploads it to the Workbook."],
-  ["During conversation practice", "The student saves useful explanations and examples."],
-  ["After a grammar explanation", "The student photographs the teacher’s diagram and keeps it with their notes."],
-  ["Between lessons", "The student asks the optional AI tutor to practice recently learned vocabulary."],
-];
 
 const audiences = [
   "Private tutors",
@@ -333,27 +326,10 @@ const TeacherPartnerPage = () => {
         </section>
 
         <section className="border-b border-border py-20 md:py-28">
-          <div className="container grid gap-16 px-4 sm:px-6 lg:grid-cols-2">
-            <div>
-              <SectionHeading eyebrow="Use cases" title="Use it your way." />
-              <div className="divide-y divide-border border-y border-border">
-                {useCases.map(([title, text]) => <div key={title} className="py-5"><h3 className="font-semibold">{title}</h3><p className="mt-1 text-sm leading-relaxed text-muted-foreground">{text}</p></div>)}
-              </div>
-            </div>
-            <div>
-              <SectionHeading eyebrow="Who it’s for" title="For language teachers of any language." intro="Hebrew, English, Russian, Spanish, French, German, Italian — and other languages. We’re currently recruiting early Teacher Partners in Israel." />
-              <div className="grid grid-cols-2 gap-3">
-                {audiences.map((item) => <div key={item} className="flex items-start gap-2 rounded-lg border border-border bg-card p-4 text-sm"><Users className="mt-0.5 text-primary" /><span>{item}</span></div>)}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-b border-border py-20 md:py-28">
-          <div className="container grid gap-12 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <SectionHeading eyebrow="Early Partner Program" title="Be one of our first Teacher Partners." />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {["Lifetime Premium", "Free Premium access for students", "Early access to new features", "Opportunity to influence future teacher-focused features", "A direct, optional channel for feedback"].map((item) => <div key={item} className="flex gap-3 border-b border-border py-4"><Check className="text-primary" /><span>{item}</span></div>)}
+          <div className="container px-4 sm:px-6">
+            <SectionHeading eyebrow="Who it’s for" title="For language teachers of any language." intro="Hebrew, English, Russian, Spanish, French, German, Italian — and other languages. We’re currently recruiting early Teacher Partners in Israel." />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {audiences.map((item) => <div key={item} className="flex items-start gap-2 rounded-lg border border-border bg-card p-4 text-sm"><Users className="mt-0.5 text-primary" /><span>{item}</span></div>)}
             </div>
           </div>
         </section>
