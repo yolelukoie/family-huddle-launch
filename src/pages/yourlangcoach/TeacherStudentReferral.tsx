@@ -5,10 +5,8 @@ import { Button } from "@/components/ui/button";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
 import { ylcSupabase } from "@/integrations/supabase/ylc-client";
+import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
 
-// TODO(owner): replace with the real App Store URL once the App Store id is final.
-const APP_STORE_URL = "https://apps.apple.com/app/id6765670414";
-const GOOGLE_PLAY_BASE = "https://play.google.com/store/apps/details?id=com.yourlangcoach.app";
 
 const TeacherStudentReferral = () => {
   const { code = "" } = useParams();
@@ -61,8 +59,6 @@ const TeacherStudentReferral = () => {
     );
   };
 
-  const googlePlayHref = `${GOOGLE_PLAY_BASE}&referrer=${encodeURIComponent(`teacher=${cleanCode}`)}`;
-
   const handleIosClick = () => {
     trackClick("ios");
     // Best-effort clipboard handoff so the code survives the App Store trip.
@@ -109,12 +105,12 @@ const TeacherStudentReferral = () => {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button asChild size="lg" className="rounded-lg">
-              <a href={googlePlayHref} target="_blank" rel="noopener noreferrer" onClick={() => trackClick("android")}>
+              <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackClick("android")}>
                 <Smartphone /> Get it on Google Play
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-lg">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" onClick={handleIosClick}>
+              <a href={IPHONE_URL} target="_blank" rel="noopener noreferrer" onClick={handleIosClick}>
                 <Apple /> Download on the App Store
               </a>
             </Button>
