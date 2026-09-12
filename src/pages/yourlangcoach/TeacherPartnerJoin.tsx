@@ -112,6 +112,22 @@ const TeacherPartnerJoinContent = () => {
     }
   };
 
+  const androidHref = partnerCode
+    ? `${ANDROID_URL}&referrer=teacher%3D${encodeURIComponent(partnerCode)}`
+    : ANDROID_URL;
+
+  const openIphoneStore = async () => {
+    if (partnerCode) {
+      try {
+        await navigator.clipboard.writeText(`YLC-T:${partnerCode}`);
+        toast.success(tj.copyCodeSuccess);
+      } catch {
+        toast.error(tj.copyError);
+      }
+    }
+    window.location.href = IPHONE_URL;
+  };
+
   return (
     <div dir={dir} className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
@@ -291,16 +307,31 @@ const TeacherPartnerJoinContent = () => {
                 )}
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                  <Button asChild variant="outline" className="rounded-lg">
-                    <a href={IPHONE_URL}>
-                      <ExternalLink /> {tj.openIphone}
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" className="rounded-lg">
-                    <a href={ANDROID_URL}>
-                      <ExternalLink /> {tj.openAndroid}
-                    </a>
-                  </Button>
+                  {partnerCode ? (
+                    <>
+                      <Button variant="outline" className="rounded-lg" onClick={openIphoneStore}>
+                        <ExternalLink /> {tj.openIphone}
+                      </Button>
+                      <Button asChild variant="outline" className="rounded-lg">
+                        <a href={androidHref}>
+                          <ExternalLink /> {tj.openAndroid}
+                        </a>
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button asChild variant="outline" className="rounded-lg">
+                        <a href={IPHONE_URL}>
+                          <ExternalLink /> {tj.openIphone}
+                        </a>
+                      </Button>
+                      <Button asChild variant="outline" className="rounded-lg">
+                        <a href={ANDROID_URL}>
+                          <ExternalLink /> {tj.openAndroid}
+                        </a>
+                      </Button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
