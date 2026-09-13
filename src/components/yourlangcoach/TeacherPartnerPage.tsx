@@ -31,10 +31,10 @@ import FamilyHuddlePromo from "@/components/yourlangcoach/FamilyHuddlePromo";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
-import workbookGrid from "@/assets/ylc-workbook-grid.jpeg.asset.json";
-import workbookEditor from "@/assets/ylc-workbook-editor.jpeg.asset.json";
-import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg.asset.json";
-import reviewSettings from "@/assets/ylc-review-settings.jpeg.asset.json";
+import workbookGrid from "@/assets/ylc-workbook-grid.jpeg";
+import workbookEditor from "@/assets/ylc-workbook-editor.jpeg";
+import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg";
+import reviewSettings from "@/assets/ylc-review-settings.jpeg";
 import { SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
 import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
 
@@ -180,10 +180,10 @@ const TeacherPartnerContent = () => {
               </div>
               <div className="tpp-product-stage">
                 <figure className="tpp-phone tpp-phone-back">
-                  <img src={reviewSettings.url} alt="YourLangCoach spaced repetition settings showing review options and batch size" loading="lazy" />
+                  <img src={reviewSettings} alt="YourLangCoach spaced repetition settings showing review options and batch size" loading="lazy" />
                 </figure>
                 <figure className="tpp-phone tpp-phone-front">
-                  <img src={reviewDashboard.url} alt="YourLangCoach review dashboard with due words and review categories" loading="lazy" />
+                  <img src={reviewDashboard} alt="YourLangCoach review dashboard with due words and review categories" loading="lazy" />
                 </figure>
               </div>
             </div>
@@ -228,10 +228,10 @@ const TeacherPartnerContent = () => {
             </div>
             <div className="tpp-product-stage">
               <figure className="tpp-phone tpp-phone-back">
-                <img src={workbookGrid.url} alt="YourLangCoach Workbook showing organized, draggable learning cards" loading="lazy" />
+                <img src={workbookGrid} alt="YourLangCoach Workbook showing organized, draggable learning cards" loading="lazy" />
               </figure>
               <figure className="tpp-phone tpp-phone-front">
-                <img src={workbookEditor.url} alt="YourLangCoach editable Workbook text entry" loading="lazy" />
+                <img src={workbookEditor} alt="YourLangCoach editable Workbook text entry" loading="lazy" />
               </figure>
             </div>
           </div>
