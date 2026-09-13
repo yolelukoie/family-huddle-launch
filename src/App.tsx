@@ -55,6 +55,8 @@ const App = () => (
           <Route path="/yourlangcoach/auth/confirm" element={<YLCAuthConfirm />} />
           <Route path="/yourlangcoach/auth/reset" element={<YLCResetPassword />} />
           <Route path="/yourlangcoach/tpp" element={<YLCTeacherPartner />} />
+          {/* Static share page at /yourlangcoach/tpp/ forwards humans here */}
+          <Route path="/yourlangcoach/tpp/app" element={<YLCTeacherPartner />} />
           <Route path="/yourlangcoach/tpp/join" element={<YLCTeacherPartnerJoin />} />
           <Route path="/yourlangcoach/teacher/:code" element={<YLCTeacherReferral />} />
           <Route path="/yourlangcoach/t/:code" element={<YLCTeacherStudentReferral />} />
