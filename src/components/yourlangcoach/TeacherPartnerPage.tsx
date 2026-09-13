@@ -27,7 +27,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import FamilyHuddlePromo from "@/components/yourlangcoach/FamilyHuddlePromo";
+
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
@@ -101,9 +101,8 @@ const TeacherPartnerContent = () => {
               <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-semibold leading-[1.08] sm:text-5xl md:text-7xl">
                 {tp.heroTitle}
               </h1>
-              <p className="mt-7 max-w-3xl text-balance text-lg leading-relaxed text-muted-foreground md:text-xl">
-                {tp.heroSubA}
-                <strong className="font-semibold text-foreground">{tp.heroSubB}</strong>
+              <p className="mt-7 max-w-3xl text-balance text-xl leading-relaxed text-foreground md:text-2xl">
+                {tp.heroOffer}
               </p>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">{tp.heroText}</p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -112,6 +111,17 @@ const TeacherPartnerContent = () => {
                   <a href="#how-it-works">{tp.seeHow} <ArrowDown /></a>
                 </Button>
               </div>
+            </div>
+
+            <div className="mx-auto mt-10 max-w-5xl rounded-lg border border-primary/20 bg-card/40 px-4 py-4 text-center sm:px-6">
+              <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-foreground">
+                {tp.heroStrip.map((item, i) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <span>{item}</span>
+                    {i < tp.heroStrip.length - 1 && <span className="hidden h-1 w-1 rounded-full bg-primary/60 sm:inline" aria-hidden="true" />}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="mx-auto mt-14 max-w-6xl" aria-label="Learning journey from lesson to next lesson">
@@ -343,7 +353,6 @@ const TeacherPartnerContent = () => {
           </div>
         </section>
 
-        <FamilyHuddlePromo />
       </main>
       <YLCFooter />
     </div>
