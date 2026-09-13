@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Family Huddle – Small Steps, Big Wins Together</title>
+    <meta name="description" content="A shared task and goals app for families and friends who want to support each other, build habits, and celebrate progress as a team." />
+    <meta name="author" content="Family Huddle" />
+
+    <meta property="og:title" content="Family Huddle – Small Steps, Big Wins Together" />
+    <meta property="og:description" content="A shared task and goals app for families and friends who want to support each other, build habits, and celebrate progress as a team." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@FamilyHuddle" />
+    <meta name="twitter:image" content="/favicon.png" />
+  </head>
+
+  <body>
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
