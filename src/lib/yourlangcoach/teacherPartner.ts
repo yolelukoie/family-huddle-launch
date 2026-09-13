@@ -20,7 +20,9 @@ export type TeacherSignupValues = z.infer<typeof teacherSignupSchema>;
 export const TEACHING_FORMATS = ["Private", "Language school", "Online", "Other"];
 export const STUDENT_COUNTS = ["1–5", "6–15", "16–30", "30+"];
 
-export const referralUrl = (code: string) => `${TEACHER_LINK_BASE}/${code}`;
+// Share links use the static /yourlangcoach/t/ entry page (HTTP 200 + social
+// preview tags for crawlers); it forwards humans to the /t/:code app route.
+export const referralUrl = (code: string) => `${TEACHER_LINK_BASE}/?c=${encodeURIComponent(code)}`;
 
 export type SignupResult = {
   referralCode: string;
