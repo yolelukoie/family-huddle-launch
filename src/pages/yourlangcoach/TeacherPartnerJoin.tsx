@@ -4,7 +4,7 @@ import { ArrowLeft, Bookmark, Check, Copy, Crown, ExternalLink, Gift, Infinity a
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
 import { toast } from "sonner";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
@@ -197,33 +197,33 @@ const TeacherPartnerJoinContent = () => {
 
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label>{tj.format} <span className="text-muted-foreground">{tj.optional}</span></Label>
-                    <Select
-                      value={values.teachingFormat}
-                      onValueChange={(value) => setValues((v) => ({ ...v, teachingFormat: value }))}
+                    <Label htmlFor="teachingFormat">{tj.format} <span className="text-muted-foreground">{tj.optional}</span></Label>
+                    <select
+                      id="teachingFormat"
+                      value={values.teachingFormat ?? ""}
+                      onChange={(e) => setValues((v) => ({ ...v, teachingFormat: e.target.value || undefined }))}
+                      className="flex h-10 w-full items-center rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     >
-                      <SelectTrigger><SelectValue placeholder={tj.select} /></SelectTrigger>
-                      <SelectContent>
-                        {TEACHING_FORMATS.map((format, index) => (
-                          <SelectItem key={format} value={format}>{tj.formats[index] ?? format}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                      <option value="">{tj.select}</option>
+                      {TEACHING_FORMATS.map((format, index) => (
+                        <option key={format} value={format}>{tj.formats[index] ?? format}</option>
+                      ))}
+                    </select>
                   </div>
 
                   <div className="space-y-2">
-                    <Label>{tj.students} <span className="text-muted-foreground">{tj.optional}</span></Label>
-                    <Select
-                      value={values.studentCount}
-                      onValueChange={(value) => setValues((v) => ({ ...v, studentCount: value }))}
+                    <Label htmlFor="studentCount">{tj.students} <span className="text-muted-foreground">{tj.optional}</span></Label>
+                    <select
+                      id="studentCount"
+                      value={values.studentCount ?? ""}
+                      onChange={(e) => setValues((v) => ({ ...v, studentCount: e.target.value || undefined }))}
+                      className="flex h-10 w-full items-center rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     >
-                      <SelectTrigger><SelectValue placeholder={tj.select} /></SelectTrigger>
-                      <SelectContent>
-                        {STUDENT_COUNTS.map((count) => (
-                          <SelectItem key={count} value={count}>{count}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                      <option value="">{tj.select}</option>
+                      {STUDENT_COUNTS.map((count) => (
+                        <option key={count} value={count}>{count}</option>
+                      ))}
+                    </select>
                   </div>
                 </div>
 
