@@ -55,7 +55,7 @@ const App = () => (
           <Route path="/yourlangcoach/auth/confirm" element={<YLCAuthConfirm />} />
           <Route path="/yourlangcoach/auth/reset" element={<YLCResetPassword />} />
           <Route path="/yourlangcoach/tpp" element={<YLCTeacherPartner />} />
-          {/* Static share page at /yourlangcoach/tpp/ forwards humans here */}
+          {/* Legacy alias: the 2026-09-13 redirect stub sent visitors here; keep so copied URLs still work */}
           <Route path="/yourlangcoach/tpp/app" element={<YLCTeacherPartner />} />
           <Route path="/yourlangcoach/tpp/join" element={<YLCTeacherPartnerJoin />} />
           <Route path="/yourlangcoach/teacher/:code" element={<YLCTeacherReferral />} />
