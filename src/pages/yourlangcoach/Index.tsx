@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import YLCHeader from "@/components/yourlangcoach/YLCHeader";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import YLCHero from "@/components/yourlangcoach/YLCHero";
-import YLCHowItWorks from "@/components/yourlangcoach/YLCHowItWorks";
+import YLCStory from "@/components/yourlangcoach/YLCStory";
+import YLCSystem from "@/components/yourlangcoach/YLCSystem";
+import YLCFinalCta from "@/components/yourlangcoach/YLCFinalCta";
 import YLCFeatures from "@/components/yourlangcoach/YLCFeatures";
 import YLCPricing from "@/components/yourlangcoach/YLCPricing";
 import FamilyHuddlePromo from "@/components/yourlangcoach/FamilyHuddlePromo";
@@ -10,7 +12,7 @@ import TeacherPartnerPromo from "@/components/yourlangcoach/TeacherPartnerPromo"
 import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
 
 const META_DESCRIPTION =
-  "YourLangCoach is a language-learning app created by a language coach, with AI-guided practice, spaced repetition, a personal dictionary, and a workbook for flexible self-learning.";
+  "YourLangCoach turns the words you meet in real life into language you can actually use: save a word in one tap, review it with spaced repetition, and practice it with AI.";
 
 const YourLangCoachContent = () => {
   const { dir } = useYlcLang();
@@ -20,10 +22,12 @@ const YourLangCoachContent = () => {
       <YLCHeader />
       <main className="flex-1">
         <YLCHero />
-        <YLCHowItWorks />
+        <YLCStory />
+        <YLCSystem />
         <YLCFeatures />
         <TeacherPartnerPromo />
         <YLCPricing />
+        <YLCFinalCta />
         <FamilyHuddlePromo />
       </main>
       <YLCFooter />
@@ -33,7 +37,7 @@ const YourLangCoachContent = () => {
 
 const YourLangCoachIndex = () => {
   useEffect(() => {
-    document.title = "YourLangCoach — Learn a language your way";
+    document.title = "YourLangCoach — Turn the words you meet into words you use";
     const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
       if (!el) {
@@ -44,7 +48,7 @@ const YourLangCoachIndex = () => {
       el.content = content;
     };
     setMeta("description", META_DESCRIPTION);
-    setMeta("og:title", "YourLangCoach — Learn a language your way", "property");
+    setMeta("og:title", "YourLangCoach — Turn the words you meet into words you use", "property");
     setMeta("og:description", META_DESCRIPTION, "property");
     setMeta("og:type", "website", "property");
   }, []);
