@@ -25,6 +25,9 @@ const YLCPricing = () => {
             <h2 className="font-display font-semibold text-3xl md:text-4xl text-[hsl(220,25%,95%)] mt-3">
               {t.pricing.title}
             </h2>
+            <p className="text-[hsl(220,15%,72%)] mt-4 max-w-2xl mx-auto">
+              {t.pricing.subtitle}
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
