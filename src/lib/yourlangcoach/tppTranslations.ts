@@ -4,6 +4,8 @@ export const tppEn = {
   navBenefits: "For teachers",
   navFaq: "FAQ",
   cta: "Become a Teacher Partner",
+  ctaMobile: "Join",
+
   heroEyebrow: "A learning system that continues after the lesson",
   heroTitle: "Your students learn new words in your lessons. YourLangCoach helps them actually keep them.",
   heroText: "Capture the words they encounter in class. Bring them back at the right moment. Practice them until they move from passive recognition into active vocabulary.",
