@@ -5,10 +5,11 @@ const LanguageSwitcher = ({ className = "" }: { className?: string }) => {
 
   return (
     <div
-      className={`inline-flex items-center gap-1 rounded-full border border-[hsl(220,20%,18%)] bg-[hsl(222,30%,10%)]/70 p-1 ${className}`}
+      className={`inline-flex items-center gap-0.5 rounded-full border border-[hsl(220,20%,18%)] bg-[hsl(222,30%,10%)]/70 p-0.5 sm:gap-1 sm:p-1 ${className}`}
       role="group"
       aria-label="Language"
     >
+
       {YLC_LANGS.map((option) => {
         const active = option.code === lang;
         return (
