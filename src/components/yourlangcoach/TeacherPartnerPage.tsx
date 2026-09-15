@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowDown, ArrowRight, BookOpen, Brain, Check, CircleDot, FileText, GraduationCap,
-  Infinity as InfinityIcon, Languages, Lightbulb, MessageCircleMore, Mic, NotebookTabs,
-  RefreshCw, Sparkles, Upload, Volume2,
+  Languages, Lightbulb, MessageCircleMore, Mic, NotebookTabs, RefreshCw, Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
