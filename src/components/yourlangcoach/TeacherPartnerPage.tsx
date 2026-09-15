@@ -28,10 +28,24 @@ const SectionHeading = ({ eyebrow, title, intro, centered = false }: { eyebrow: 
   </div>
 );
 
-const PartnerCTA = ({ className = "", label }: { className?: string; label?: string }) => {
+const PartnerCTA = ({ className = "", label, compact = false }: { className?: string; label?: string; compact?: boolean }) => {
   const { t } = useYlcLang();
-  return <Button asChild size="lg" className={`rounded-lg px-6 ${className}`}><Link to={SIGNUP_URL}>{label ?? t.tpp.cta}<ArrowRight className="rtl:rotate-180" /></Link></Button>;
+  const text = label ?? t.tpp.cta;
+  return (
+    <Button asChild size="lg" className={`rounded-lg px-6 ${className}`}>
+      <Link to={SIGNUP_URL}>
+        {compact ? (
+          <>
+            <span className="sm:hidden">{t.tpp.ctaMobile}</span>
+            <span className="hidden sm:inline">{text}</span>
+          </>
+        ) : text}
+        <ArrowRight className="rtl:rotate-180" />
+      </Link>
+    </Button>
+  );
 };
+
 
 const Flow = ({ items, quiet = false }: { items: string[]; quiet?: boolean }) => (
   <div className="tpp-inline-flow">
