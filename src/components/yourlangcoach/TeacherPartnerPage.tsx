@@ -75,7 +75,11 @@ const TeacherPartnerContent = () => {
               <p className="ylc-eyebrow">{tp.heroEyebrow}</p>
               <h1 className="mx-auto mt-5 max-w-5xl text-balance font-display text-4xl font-semibold leading-[1.08] sm:text-5xl md:text-7xl">{tp.heroTitle}</h1>
               <p className="mx-auto mt-7 max-w-3xl text-balance text-xl leading-relaxed text-foreground md:text-2xl">{tp.heroText}</p>
-              <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-muted-foreground">{tp.heroSupport}</p>
+              <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-muted-foreground">
+                {tp.heroSupport.split("{{anyLanguage}}").map((part, i, arr) => (
+                  <span key={i}>{part}{i < arr.length - 1 && <span className="font-semibold text-primary">{tp.anyLanguage}</span>}</span>
+                ))}
+              </p>
               <p className="mx-auto mt-7 max-w-4xl font-display text-lg font-semibold text-primary md:text-2xl">{tp.heroPromise}</p>
               <div className="mx-auto mt-7 grid max-w-2xl gap-2 text-sm sm:grid-cols-2">
                 <p className="rounded-lg border border-primary/30 bg-primary/10 px-4 py-3">{tp.teacherGift}</p>
