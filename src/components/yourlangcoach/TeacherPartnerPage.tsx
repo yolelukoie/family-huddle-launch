@@ -113,8 +113,8 @@ const TeacherPartnerContent = () => {
         <section id="how-it-works" className="scroll-mt-20 border-b border-border py-20 md:py-28">
           <div className="container px-4 sm:px-6">
             <SectionHeading eyebrow={tp.loopEyebrow} title={tp.loopTitle} intro={tp.loopIntro} centered />
-            <div className="mx-auto mt-12 grid max-w-5xl gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-              {tp.loopLabels.map((label, index) => { const Icon = stepIcons[index]; return <div key={label} className="bg-card p-6"><span className="text-sm text-primary">0{index + 1}</span><Icon className="mt-8 h-6 w-6 text-primary" /><p className="mt-4 font-display text-lg font-semibold">{label}</p></div>; })}
+            <div className="mx-auto mt-12 grid max-w-5xl auto-rows-min gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+              {tp.loopLabels.map((label, index) => { const Icon = stepIcons[index]; return <div key={label} className="flex flex-col bg-card p-5"><span className="text-sm text-primary">0{index + 1}</span><Icon className="mt-3 h-6 w-6 text-primary" /><p className="mt-2 font-display text-lg font-semibold">{label}</p></div>; })}
             </div>
           </div>
         </section>
