@@ -67,8 +67,8 @@ const TeacherPartnerContent = () => {
   return (
     <div dir={dir} className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between gap-2 px-3 sm:gap-3 sm:px-6">
-          <Link to="/yourlangcoach" className="flex min-w-0 items-center gap-2.5">
+        <div className="container flex h-16 items-center justify-between gap-1.5 px-3 sm:gap-3 sm:px-6">
+          <Link to="/yourlangcoach" className="flex min-w-0 items-center gap-2 sm:gap-2.5">
             <img src={ylcLogo} alt="YourLangCoach logo" className="h-9 w-9 rounded-lg object-cover" />
             <span className="truncate font-display text-sm font-semibold sm:text-base">YourLangCoach</span>
             <span className="hidden border-s border-border ps-3 text-xs text-muted-foreground lg:inline">{tp.headerTag}</span>
@@ -78,9 +78,10 @@ const TeacherPartnerContent = () => {
             <a href="#teacher-benefits" className="transition-colors hover:text-foreground">{tp.navBenefits}</a>
             <a href="#faq" className="transition-colors hover:text-foreground">{tp.navFaq}</a>
           </nav>
-          <div className="flex items-center gap-1.5 sm:gap-2"><LanguageSwitcher /><PartnerCTA compact className="h-9 px-2.5 text-xs sm:px-4 sm:text-sm" /></div>
+          <div className="flex items-center gap-1 sm:gap-2"><LanguageSwitcher /><PartnerCTA compact className="h-9 px-2 text-xs sm:px-4 sm:text-sm" /></div>
         </div>
       </header>
+
 
 
       <main>
