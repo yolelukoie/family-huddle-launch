@@ -9,3 +9,5 @@
 - [x] Align the Teacher Partner page with YourLangCoach's purple visual language and organic layout.
 - [x] Simplify the Teacher Partner success screen and emphasize saving the personal link.
 - [x] Remove WhatsApp sharing and use the direct Google Play URL for Android.
+- [x] Rebuild the Teacher Partner landing page around capture, retention, active use, and learning context.
+- [x] Rewrite the Teacher Partner landing page in English, Hebrew, and Russian.
