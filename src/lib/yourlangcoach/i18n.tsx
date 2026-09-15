@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { tppEn, tppHe, tppRu } from "@/lib/yourlangcoach/tppTranslations";
+import { homeEn, homeHe, homeRu } from "@/lib/yourlangcoach/homeTranslations";
 
 export type YlcLang = "en" | "he" | "ru";
 
@@ -66,7 +67,8 @@ const en = {
   },
   pricing: {
     eyebrow: "Pricing",
-    title: "Simple pricing",
+    title: "Start building your own language",
+    subtitle: "Try Premium and get full access to AI practice and the YourLangCoach tools.",
     bestValue: "Best value",
     fairUseBadge: "Subject to fair use",
     fairUseNote: "Voice usage is subject to fair use limits to maintain service quality.",
@@ -102,6 +104,7 @@ const en = {
     deleteAccount: "Delete Account",
     rights: "All rights reserved.",
   },
+  home: homeEn,
   tpp: tppEn,
   join: {
     back: "Back",
@@ -201,7 +204,8 @@ const he: YlcDict = {
   },
   pricing: {
     eyebrow: "מחירים",
-    title: "תמחור פשוט",
+    title: "להתחיל לבנות את השפה שלך",
+    subtitle: "נסו את Premium וקבלו גישה מלאה לתרגול עם AI ולכל הכלים של YourLangCoach.",
     bestValue: "הכי משתלם",
     fairUseBadge: "בכפוף לשימוש הוגן",
     fairUseNote: "השימוש בקול כפוף למגבלות שימוש הוגן לשמירה על איכות השירות.",
@@ -237,6 +241,7 @@ const he: YlcDict = {
     deleteAccount: "מחיקת חשבון",
     rights: "כל הזכויות שמורות.",
   },
+  home: homeHe,
   tpp: tppHe,
   join: {
     back: "חזרה",
@@ -334,7 +339,8 @@ const ru: YlcDict = {
   },
   pricing: {
     eyebrow: "Цены",
-    title: "Простые тарифы",
+    title: "Начните строить свой собственный язык",
+    subtitle: "Попробуйте Premium и получите полный доступ к AI-практике и инструментам YourLangCoach.",
     bestValue: "Выгоднее всего",
     fairUseBadge: "С учётом добросовестного использования",
     fairUseNote: "Голосовые минуты ограничены правилами добросовестного использования для сохранения качества сервиса.",
@@ -370,6 +376,7 @@ const ru: YlcDict = {
     deleteAccount: "Удалить аккаунт",
     rights: "Все права защищены.",
   },
+  home: homeRu,
   tpp: tppRu,
   join: {
     back: "Назад",
