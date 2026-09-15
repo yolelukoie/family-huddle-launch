@@ -5,10 +5,11 @@ const LanguageSwitcher = ({ className = "" }: { className?: string }) => {
 
   return (
     <div
-      className={`inline-flex items-center gap-1 rounded-full border border-[hsl(220,20%,18%)] bg-[hsl(222,30%,10%)]/70 p-1 ${className}`}
+      className={`inline-flex items-center gap-0.5 rounded-full border border-[hsl(220,20%,18%)] bg-[hsl(222,30%,10%)]/70 p-0.5 sm:gap-1 sm:p-1 ${className}`}
       role="group"
       aria-label="Language"
     >
+
       {YLC_LANGS.map((option) => {
         const active = option.code === lang;
         return (
@@ -18,7 +19,7 @@ const LanguageSwitcher = ({ className = "" }: { className?: string }) => {
             onClick={() => setLang(option.code)}
             aria-pressed={active}
             title={option.label}
-            className={`flex h-7 w-8 items-center justify-center rounded-full text-base leading-none transition-all ${
+            className={`flex h-6 w-7 items-center justify-center rounded-full text-base leading-none transition-all sm:h-7 sm:w-8 ${
               active
                 ? "bg-[hsl(235,60%,22%)] opacity-100 ring-1 ring-[hsl(235,80%,70%)]"
                 : "opacity-55 hover:opacity-100"

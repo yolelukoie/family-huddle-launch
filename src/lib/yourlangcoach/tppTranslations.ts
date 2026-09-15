@@ -4,6 +4,8 @@ export const tppEn = {
   navBenefits: "For teachers",
   navFaq: "FAQ",
   cta: "Become a Teacher Partner",
+  ctaMobile: "Join",
+
   heroEyebrow: "A learning system that continues after the lesson",
   heroTitle: "Your students learn new words in your lessons. YourLangCoach helps them actually keep them.",
   heroText: "Capture the words they encounter in class. Bring them back at the right moment. Practice them until they move from passive recognition into active vocabulary.",
@@ -146,6 +148,8 @@ export const tppHe: typeof tppEn = {
   navBenefits: "למורים",
   navFaq: "שאלות נפוצות",
   cta: "להצטרפות כמורה שותף",
+  ctaMobile: "להצטרף",
+
   heroEyebrow: "מערכת למידה שממשיכה אחרי השיעור",
   heroTitle: "התלמידים שלכם לומדים מילים חדשות בשיעור. YourLangCoach עוזרת להם באמת לזכור אותן.",
   heroText: "שומרים את המילים שפוגשים בשיעור, מחזירים אותן בזמן הנכון ומתרגלים עד שהן עוברות מזיהוי פסיבי לאוצר מילים פעיל.",
@@ -271,6 +275,8 @@ export const tppRu: typeof tppEn = {
   navBenefits: "Для преподавателя",
   navFaq: "Вопросы",
   cta: "Стать партнёром-преподавателем",
+  ctaMobile: "Вступить",
+
   heroEyebrow: "Система обучения, которая продолжает работать после урока",
   heroTitle: "На ваших уроках ученики узнают новые слова. YourLangCoach помогает действительно их сохранить.",
   heroText: "Сохранить слова с урока. Вернуть их в нужный момент. Практиковать, пока пассивное узнавание не превратится в активный словарь.",

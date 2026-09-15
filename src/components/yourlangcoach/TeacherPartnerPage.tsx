@@ -28,10 +28,24 @@ const SectionHeading = ({ eyebrow, title, intro, centered = false }: { eyebrow: 
   </div>
 );
 
-const PartnerCTA = ({ className = "", label }: { className?: string; label?: string }) => {
+const PartnerCTA = ({ className = "", label, compact = false }: { className?: string; label?: string; compact?: boolean }) => {
   const { t } = useYlcLang();
-  return <Button asChild size="lg" className={`rounded-lg px-6 ${className}`}><Link to={SIGNUP_URL}>{label ?? t.tpp.cta}<ArrowRight className="rtl:rotate-180" /></Link></Button>;
+  const text = label ?? t.tpp.cta;
+  return (
+    <Button asChild size="lg" className={`rounded-lg px-6 ${className}`}>
+      <Link to={SIGNUP_URL}>
+        {compact ? (
+          <>
+            <span className="sm:hidden">{t.tpp.ctaMobile}</span>
+            <span className="hidden sm:inline">{text}</span>
+          </>
+        ) : text}
+        <ArrowRight className="rtl:rotate-180" />
+      </Link>
+    </Button>
+  );
 };
+
 
 const Flow = ({ items, quiet = false }: { items: string[]; quiet?: boolean }) => (
   <div className="tpp-inline-flow">
@@ -53,10 +67,10 @@ const TeacherPartnerContent = () => {
   return (
     <div dir={dir} className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between gap-3 px-4 sm:px-6">
-          <Link to="/yourlangcoach" className="flex min-w-0 items-center gap-2.5">
+        <div className="container flex h-16 items-center justify-between gap-1.5 px-3 sm:gap-3 sm:px-6">
+          <Link to="/yourlangcoach" className="flex min-w-0 items-center gap-2 sm:gap-2.5">
             <img src={ylcLogo} alt="YourLangCoach logo" className="h-9 w-9 rounded-lg object-cover" />
-            <span className="hidden truncate font-display text-sm font-semibold sm:inline sm:text-base">YourLangCoach</span>
+            <span className="truncate font-display text-sm font-semibold sm:text-base">YourLangCoach</span>
             <span className="hidden border-s border-border ps-3 text-xs text-muted-foreground lg:inline">{tp.headerTag}</span>
           </Link>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex" aria-label="Teacher Partner page">
@@ -64,9 +78,11 @@ const TeacherPartnerContent = () => {
             <a href="#teacher-benefits" className="transition-colors hover:text-foreground">{tp.navBenefits}</a>
             <a href="#faq" className="transition-colors hover:text-foreground">{tp.navFaq}</a>
           </nav>
-          <div className="flex items-center gap-2"><LanguageSwitcher /><PartnerCTA className="h-9 px-3 text-xs sm:px-4 sm:text-sm" /></div>
+          <div className="flex items-center gap-1 sm:gap-2"><LanguageSwitcher /><PartnerCTA compact className="h-9 px-2 text-xs sm:px-4 sm:text-sm" /></div>
         </div>
       </header>
+
+
 
       <main>
         <section className="tpp-hero overflow-hidden border-b border-border">
