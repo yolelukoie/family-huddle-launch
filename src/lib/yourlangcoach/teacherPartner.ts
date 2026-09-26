@@ -49,6 +49,12 @@ export async function submitTeacherSignup(values: TeacherSignupValues): Promise<
   const row = Array.isArray(data) ? data[0] : data;
   if (!row?.referral_code) throw new Error("Signup did not return a referral code");
 
+  // Fire-and-forget: email the teacher their links & codes (Resend-backed
+  // edge function in the YLC Supabase project). Never blocks or fails signup.
+  ylcSupabase.functions
+    .invoke("send-teacher-welcome", { body: { email: values.email.trim() } })
+    .catch((err) => console.warn("welcome email failed:", err));
+
   return {
     referralCode: row.referral_code as string,
     alreadyRegistered: Boolean(row.already_registered),
