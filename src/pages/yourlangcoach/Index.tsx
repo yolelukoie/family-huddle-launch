@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import YLCHeader from "@/components/yourlangcoach/YLCHeader";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import YLCHero from "@/components/yourlangcoach/YLCHero";
@@ -36,6 +36,15 @@ const YourLangCoachContent = () => {
 };
 
 const YourLangCoachIndex = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    const frame = window.requestAnimationFrame(() => window.scrollTo(0, 0));
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
   useEffect(() => {
     document.title = "YourLangCoach — Turn the words you meet into words you use";
     const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
