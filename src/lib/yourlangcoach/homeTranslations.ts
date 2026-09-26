@@ -11,6 +11,35 @@ export const homeEn = {
     seeHow: "How it works",
     shortLine: "Capture → Remember → Use → Expand",
   },
+  movers: {
+    "eyebrow": "For people living in the language",
+    "title": "You have just moved. The language is around you all day.",
+    "p1": "In one day you hear dozens of words you actually need — at the doctor, at the bank, in the school chat, at work, standing in a queue. You need them tomorrow, not someday.",
+    "p2": "And by the evening not one of them is left.",
+    "closing": "A textbook gives you words someone else picked. Here you collect the ones that already happened to you.",
+    "chips": [
+      {
+        "label": "In class",
+        "text": "the word your teacher explained, gone by the next lesson"
+      },
+      {
+        "label": "At the doctor",
+        "text": "the phrase you had to ask about three times"
+      },
+      {
+        "label": "At the bank and the offices",
+        "text": "words you meet nowhere else"
+      },
+      {
+        "label": "At work",
+        "text": "what your colleagues say, which no course ever covers"
+      },
+      {
+        "label": "In the parents’ chat",
+        "text": "language that is in no textbook"
+      }
+    ]
+  },
   forget: {
     eyebrow: "Why words disappear",
     title: "Why are new words so easy to forget?",
@@ -219,6 +248,35 @@ export const homeHe: YlcHomeDict = {
     seeHow: "איך זה עובד",
     shortLine: "לאסוף → לזכור → להשתמש → להרחיב",
   },
+  movers: {
+    "eyebrow": "Для тех, кто живёт в языке",
+    "title": "Вы только что переехали. Язык вокруг вас весь день.",
+    "p1": "За день вы слышите десятки нужных слов — у врача, в банке, в родительском чате, на работе, в очереди. Они нужны вам не когда-нибудь, а завтра.",
+    "p2": "И к вечеру не остаётся ни одного.",
+    "closing": "Учебник даёт слова, которые кто-то выбрал за вас. Здесь вы собираете те, которые уже случились с вами.",
+    "chips": [
+      {
+        "label": "В ульпане",
+        "text": "слово, которое преподаватель объяснил, а вы забыли к следующему уроку"
+      },
+      {
+        "label": "У врача",
+        "text": "фраза, которую пришлось переспросить три раза"
+      },
+      {
+        "label": "В банке и конторах",
+        "text": "слова, которые встречаются только там"
+      },
+      {
+        "label": "На работе",
+        "text": "то, что говорят коллеги, но чего нет ни на одних курсах"
+      },
+      {
+        "label": "В чате родителей",
+        "text": "язык, которого нет ни в одном учебнике"
+      }
+    ]
+  },
   forget: {
     eyebrow: "למה מילים נעלמות",
     title: "למה כל כך קל לשכוח מילים חדשות?",
@@ -389,6 +447,35 @@ export const homeRu: YlcHomeDict = {
     downloadIphone: "Скачать для iPhone",
     seeHow: "Как это работает",
     shortLine: "Собрать → Запомнить → Использовать → Расширить",
+  },
+  movers: {
+    "eyebrow": "למי שחי בתוך השפה",
+    "title": "בדיוק עברתם. השפה סביבכם כל היום.",
+    "p1": "במהלך יום אתם שומעים עשרות מילים שאתם באמת צריכים — אצל הרופא, בבנק, בקבוצת ההורים, בעבודה, בתור. אתם צריכים אותן מחר, לא מתישהו.",
+    "p2": "ועד הערב לא נשארת אף אחת.",
+    "closing": "ספר לימוד נותן מילים שמישהו אחר בחר בשבילכם. כאן אתם אוספים את אלה שכבר קרו לכם.",
+    "chips": [
+      {
+        "label": "באולפן",
+        "text": "מילה שהמורה הסביר/ה, ונשכחה עד השיעור הבא"
+      },
+      {
+        "label": "אצל הרופא",
+        "text": "משפט שהייתם צריכים לבקש לחזור עליו שלוש פעמים"
+      },
+      {
+        "label": "בבנק ובמשרדים",
+        "text": "מילים שפוגשים רק שם"
+      },
+      {
+        "label": "בעבודה",
+        "text": "מה שהעמיתים אומרים, ואין באף קורס"
+      },
+      {
+        "label": "בקבוצת ההורים",
+        "text": "שפה שאין באף ספר לימוד"
+      }
+    ]
   },
   forget: {
     eyebrow: "Почему слова теряются",
