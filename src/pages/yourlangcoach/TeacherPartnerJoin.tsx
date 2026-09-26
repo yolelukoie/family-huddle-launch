@@ -28,9 +28,69 @@ const emptyForm: TeacherSignupValues = {
   studentCount: undefined,
 };
 
+const STEP1_KEY = "ylc-tpp-step1-done";
+
+const SUCCESS = {
+  en: {
+    title: "You're in the program 🎉",
+    subtitle: "Two quick steps and you're all set.",
+    s1Title: "Claim your Premium — forever",
+    s1Body: "It's already yours. Open the app and enter the code once.",
+    copyCode: "Copy code",
+    hint: "In the app: Settings → Teacher code",
+    appStore: "Open in App Store",
+    googlePlay: "Open in Google Play",
+    caution: "The code is single-use and just for you.",
+    s2Title: "Invite your students — once you've tried it",
+    s2Body: "Every student who joins via your link gets a month of Premium free.",
+    copyLink: "Copy link",
+    orCode: "Or they can enter the code {CODE} right in the app.",
+    accordion: "Ready-made message for students",
+    copyMessage: "Copy message",
+    message: "Hi! I'm inviting you to practice with me on YourLangCoach. Use my link — you'll get 30 days of Premium for free: {LINK}\n\nIf the app asks for a teacher code, enter: {CODE}",
+  },
+  ru: {
+    title: "Вы в программе 🎉",
+    subtitle: "Два коротких шага — и всё готово.",
+    s1Title: "Заберите свой Premium — навсегда",
+    s1Body: "Он уже ваш. Откройте приложение и введите код один раз.",
+    copyCode: "Скопировать код",
+    hint: "В приложении: Настройки → Код преподавателя",
+    appStore: "Открыть в App Store",
+    googlePlay: "Открыть в Google Play",
+    caution: "Код одноразовый и только для вас.",
+    s2Title: "Пригласите учеников — когда сами попробуете",
+    s2Body: "Каждый ученик по вашей ссылке получает месяц Premium бесплатно.",
+    copyLink: "Скопировать ссылку",
+    orCode: "Или пусть введут код {CODE} прямо в приложении.",
+    accordion: "Готовое сообщение для учеников",
+    copyMessage: "Скопировать сообщение",
+    message: "Привет! Приглашаю тебя заниматься со мной в YourLangCoach. По моей ссылке — 30 дней Premium бесплатно: {LINK}\n\nЕсли приложение попросит код преподавателя, введи: {CODE}",
+  },
+  he: {
+    title: "את/ה בתוכנית 🎉",
+    subtitle: "שני צעדים קצרים — וזהו.",
+    s1Title: "קבלו את ה‑Premium שלכם — לתמיד",
+    s1Body: "הוא כבר שלכם. פתחו את האפליקציה והזינו את הקוד פעם אחת.",
+    copyCode: "העתקת קוד",
+    hint: "באפליקציה: הגדרות ← קוד מורה",
+    appStore: "פתיחה ב‑App Store",
+    googlePlay: "פתיחה ב‑Google Play",
+    caution: "הקוד חד־פעמי ואישי עבורכם בלבד.",
+    s2Title: "הזמינו תלמידים — אחרי שתנסו בעצמכם",
+    s2Body: "כל תלמיד שמצטרף דרך הקישור שלכם מקבל חודש Premium בחינם.",
+    copyLink: "העתקת קישור",
+    orCode: "או שיזינו את הקוד {CODE} ישירות באפליקציה.",
+    accordion: "הודעה מוכנה לתלמידים",
+    copyMessage: "העתקת ההודעה",
+    message: "היי! אני מזמין/ה אותך לתרגל איתי ב‑YourLangCoach. דרך הקישור שלי תקבל/י 30 ימי Premium בחינם: {LINK}\n\nאם האפליקציה מבקשת קוד מורה, הזן/י: {CODE}",
+  },
+} as const;
+
 const TeacherPartnerJoinContent = () => {
-  const { t, dir } = useYlcLang();
+  const { t, dir, lang } = useYlcLang();
   const tj = t.join;
+  const s = SUCCESS[(lang as keyof typeof SUCCESS)] ?? SUCCESS.en;
   const [values, setValues] = useState<TeacherSignupValues>(emptyForm);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
@@ -39,6 +99,9 @@ const TeacherPartnerJoinContent = () => {
   const [copiedMessage, setCopiedMessage] = useState(false);
   const [partnerCode, setPartnerCode] = useState<string | null>(null);
   const [copiedPartnerCode, setCopiedPartnerCode] = useState(false);
+  const [step1Done, setStep1Done] = useState(() => {
+    try { return localStorage.getItem(STEP1_KEY) === "1"; } catch { return false; }
+  });
 
   useEffect(() => {
     document.title = "Join the Teacher Partner Program | YourLangCoach";
@@ -86,9 +149,7 @@ const TeacherPartnerJoinContent = () => {
     }
   };
 
-  const studentMessage = code
-    ? `Hi! I'm inviting you to practice with me on YourLangCoach. Use my link — you'll get 30 days of Premium for free: ${referralUrl(code)}\n\nIf the app asks for a teacher code, enter: ${code}`
-    : "";
+  const studentMessage = code ? s.message.replace("{LINK}", referralUrl(code)).replace("{CODE}", code) : "";
 
   const copyMessage = async () => {
     try {
@@ -112,11 +173,22 @@ const TeacherPartnerJoinContent = () => {
     }
   };
 
+  const markStep1 = () => {
+    setStep1Done(true);
+    try { localStorage.setItem(STEP1_KEY, "1"); } catch { /* ignore */ }
+  };
+
   const androidHref = partnerCode
     ? `${ANDROID_URL}&referrer=teacher%3D${encodeURIComponent(partnerCode)}`
     : ANDROID_URL;
 
+  const openAndroidStore = () => {
+    markStep1();
+    window.location.href = androidHref;
+  };
+
   const openIphoneStore = async () => {
+    markStep1();
     if (partnerCode) {
       try {
         await navigator.clipboard.writeText(`YLC-T:${partnerCode}`);
@@ -233,107 +305,88 @@ const TeacherPartnerJoinContent = () => {
               </form>
             </>
           ) : (
-            <div className="overflow-hidden rounded-2xl border border-border bg-card/60 text-center">
-              <div className="border-b border-border bg-primary/10 px-6 py-8 md:px-10">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                  <Check className="h-6 w-6" />
+            <div className="space-y-4">
+              <div className="text-center">
+                <h1 className="font-display text-3xl font-semibold md:text-4xl">{s.title}</h1>
+                <p className="mt-2 text-base text-muted-foreground">{s.subtitle}</p>
+                <div className="mt-4 grid gap-2 text-start sm:grid-cols-2">
+                  <div className="flex items-center gap-2 rounded-lg border border-border/60 bg-card/40 px-3 py-2 text-xs text-muted-foreground">
+                    <Gift className="h-4 w-4 shrink-0 text-primary/80" />
+                    <span>{tj.studentsGetA}{tj.studentsGetB}</span>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-lg border border-border/60 bg-card/40 px-3 py-2 text-xs text-muted-foreground">
+                    <InfinityIcon className="h-4 w-4 shrink-0 text-primary/80" />
+                    <span>{tj.youGetA}{tj.youGetB}</span>
+                  </div>
                 </div>
-              <h1 className="font-display text-3xl font-semibold md:text-4xl">{tj.successTitle}</h1>
-              <p className="mt-3 text-lg text-muted-foreground">{tj.successText}</p>
               </div>
 
-              <div className="p-6 md:p-10">
-                <div className="grid gap-3 text-start sm:grid-cols-2">
-                  <div className="flex items-start gap-3 rounded-xl border border-border bg-background/50 p-4">
-                  <Gift className="mt-0.5 h-5 w-5 text-primary" />
-                  <p className="text-sm">{tj.studentsGetA}<strong>{tj.studentsGetB}</strong>.</p>
-                  </div>
-                  <div className="flex items-start gap-3 rounded-xl border border-border bg-background/50 p-4">
-                  <InfinityIcon className="mt-0.5 h-5 w-5 text-primary" />
-                  <p className="text-sm">{tj.youGetA}<strong>{tj.youGetB}</strong>.</p>
-                  </div>
+              {/* STEP 1 */}
+              <section className="rounded-2xl border-2 border-primary bg-card/70 p-5 text-start md:p-6">
+                <div className="flex items-center gap-3">
+                  <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground">
+                    1
+                    {step1Done && (
+                      <span className="absolute -end-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-green-500 text-background">
+                        <Check className="h-3 w-3" />
+                      </span>
+                    )}
+                  </span>
+                  <h2 className="font-display text-xl font-semibold">{s.s1Title}</h2>
                 </div>
-
-                <div className="mt-6 rounded-xl border-2 border-primary/40 bg-background/70 p-4 text-start md:p-5">
-                  <div className="flex items-center gap-2 text-primary">
-                    <Bookmark className="h-5 w-5" />
-                    <p className="font-semibold">{tj.saveTitle}</p>
-                  </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{tj.saveText}</p>
-                  <code dir="ltr" className="mt-4 block overflow-x-auto rounded-lg border border-border bg-background px-4 py-3 text-sm">
-                    {link}
-                  </code>
-                  <Button onClick={copyLink} size="lg" className="mt-3 w-full rounded-lg">
-                    {copied ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copy}</>}
+                <p className="mt-2 text-sm text-muted-foreground">{s.s1Body}</p>
+                {partnerCode && (
+                  <>
+                    <div className="mt-4 flex gap-2">
+                      <code dir="ltr" className="flex-1 overflow-x-auto rounded-lg border border-border bg-background px-4 py-2.5 text-center font-mono text-lg font-semibold tracking-wider">
+                        {partnerCode}
+                      </code>
+                      <Button onClick={copyPartnerCode} variant="outline" className="h-auto rounded-lg">
+                        {copiedPartnerCode ? <><Check /> {tj.copied}</> : <><Copy /> {s.copyCode}</>}
+                      </Button>
+                    </div>
+                    <p className="mt-2 text-xs text-muted-foreground">{s.hint}</p>
+                  </>
+                )}
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  <Button size="lg" className="w-full rounded-lg" onClick={openIphoneStore}>
+                    <ExternalLink /> {s.appStore}
                   </Button>
-                  <p className="mt-3 text-center text-sm text-muted-foreground">
-                    {tj.codeNoteA}<strong>{code}</strong>{tj.codeNoteB}
-                  </p>
+                  <Button size="lg" className="w-full rounded-lg" onClick={openAndroidStore}>
+                    <ExternalLink /> {s.googlePlay}
+                  </Button>
                 </div>
+                {partnerCode && <p className="mt-3 text-sm text-muted-foreground">{s.caution}</p>}
+              </section>
 
-                <div className="mt-6 border-t border-border pt-6 text-start">
-                  <p className="font-medium">{tj.messageLabel}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{tj.messageHint}</p>
+              {/* STEP 2 */}
+              <section className={`rounded-2xl border bg-card/40 p-5 text-start transition-opacity md:p-6 ${step1Done ? "border-border opacity-100" : "border-border/50 opacity-60"}`}>
+                <div className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border bg-muted font-semibold">2</span>
+                  <h2 className="font-display text-lg font-semibold">{s.s2Title}</h2>
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground">{s.s2Body}</p>
+                <div className="mt-4 flex gap-2">
+                  <code dir="ltr" className="flex-1 overflow-x-auto whitespace-nowrap rounded-lg border border-border bg-background px-3 py-2.5 text-sm">{link}</code>
+                  <Button onClick={copyLink} variant="secondary" className="h-auto rounded-lg">
+                    {copied ? <><Check /> {tj.copied}</> : <><Copy /> {s.copyLink}</>}
+                  </Button>
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground">{s.orCode.replace("{CODE}", code)}</p>
+                <details className="mt-4 rounded-lg border border-border bg-background/40 p-3" dir={dir}>
+                  <summary className="cursor-pointer text-sm font-medium">{s.accordion}</summary>
                   <textarea
                     readOnly
-                    dir="ltr"
+                    dir={dir}
                     rows={5}
                     value={studentMessage}
-                    className="mt-3 w-full resize-none rounded-lg border border-border bg-background/70 px-4 py-3 text-sm focus:outline-none"
+                    className="mt-3 w-full resize-none rounded-lg border border-border bg-background/70 px-3 py-2 text-sm focus:outline-none"
                   />
-                  <Button onClick={copyMessage} variant="secondary" className="mt-3 w-full rounded-lg sm:w-auto">
-                    {copiedMessage ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copyMessage}</>}
+                  <Button onClick={copyMessage} variant="secondary" size="sm" className="mt-2 rounded-lg">
+                    {copiedMessage ? <><Check /> {tj.copied}</> : <><Copy /> {s.copyMessage}</>}
                   </Button>
-                </div>
-
-                {partnerCode && (
-                  <div className="tpp-premium-code mt-6 rounded-xl border-2 bg-background/70 p-4 text-start md:p-5">
-                    <div className="flex items-center gap-2 tpp-amber-text">
-                      <Key className="h-5 w-5" />
-                      <p className="font-semibold">{tj.premiumCodeTitle}</p>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground">{tj.premiumCodeBody}</p>
-                    <code dir="ltr" className="mt-4 block overflow-x-auto rounded-lg border border-border bg-background px-4 py-3 text-center font-mono text-2xl font-semibold tracking-wider text-foreground">
-                      {partnerCode}
-                    </code>
-                    <Button onClick={copyPartnerCode} size="lg" variant="secondary" className="mt-3 w-full rounded-lg">
-                      {copiedPartnerCode ? <><Check /> {tj.copied}</> : <><Copy /> {tj.copyCode}</>}
-                    </Button>
-                    <div className="tpp-warning-note mt-3 flex items-start gap-2 rounded-lg border p-3 text-sm">
-                      <Crown className="tpp-amber-text mt-0.5 h-4 w-4 shrink-0" />
-                      <p>{tj.premiumCodeWarning}</p>
-                    </div>
-                  </div>
-                )}
-
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                  {partnerCode ? (
-                    <>
-                      <Button variant="outline" className="rounded-lg" onClick={openIphoneStore}>
-                        <ExternalLink /> {tj.openIphone}
-                      </Button>
-                      <Button asChild variant="outline" className="rounded-lg">
-                        <a href={androidHref}>
-                          <ExternalLink /> {tj.openAndroid}
-                        </a>
-                      </Button>
-                    </>
-                  ) : (
-                    <>
-                      <Button asChild variant="outline" className="rounded-lg">
-                        <a href={IPHONE_URL}>
-                          <ExternalLink /> {tj.openIphone}
-                        </a>
-                      </Button>
-                      <Button asChild variant="outline" className="rounded-lg">
-                        <a href={ANDROID_URL}>
-                          <ExternalLink /> {tj.openAndroid}
-                        </a>
-                      </Button>
-                    </>
-                  )}
-                </div>
-              </div>
+                </details>
+              </section>
             </div>
           )}
         </div>
