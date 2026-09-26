@@ -104,6 +104,7 @@ const TeacherPartnerJoinContent = () => {
   });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "Join the Teacher Partner Program | YourLangCoach";
   }, []);
 
