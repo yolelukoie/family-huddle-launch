@@ -13,6 +13,29 @@ const YLCStory = () => {
 
   return (
     <>
+      {/* Who it's for: people who just moved */}
+      <section className="py-16 md:py-20 border-t border-[hsl(220,20%,12%)]">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="ylc-eyebrow">{h.movers.eyebrow}</p>
+            <h2 className="font-display font-semibold text-2xl md:text-3xl text-[hsl(220,25%,95%)] mt-3 text-balance">
+              {h.movers.title}
+            </h2>
+            <p className="mt-5 text-[hsl(220,15%,72%)] text-base md:text-lg">{h.movers.p1}</p>
+            <p className="mt-3 text-[hsl(220,25%,90%)] text-base md:text-lg font-medium">{h.movers.p2}</p>
+            <ul className="mt-8 flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-3 text-start">
+              {h.movers.chips.map((c) => (
+                <li key={c.label} className="ylc-card rounded-xl px-4 py-3 sm:max-w-[17rem]">
+                  <span className="block text-sm font-medium text-[hsl(220,25%,92%)]">{c.label}</span>
+                  <span className="block text-sm text-[hsl(220,12%,68%)] mt-0.5">{c.text}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-[hsl(260,55%,80%)] font-medium text-balance">{h.movers.closing}</p>
+          </div>
+        </div>
+      </section>
+
       {/* Why words are forgotten */}
       <section className="py-20 md:py-24 border-t border-[hsl(220,20%,12%)]">
         <div className="container mx-auto px-4 sm:px-6">
