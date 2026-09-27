@@ -1,5 +1,7 @@
-import { Mic, Sparkles, Bell, MessagesSquare, FolderOpen, Check } from "lucide-react";
+import { Mic, Sparkles, Bell, MessagesSquare, FolderOpen, Check, ArrowRight } from "lucide-react";
 import { useYlcLang } from "@/lib/yourlangcoach/i18n";
+import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg";
+import reviewSettings from "@/assets/ylc-review-settings.jpeg";
 
 const Arrow = () => (
   <span aria-hidden="true" className="text-[hsl(220,12%,45%)] text-sm">
@@ -176,7 +178,7 @@ const YLCStory = () => {
       {/* Remember */}
       <section className="py-20 md:py-24 border-t border-[hsl(220,20%,12%)]">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center">
               <p className="ylc-eyebrow">{h.remember.eyebrow}</p>
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-[hsl(220,25%,95%)] mt-3 text-balance">
@@ -194,19 +196,30 @@ const YLCStory = () => {
               </p>
             </div>
 
-            <ol className="mt-8 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-x-3 gap-y-5">
-              {h.remember.timeline.map((point, i) => (
-                <li key={point} className="relative flex flex-col items-center text-center">
-                  <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-primary/60 bg-secondary text-xs font-semibold text-primary">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="mt-3 text-sm font-medium text-foreground">{point}</span>
-                  {i < h.remember.timeline.length - 1 && <span aria-hidden="true" className="absolute top-[1.1rem] left-[calc(50%+1.5rem)] hidden h-px w-[calc(100%-1rem)] bg-primary/35 lg:block" />}
-                </li>
-              ))}
-            </ol>
+            <div className="mt-8 overflow-x-auto pb-3" aria-label={h.remember.eyebrow}>
+              <ol dir="ltr" className="flex min-w-[840px] items-start">
+                {h.remember.timeline.map((point, i) => (
+                  <li key={point} className="flex min-w-0 flex-1 items-start">
+                    <div className="flex min-w-0 flex-1 flex-col items-center text-center">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/60 bg-secondary text-xs font-semibold text-primary">{String(i + 1).padStart(2, "0")}</span>
+                      <span dir="auto" className="mt-3 text-sm font-medium text-foreground leading-tight">{point}</span>
+                    </div>
+                    {i < h.remember.timeline.length - 1 && <ArrowRight aria-hidden="true" className="mt-3 h-4 w-4 shrink-0 text-primary/70" strokeWidth={1.8} />}
+                  </li>
+                ))}
+              </ol>
+            </div>
 
             <p className="mt-6 text-sm text-[hsl(220,12%,58%)] text-center">
               {h.remember.caution}
             </p>
+            <div className="mx-auto mt-9 max-w-xl">
+              <div className="grid grid-cols-2 items-start gap-4 sm:gap-6 px-3 sm:px-5 py-5">
+                <img src={reviewDashboard} alt="YourLangCoach review reminders" loading="lazy" className="w-full -rotate-3 translate-y-5 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
+                <img src={reviewSettings} alt="YourLangCoach review schedule" loading="lazy" className="w-full rotate-3 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
+              </div>
+              <p className="mt-8 text-xs text-center text-[hsl(220,12%,55%)]">{h.example.caption}</p>
+            </div>
           </div>
         </div>
       </section>

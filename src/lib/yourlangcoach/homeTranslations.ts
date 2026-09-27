@@ -86,7 +86,7 @@ export const homeEn = {
     title: "YourLangCoach doesn’t let important words disappear",
     text: "After you save a word, the app brings it back to you through spaced repetition, at gradually wider intervals.",
     highlight: "You don’t have to remember when to review. The app keeps track for you.",
-    timeline: ["Learn", "20 minutes", "1 hour", "9 hours", "1 day", "2 days", "3 days"],
+    timeline: ["Learn", "20 minutes", "1 hour", "9 hours", "1 day", "2 days", "3 days", "7 days"],
     caution:
       "Coming back to a word regularly helps it settle in memory — review supports recall, it doesn’t guarantee it.",
   },
@@ -320,7 +320,7 @@ export const homeHe: YlcHomeDict = {
     title: "YourLangCoach לא נותנת למילים חשובות להיעלם",
     text: "אחרי ששמרת מילה, האפליקציה מחזירה אותה אליך בחזרות מרווחות, במרווחים שהולכים ומתרחבים.",
     highlight: "לא צריך לזכור מתי לחזור. האפליקציה זוכרת במקומך.",
-    timeline: ["למידה", "20 דקות", "שעה", "9 שעות", "יום", "יומיים", "3 ימים"],
+    timeline: ["למידה", "20 דקות", "שעה", "9 שעות", "יום", "יומיים", "3 ימים", "7 ימים"],
     caution: "חזרה קבועה למילה עוזרת לקבע אותה בזיכרון — היא תומכת בשליפה, לא מבטיחה אותה.",
   },
   use: {
@@ -523,7 +523,7 @@ export const homeRu: YlcHomeDict = {
     title: "YourLangCoach не даёт важным словам исчезнуть",
     text: "После того как вы добавили слово, приложение возвращает его вам через интервальные повторения — со всё более широкими интервалами.",
     highlight: "Вам не нужно помнить, когда повторять. Приложение помнит за вас.",
-    timeline: ["Изучение", "20 минут", "1 час", "9 часов", "1 день", "2 дня", "3 дня"],
+    timeline: ["Изучение", "20 минут", "1 час", "9 часов", "1 день", "2 дня", "3 дня", "7 дней"],
     caution:
       "Регулярное возвращение к слову помогает закреплять его в памяти — повторение поддерживает припоминание, но не гарантирует его.",
   },
