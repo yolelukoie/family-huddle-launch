@@ -13,3 +13,4 @@
 - [x] Rewrite the Teacher Partner landing page in English, Hebrew, and Russian.
 - [x] Restore main YLC section alignment, review timing cards, tilted screenshots, and correct RU/HE mover copy.
 - [x] Confirm RU/HE mover language, show concrete spaced-repetition intervals as a compact timeline, remove differentiation, retain only two Review screenshots.
+- [x] Move Review screenshots into Remember, connect eight review steps, merge system and example, and remove the duplicate Why section.
