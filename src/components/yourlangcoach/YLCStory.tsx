@@ -194,14 +194,15 @@ const YLCStory = () => {
               </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 auto-rows-fr">
+            <ol className="mt-8 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-x-3 gap-y-5">
               {h.remember.timeline.map((point, i) => (
-                <div key={point} className="ylc-card rounded-xl p-4 text-center flex flex-col items-center justify-center min-h-28">
-                  <div className="text-xs text-[hsl(260,60%,72%)] mb-2">{String(i + 1).padStart(2, "0")}</div>
-                  <div className="text-sm font-medium text-[hsl(220,15%,82%)]">{point}</div>
-                </div>
+                <li key={point} className="relative flex flex-col items-center text-center">
+                  <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-primary/60 bg-secondary text-xs font-semibold text-primary">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="mt-3 text-sm font-medium text-foreground">{point}</span>
+                  {i < h.remember.timeline.length - 1 && <span aria-hidden="true" className="absolute top-[1.1rem] left-[calc(50%+1.5rem)] hidden h-px w-[calc(100%-1rem)] bg-primary/35 lg:block" />}
+                </li>
               ))}
-            </div>
+            </ol>
 
             <p className="mt-6 text-sm text-[hsl(220,12%,58%)] text-center">
               {h.remember.caution}

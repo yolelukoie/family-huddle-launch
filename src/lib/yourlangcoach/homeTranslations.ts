@@ -190,7 +190,7 @@ export const homeEn = {
       { label: "Used it", text: "Anna asks a question where you need that exact word." },
       { label: "Met it again", text: "Later you run into it in a new context — and it’s yours." },
     ],
-    caption: "Review reminders and your own materials, inside the app.",
+    caption: "Your review reminders and schedule, inside the app.",
   },
   styles: {
     eyebrow: "Your learning, your shape",
@@ -391,7 +391,7 @@ export const homeHe: YlcHomeDict = {
       { label: "השתמשת", text: "אנה שואלת שאלה שדורשת בדיוק את המילה הזאת." },
       { label: "פגשת שוב", text: "אחר כך פוגשים אותה בהקשר חדש — והיא כבר שלך." },
     ],
-    caption: "תזכורות חזרה והחומרים שלך, בתוך האפליקציה.",
+    caption: "תזכורות החזרה ולוח החזרות שלך, בתוך האפליקציה.",
   },
   styles: {
     eyebrow: "הלמידה שלך, בצורה שלך",
@@ -607,7 +607,7 @@ export const homeRu: YlcHomeDict = {
       { label: "Использовал", text: "Анна задаёт вопрос, где нужно именно это слово." },
       { label: "Встретил снова", text: "Позже слово попадается в новом контексте — и оно уже ваше." },
     ],
-    caption: "Напоминания о повторении и ваши материалы — внутри приложения.",
+    caption: "Напоминания и расписание повторений — внутри приложения.",
   },
   styles: {
     eyebrow: "Ваше обучение, ваша форма",
