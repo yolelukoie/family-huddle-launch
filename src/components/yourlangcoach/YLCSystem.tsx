@@ -1,6 +1,8 @@
 import { useYlcLang } from "@/lib/yourlangcoach/i18n";
 import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg";
+import reviewSettings from "@/assets/ylc-review-settings.jpeg";
 import workbookGrid from "@/assets/ylc-workbook-grid.jpeg";
+import workbookEditor from "@/assets/ylc-workbook-editor.jpeg";
 
 const YLCSystem = () => {
   const { t } = useYlcLang();
@@ -88,7 +90,6 @@ const YLCSystem = () => {
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-[hsl(220,25%,95%)] mt-3 text-balance">
                 {h.example.title}
               </h2>
-              <p className="text-[hsl(220,15%,72%)] mt-4 text-lg">{h.example.intro}</p>
             </div>
 
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
@@ -110,22 +111,18 @@ const YLCSystem = () => {
                 ))}
               </ol>
 
-              <div className="grid grid-cols-2 gap-4">
-                <img
-                  src={reviewDashboard}
-                  alt="YourLangCoach review reminders on a phone"
-                  loading="lazy"
-                  className="w-full rounded-2xl border border-[hsl(220,20%,16%)]"
-                />
-                <img
-                  src={workbookGrid}
-                  alt="YourLangCoach workbook with saved learning materials"
-                  loading="lazy"
-                  className="w-full rounded-2xl border border-[hsl(220,20%,16%)]"
-                />
-                <p className="col-span-2 text-xs text-center text-[hsl(220,12%,55%)]">
-                  {h.example.caption}
-                </p>
+              <div>
+                <div className="grid grid-cols-2 gap-3 sm:gap-5 items-start px-3 sm:px-5 py-5">
+                  <div className="space-y-4 -rotate-3 translate-y-5 motion-reduce:transform-none">
+                    <img src={reviewDashboard} alt="YourLangCoach review reminders" loading="lazy" className="w-full rounded-xl border border-border shadow-xl" />
+                    <img src={reviewSettings} alt="YourLangCoach review schedule" loading="lazy" className="w-full rounded-xl border border-border shadow-xl" />
+                  </div>
+                  <div className="space-y-4 rotate-3 motion-reduce:transform-none">
+                    <img src={workbookGrid} alt="YourLangCoach workbook" loading="lazy" className="w-full rounded-xl border border-border shadow-xl" />
+                    <img src={workbookEditor} alt="YourLangCoach workbook entry" loading="lazy" className="w-full rounded-xl border border-border shadow-xl" />
+                  </div>
+                </div>
+                <p className="mt-8 text-xs text-center text-[hsl(220,12%,55%)]">{h.example.caption}</p>
               </div>
             </div>
           </div>
