@@ -11,3 +11,4 @@
 - [x] Remove WhatsApp sharing and use the direct Google Play URL for Android.
 - [x] Rebuild the Teacher Partner landing page around capture, retention, active use, and learning context.
 - [x] Rewrite the Teacher Partner landing page in English, Hebrew, and Russian.
+- [x] Restore main YLC section alignment, review timing cards, tilted screenshots, and correct RU/HE mover copy.
