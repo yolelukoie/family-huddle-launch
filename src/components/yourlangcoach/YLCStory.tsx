@@ -60,7 +60,7 @@ const YLCStory = () => {
       <section className="py-20 md:py-24 border-t border-[hsl(220,20%,12%)]">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
-            <div className="max-w-2xl">
+            <div className="max-w-2xl mx-auto text-center">
               <p className="ylc-eyebrow">{h.capture.eyebrow}</p>
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-[hsl(220,25%,95%)] mt-3">
                 {h.capture.title}
@@ -194,11 +194,11 @@ const YLCStory = () => {
               </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 auto-rows-fr">
               {h.remember.timeline.map((point, i) => (
-                <div key={point} className="ylc-card rounded-xl p-4 text-center">
-                  <div className="text-xs text-[hsl(260,60%,72%)] mb-1">{i + 1}</div>
-                  <div className="text-sm text-[hsl(220,15%,82%)]">{point}</div>
+                <div key={point} className="ylc-card rounded-xl p-4 text-center flex flex-col items-center justify-center min-h-28">
+                  <div className="text-xs text-[hsl(260,60%,72%)] mb-2">{String(i + 1).padStart(2, "0")}</div>
+                  <div className="text-sm font-medium text-[hsl(220,15%,82%)]">{point}</div>
                 </div>
               ))}
             </div>
@@ -214,7 +214,7 @@ const YLCStory = () => {
       <section className="py-20 md:py-24 border-t border-[hsl(220,20%,12%)]">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto text-center">
               <p className="ylc-eyebrow">{h.use.eyebrow}</p>
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-[hsl(220,25%,95%)] mt-3">
                 {h.use.title}
