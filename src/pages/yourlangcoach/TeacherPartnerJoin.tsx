@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Check, Copy, ExternalLink, Gift, Infinity as InfinityIcon, Loader2 } from "lucide-react";
+import { ArrowLeft, Check, Copy, ExternalLink, Gift, Infinity as InfinityIcon, Loader2, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,12 +9,14 @@ import { toast } from "sonner";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
-import { IPHONE_URL, ANDROID_URL } from "@/lib/yourlangcoach/content";
+import { IPHONE_URL, ANDROID_URL, SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
 import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
 import {
   STUDENT_COUNTS,
   TEACHING_FORMATS,
   referralUrl,
+  SignupNetworkError,
+  buildSupportMailto,
   submitTeacherSignup,
   teacherSignupSchema,
   type TeacherSignupValues,
@@ -94,6 +96,8 @@ const TeacherPartnerJoinContent = () => {
   const [values, setValues] = useState<TeacherSignupValues>(emptyForm);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
+  const [networkFailed, setNetworkFailed] = useState(false);
+  const [retrying, setRetrying] = useState(false);
   const [code, setCode] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [copiedMessage, setCopiedMessage] = useState(false);
@@ -123,15 +127,21 @@ const TeacherPartnerJoinContent = () => {
       return;
     }
     setErrors({});
+    setNetworkFailed(false);
+    setRetrying(false);
     setLoading(true);
     try {
-      const result = await submitTeacherSignup(parsed.data);
+      const result = await submitTeacherSignup(parsed.data, { onRetry: () => setRetrying(true) });
       setCode(result.referralCode);
       setPartnerCode(result.partnerCode ?? null);
       if (result.alreadyRegistered) {
         toast.info(tj.alreadyRegistered);
       }
     } catch (error) {
+      if (error instanceof SignupNetworkError) {
+        setNetworkFailed(true);
+        return;
+      }
       const message = error instanceof Error ? error.message : "";
       toast.error(`${tj.signupError} ${message}`.trim());
     } finally {
@@ -149,6 +159,14 @@ const TeacherPartnerJoinContent = () => {
       toast.error(tj.copyError);
     }
   };
+
+  const supportMailto = buildSupportMailto(values, tj.mailSubject, tj.mailIntro, {
+    name: tj.mailName,
+    email: tj.mailEmail,
+    languages: tj.mailLanguages,
+    format: tj.mailFormat,
+    students: tj.mailStudents,
+  });
 
   const studentMessage = code ? s.message.replace("{LINK}", referralUrl(code)).replace("{CODE}", code) : "";
 
@@ -300,9 +318,26 @@ const TeacherPartnerJoinContent = () => {
                   </div>
                 </div>
 
+                {networkFailed && (
+                  <div role="alert" className="space-y-3 rounded-lg border border-destructive/50 bg-destructive/10 p-4 text-start">
+                    <p className="font-semibold text-destructive">{tj.networkErrorTitle}</p>
+                    <p className="text-sm text-muted-foreground">{tj.networkErrorBody}</p>
+                    <Button asChild variant="outline" className="rounded-lg">
+                      <a href={supportMailto}><Mail /> {tj.writeToUs}</a>
+                    </Button>
+                    <p className="text-sm text-muted-foreground">
+                      {tj.noMailApp}{" "}
+                      <span dir="ltr" className="inline-block select-all font-medium text-foreground">{SUPPORT_EMAIL}</span>
+                    </p>
+                  </div>
+                )}
+
                 <Button type="submit" size="lg" className="w-full rounded-lg" disabled={loading}>
                   {loading ? <><Loader2 className="animate-spin" /> {tj.submitting}</> : tj.submit}
                 </Button>
+                {loading && retrying && (
+                  <p role="status" className="text-center text-sm text-muted-foreground">{tj.slowConnection}</p>
+                )}
               </form>
             </>
           ) : (
