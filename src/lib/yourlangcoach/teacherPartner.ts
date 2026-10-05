@@ -26,7 +26,8 @@ export const STUDENT_COUNTS = ["1–5", "6–15", "16–30", "30+"];
 export const referralUrl = (code: string) => `${TEACHER_LINK_BASE}/?c=${encodeURIComponent(code)}`;
 
 export type SignupResult = {
-  referralCode: string;
+  /** null: the address was already registered, so the server returned no codes. They go out only by email. */
+  referralCode: string | null;
   alreadyRegistered: boolean;
   partnerCode?: string;
 };
@@ -101,7 +102,7 @@ async function callCreateTeacherPartner(args: Record<string, unknown>): Promise<
 
 export async function submitTeacherSignup(
   values: TeacherSignupValues,
-  options: { onRetry?: () => void } = {},
+  options: { onRetry?: () => void; lang?: string } = {},
 ): Promise<SignupResult> {
   const parts = values.name.trim().split(/\s+/);
   const firstName = parts[0];
@@ -132,11 +133,17 @@ export async function submitTeacherSignup(
     }
   }
 
-  if (!row?.referral_code) throw new Error("Signup did not return a referral code");
+  // An address that is already registered gets no codes back from the server
+  // (except during the first 10 minutes, which covers our own retries): the
+  // codes are delivered only by email.
+  const codesByEmail = !row?.referral_code && row?.already_registered === true;
+  if (!row?.referral_code && !codesByEmail) throw new Error("Signup did not return a referral code");
 
   // Fire-and-forget: email the teacher their links & codes (Resend-backed
   // edge function in the YLC Supabase project). Never blocks or fails signup.
-  sendWelcomeEmail(values.email.trim());
+  sendWelcomeEmail(values.email.trim(), options.lang);
+
+  if (codesByEmail) return { referralCode: null, alreadyRegistered: true };
 
   return {
     referralCode: row.referral_code as string,
@@ -147,12 +154,17 @@ export async function submitTeacherSignup(
   };
 }
 
-function sendWelcomeEmail(email: string): void {
+// `lang` is the page language. The function writes the email in Russian for
+// "ru" and in English for everything else.
+function sendWelcomeEmail(email: string, lang?: string): void {
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), WELCOME_EMAIL_TIMEOUT_MS);
     Promise.resolve(
-      ylcSupabase.functions.invoke("send-teacher-welcome", { body: { email }, signal: controller.signal }),
+      ylcSupabase.functions.invoke("send-teacher-welcome", {
+        body: lang ? { email, lang } : { email },
+        signal: controller.signal,
+      }),
     )
       .catch((err) => console.warn("welcome email failed:", err))
       .finally(() => clearTimeout(timer));

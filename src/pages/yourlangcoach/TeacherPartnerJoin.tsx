@@ -100,6 +100,8 @@ const TeacherPartnerJoinContent = () => {
   const [networkFailed, setNetworkFailed] = useState(false);
   const [retrying, setRetrying] = useState(false);
   const [code, setCode] = useState<string | null>(null);
+  // Set when the address was already registered: no codes on the page, they went out by email.
+  const [sentToEmail, setSentToEmail] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [copiedMessage, setCopiedMessage] = useState(false);
   const [partnerCode, setPartnerCode] = useState<string | null>(null);
@@ -132,7 +134,11 @@ const TeacherPartnerJoinContent = () => {
     setRetrying(false);
     setLoading(true);
     try {
-      const result = await submitTeacherSignup(parsed.data, { onRetry: () => setRetrying(true) });
+      const result = await submitTeacherSignup(parsed.data, { onRetry: () => setRetrying(true), lang });
+      if (result.referralCode === null) {
+        setSentToEmail(parsed.data.email.trim());
+        return;
+      }
       setCode(result.referralCode);
       setPartnerCode(result.partnerCode ?? null);
       if (result.alreadyRegistered) {
@@ -161,13 +167,16 @@ const TeacherPartnerJoinContent = () => {
     }
   };
 
-  const supportMailto = buildSupportMailto(values, tj.mailSubject, tj.mailIntro, {
+  const mailLabels = {
     name: tj.mailName,
     email: tj.mailEmail,
     languages: tj.mailLanguages,
     format: tj.mailFormat,
     students: tj.mailStudents,
-  });
+  };
+  const supportMailto = buildSupportMailto(values, tj.mailSubject, tj.mailIntro, mailLabels);
+  const inboxMailto = buildSupportMailto(values, tj.inboxMailSubject, tj.inboxMailIntro, mailLabels);
+  const [inboxBodyBefore, inboxBodyAfter = ""] = tj.inboxBody.split("{EMAIL}");
 
   const studentMessage = code ? s.message.replace("{LINK}", referralUrl(code)).replace("{CODE}", code) : "";
 
@@ -250,7 +259,29 @@ const TeacherPartnerJoinContent = () => {
 
       <main className="container px-4 py-12 sm:px-6 md:py-20">
         <div className="mx-auto w-full max-w-xl">
-          {!code ? (
+          {sentToEmail ? (
+            <div role="status" className="space-y-4 rounded-2xl border border-border bg-card/60 p-6 text-start md:p-8">
+              <h1 className="font-display text-3xl font-semibold leading-tight md:text-4xl">{tj.inboxTitle}</h1>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                {inboxBodyBefore}
+                <span dir="ltr" className="inline-block font-medium text-foreground">{sentToEmail}</span>
+                {inboxBodyAfter}
+              </p>
+              <p className="text-sm text-muted-foreground">{tj.inboxHint}</p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild variant="outline" className="rounded-lg">
+                  <a href={inboxMailto}><Mail /> {tj.writeToUs}</a>
+                </Button>
+                <Button variant="ghost" className="rounded-lg" onClick={() => setSentToEmail(null)}>
+                  {tj.inboxBack}
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                {tj.noMailApp}{" "}
+                <span dir="ltr" className="inline-block select-all font-medium text-foreground">{SUPPORT_EMAIL}</span>
+              </p>
+            </div>
+          ) : !code ? (
             <>
               <div className="text-center">
                 <p className="ylc-eyebrow">{tj.eyebrow}</p>
