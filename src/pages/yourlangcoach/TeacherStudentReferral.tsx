@@ -6,6 +6,7 @@ import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import ylcLogo from "@/assets/yourlangcoach-logo.png";
 import { ylcSupabase } from "@/integrations/supabase/ylc-client";
 import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
+import { iosCodeMarker, isIosDevice } from "@/lib/yourlangcoach/iosCodeMarker";
 
 
 const TeacherStudentReferral = () => {
@@ -62,8 +63,11 @@ const TeacherStudentReferral = () => {
 
   const handleIosClick = () => {
     trackClick("ios");
-    // Best-effort clipboard handoff so the code survives the App Store trip.
-    navigator.clipboard.writeText(`YLC-T:${cleanCode}`).catch(() => undefined);
+    // Best-effort clipboard handoff so the code survives the App Store trip. iOS only: on any other
+    // device the marker would replace a code the visitor copied with "Copy code".
+    if (isIosDevice()) {
+      navigator.clipboard?.writeText(iosCodeMarker(cleanCode)).catch(() => undefined);
+    }
   };
 
   const headline = teacherName

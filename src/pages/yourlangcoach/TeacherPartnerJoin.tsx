@@ -21,6 +21,7 @@ import {
   teacherSignupSchema,
   type TeacherSignupValues,
 } from "@/lib/yourlangcoach/teacherPartner";
+import { iosCodeMarker, isIosDevice } from "@/lib/yourlangcoach/iosCodeMarker";
 
 const emptyForm: TeacherSignupValues = {
   name: "",
@@ -203,6 +204,15 @@ const TeacherPartnerJoinContent = () => {
 
   const openAndroidStore = () => {
     markStep1();
+    if (partnerCode) {
+      // Fallback for the case where Google Play does not hand the install referrer to the app:
+      // the plain code is then ready to paste into the app's code field. Not awaited, so the
+      // navigation below stays inside the tap.
+      navigator.clipboard?.writeText(partnerCode).then(
+        () => toast.success(tj.copyCodeSuccess),
+        () => undefined,
+      );
+    }
     window.location.href = androidHref;
   };
 
@@ -210,7 +220,9 @@ const TeacherPartnerJoinContent = () => {
     markStep1();
     if (partnerCode) {
       try {
-        await navigator.clipboard.writeText(`YLC-T:${partnerCode}`);
+        // iPhone/iPad: the marker the app picks up on first launch. Any other device: the plain
+        // code, because the marker is not something a person can paste into the app.
+        await navigator.clipboard.writeText(isIosDevice() ? iosCodeMarker(partnerCode) : partnerCode);
         toast.success(tj.copyCodeSuccess);
       } catch {
         toast.error(tj.copyError);
