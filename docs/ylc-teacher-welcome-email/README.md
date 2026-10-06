@@ -10,3 +10,5 @@ again, at most 3 times in 24 hours and never twice within 10 minutes. If the cal
 job in the database sends the email.
 
 Operations: `docs/RUNBOOK.md` in the yourlangcoach repo, section "Teacher welcome email".
+
+The owner can close the public signup without a deploy (yourlangcoach repo, `docs/RUNBOOK.md`, section "Teacher Partner signup"). The signup RPC then refuses every call with the hint `teacher_signup_closed`, and the join page shows a closed state instead of the form (`fetchSignupOpen` and `SignupClosedError` in `src/lib/yourlangcoach/teacherPartner.ts`).

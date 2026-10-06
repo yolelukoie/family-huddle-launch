@@ -45,6 +45,34 @@ export class SignupNetworkError extends Error {
   }
 }
 
+/**
+ * The hint the signup RPC sends when the owner has closed the public signup
+ * (public.teacher_program_settings.signup_open = false). The same text is in the SQL.
+ */
+export const SIGNUP_CLOSED_HINT = "teacher_signup_closed";
+
+/** Thrown when the server refuses because the public signup is closed. Never retried. */
+export class SignupClosedError extends Error {
+  constructor() {
+    super("Teacher Partner signup is closed");
+    this.name = "SignupClosedError";
+  }
+}
+
+/**
+ * Is the public signup open? Only an explicit `false` from the server counts as closed.
+ * An error, a network failure, or a database without the function counts as open: the
+ * form stays, and the signup RPC itself still refuses while the signup is closed.
+ */
+export async function fetchSignupOpen(): Promise<boolean> {
+  try {
+    const { data, error } = await ylcSupabase.rpc("teacher_signup_open");
+    return error ? true : data !== false;
+  } catch {
+    return true;
+  }
+}
+
 const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 
 // A PostgREST/business error carries a non-empty `code` (e.g. "23505") and a 4xx
@@ -85,6 +113,7 @@ async function callCreateTeacherPartner(args: Record<string, unknown>): Promise<
     }
     const { data, error, status } = result;
     if (error) {
+      if ((error as { hint?: unknown }).hint === SIGNUP_CLOSED_HINT) throw new SignupClosedError();
       // Keep the HTTP status: a 4xx is a real server answer and is never retried.
       if (isTransientError(error, status)) throw new SignupNetworkError(error.message);
       throw error;

@@ -15,8 +15,10 @@ import {
   STUDENT_COUNTS,
   TEACHING_FORMATS,
   referralUrl,
+  SignupClosedError,
   SignupNetworkError,
   buildSupportMailto,
+  fetchSignupOpen,
   submitTeacherSignup,
   teacherSignupSchema,
   type TeacherSignupValues,
@@ -102,6 +104,8 @@ const TeacherPartnerJoinContent = () => {
   const [code, setCode] = useState<string | null>(null);
   // Set when the address was already registered: no codes on the page, they went out by email.
   const [sentToEmail, setSentToEmail] = useState<string | null>(null);
+  // Set when the owner has closed the public signup: the page explains it instead of showing the form.
+  const [signupClosed, setSignupClosed] = useState(false);
   const [copied, setCopied] = useState(false);
   const [copiedMessage, setCopiedMessage] = useState(false);
   const [partnerCode, setPartnerCode] = useState<string | null>(null);
@@ -113,6 +117,17 @@ const TeacherPartnerJoinContent = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "Join the Teacher Partner Program | YourLangCoach";
+  }, []);
+
+  // The form is shown at once; only an explicit "closed" from the server replaces it.
+  useEffect(() => {
+    let active = true;
+    void fetchSignupOpen().then((open) => {
+      if (active && !open) setSignupClosed(true);
+    });
+    return () => {
+      active = false;
+    };
   }, []);
 
   const link = code ? referralUrl(code) : "";
@@ -145,6 +160,10 @@ const TeacherPartnerJoinContent = () => {
         toast.info(tj.alreadyRegistered);
       }
     } catch (error) {
+      if (error instanceof SignupClosedError) {
+        setSignupClosed(true);
+        return;
+      }
       if (error instanceof SignupNetworkError) {
         setNetworkFailed(true);
         return;
@@ -176,7 +195,8 @@ const TeacherPartnerJoinContent = () => {
   };
   const supportMailto = buildSupportMailto(values, tj.mailSubject, tj.mailIntro, mailLabels);
   const inboxMailto = buildSupportMailto(values, tj.inboxMailSubject, tj.inboxMailIntro, mailLabels);
-  const [inboxBodyBefore, inboxBodyAfter = ""] = tj.inboxBody.split("{EMAIL}");
+  const closedMailto = buildSupportMailto(values, tj.closedMailSubject, tj.closedMailIntro, mailLabels);
+  const [inboxBodyBefore,inboxBodyAfter = ""] = tj.inboxBody.split("{EMAIL}");
 
   const studentMessage = code ? s.message.replace("{LINK}", referralUrl(code)).replace("{CODE}", code) : "";
 
@@ -276,6 +296,19 @@ const TeacherPartnerJoinContent = () => {
                   {tj.inboxBack}
                 </Button>
               </div>
+              <p className="text-sm text-muted-foreground">
+                {tj.noMailApp}{" "}
+                <span dir="ltr" className="inline-block select-all font-medium text-foreground">{SUPPORT_EMAIL}</span>
+              </p>
+            </div>
+          ) : signupClosed && !code ? (
+            <div role="status" className="space-y-4 rounded-2xl border border-border bg-card/60 p-6 text-start md:p-8">
+              <p className="ylc-eyebrow">{tj.eyebrow}</p>
+              <h1 className="font-display text-3xl font-semibold leading-tight md:text-4xl">{tj.closedTitle}</h1>
+              <p className="text-base leading-relaxed text-muted-foreground">{tj.closedBody}</p>
+              <Button asChild variant="outline" className="rounded-lg">
+                <a href={closedMailto}><Mail /> {tj.writeToUs}</a>
+              </Button>
               <p className="text-sm text-muted-foreground">
                 {tj.noMailApp}{" "}
                 <span dir="ltr" className="inline-block select-all font-medium text-foreground">{SUPPORT_EMAIL}</span>
