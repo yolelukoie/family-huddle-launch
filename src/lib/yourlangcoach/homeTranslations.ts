@@ -3,7 +3,7 @@ export const homeEn = {
     titleA: "Don’t just learn words. ",
     titleB: "Make them yours.",
     subtitle:
-      "YourLangCoach turns the words you meet in real life into an active part of your language — with a personal dictionary, spaced repetition and AI practice.",
+      "Yuston turns the words you meet in real life into an active part of your language — with a personal dictionary, spaced repetition and AI practice.",
     supporting:
       "You save a word → the app helps you remember it → AI helps you start using it.",
     downloadAndroid: "Download for Android",
@@ -49,7 +49,7 @@ export const homeEn = {
       "The problem is that most words stay in your passive vocabulary: you recognise them when you read or hear them, but they don’t come to mind when you need to say something yourself.",
     ],
     highlight:
-      "YourLangCoach is built for exactly that step — from “I know this word” to “I can use it.”",
+      "Yuston is built for exactly that step — from “I know this word” to “I can use it.”",
   },
   capture: {
     eyebrow: "01 · Capture",
@@ -77,13 +77,13 @@ export const homeEn = {
     title: "Saving a word is only the first step.",
     otherTitle: "Most vocabulary apps",
     otherFlow: ["Word", "Flashcard", "Memorise"],
-    ylcTitle: "YourLangCoach",
+    ylcTitle: "Yuston",
     ylcFlow: ["Word", "Remember", "Use", "Meet it again"],
     note: "That continuation is the whole point.",
   },
   remember: {
     eyebrow: "02 · Remember",
-    title: "YourLangCoach doesn’t let important words disappear",
+    title: "Yuston doesn’t let important words disappear",
     text: "After you save a word, the app brings it back to you through spaced repetition, at gradually wider intervals.",
     highlight: "You don’t have to remember when to review. The app keeps track for you.",
     timeline: ["Learn", "20 minutes", "1 hour", "9 hours", "1 day", "2 days", "3 days", "7 days"],
@@ -94,7 +94,7 @@ export const homeEn = {
     eyebrow: "03 · Use",
     title: "Knowing a word isn’t the same as using it.",
     subtitle:
-      "YourLangCoach helps move words from your passive vocabulary into your active one.",
+      "Yuston helps move words from your passive vocabulary into your active one.",
     intro:
       "Recognising a word on a page is one thing. Producing it naturally in a conversation is another. Anna, your AI language coach, practises with the words in your own dictionary.",
     items: [
@@ -111,7 +111,7 @@ export const homeEn = {
   },
   discovery: {
     title: "Not sure what to learn next? Your dictionary knows.",
-    text: "YourLangCoach can look at the vocabulary you already have and suggest useful new words that naturally build on it — around travel, work, food, relationships or everyday life. You can also pick a topic and ask for vocabulary for it.",
+    text: "Yuston can look at the vocabulary you already have and suggest useful new words that naturally build on it — around travel, work, food, relationships or everyday life. You can also pick a topic and ask for vocabulary for it.",
     note: "New words then enter the same loop: save → remember → practise → use.",
   },
   workbook: {
@@ -149,7 +149,7 @@ export const homeEn = {
         num: "02",
         label: "REMEMBER",
         flow: "Spaced repetition",
-        text: "YourLangCoach brings important words back over time.",
+        text: "Yuston brings important words back over time.",
       },
       {
         num: "03",
@@ -161,7 +161,7 @@ export const homeEn = {
         num: "04",
         label: "EXPAND",
         flow: "New words built on what you know",
-        text: "YourLangCoach suggests vocabulary that connects to what you already have.",
+        text: "Yuston suggests vocabulary that connects to what you already have.",
       },
     ],
     footer: "Your dictionary becomes more personal — and more useful — over time.",
@@ -174,10 +174,10 @@ export const homeEn = {
       { title: "A flashcard app", text: "You add a word → you see the word → you repeat it." },
       { title: "A lesson summary", text: "You get the information → you’re expected to review it." },
     ],
-    ylcTitle: "YourLangCoach",
+    ylcTitle: "Yuston",
     ylcText:
       "You meet something useful → save it → remember it over time → actively use it → build on it.",
-    footer: "YourLangCoach connects the pieces into one continuous learning loop.",
+    footer: "Yuston connects the pieces into one continuous learning loop.",
   },
   example: {
     eyebrow: "A real example",
@@ -185,7 +185,7 @@ export const homeEn = {
     intro: "A learner of Hebrew hears the word להתמודד in a lesson.",
     steps: [
       { label: "Heard it", text: "The word comes up in a lesson or a conversation." },
-      { label: "Saved it", text: "One tap — YourLangCoach builds the word card." },
+      { label: "Saved it", text: "One tap — Yuston builds the word card." },
       { label: "Recalled it", text: "The app brings the word back through spaced repetition." },
       { label: "Used it", text: "Anna asks a question where you need that exact word." },
       { label: "Met it again", text: "Later you run into it in a new context — and it’s yours." },
@@ -206,7 +206,7 @@ export const homeEn = {
     note: "These aren’t separate tools. They all work together around your own learning.",
   },
   why: {
-    eyebrow: "Why YourLangCoach",
+    eyebrow: "Why Yuston",
     title: "Built not to give you more exercises — but to help you use the language.",
     items: [
       { title: "Your personal dictionary", description: "The words you actually meet and want to remember." },
@@ -219,7 +219,7 @@ export const homeEn = {
   },
   outcome: {
     title: "Less “I’ve seen this somewhere.” More “I know how to say this.”",
-    text: "YourLangCoach is built around a simple idea: a language becomes yours through repeated encounters and active use.",
+    text: "Yuston is built around a simple idea: a language becomes yours through repeated encounters and active use.",
     lines: [
       "Not just recognising words.",
       "Not just saving them.",
@@ -229,7 +229,7 @@ export const homeEn = {
   finalCta: {
     title: "The words you met today can be the words you use tomorrow.",
     subtitle: "Save them. Remember them. Use them.",
-    primary: "Download YourLangCoach",
+    primary: "Download Yuston",
     secondary: "See how it works",
   },
 };
@@ -241,7 +241,7 @@ export const homeHe: YlcHomeDict = {
     titleA: "לא רק ללמוד מילים. ",
     titleB: "לעשות אותן שלך.",
     subtitle:
-      "YourLangCoach הופכת את המילים שאת/ה פוגש/ת בחיים האמיתיים לחלק פעיל מהשפה שלך — בעזרת מילון אישי, חזרות מרווחות ותרגול עם AI.",
+      "Yuston הופכת את המילים שאת/ה פוגש/ת בחיים האמיתיים לחלק פעיל מהשפה שלך — בעזרת מילון אישי, חזרות מרווחות ותרגול עם AI.",
     supporting: "שומרים מילה → האפליקציה עוזרת לזכור אותה → ה‑AI עוזר להתחיל להשתמש בה.",
     downloadAndroid: "הורדה לאנדרואיד",
     downloadIphone: "הורדה לאייפון",
@@ -285,7 +285,7 @@ export const homeHe: YlcHomeDict = {
       "בדרך כלל הבעיה היא לא מחסור במילים חדשות.",
       "הבעיה היא שרוב המילים נשארות באוצר המילים הפסיבי: מזהים אותן כשקוראים או שומעים, אבל הן לא עולות לראש כשצריך להגיד משהו בעצמך.",
     ],
-    highlight: "YourLangCoach נבנתה בדיוק בשביל המעבר הזה — מ״אני מכיר/ה את המילה״ ל״אני יכול/ה להשתמש בה״.",
+    highlight: "Yuston נבנתה בדיוק בשביל המעבר הזה — מ״אני מכיר/ה את המילה״ ל״אני יכול/ה להשתמש בה״.",
   },
   capture: {
     eyebrow: "01 · לאסוף",
@@ -311,13 +311,13 @@ export const homeHe: YlcHomeDict = {
     title: "לשמור מילה זה רק הצעד הראשון.",
     otherTitle: "רוב אפליקציות אוצר המילים",
     otherFlow: ["מילה", "כרטיסייה", "לשנן"],
-    ylcTitle: "YourLangCoach",
+    ylcTitle: "Yuston",
     ylcFlow: ["מילה", "לזכור", "להשתמש", "לפגוש שוב"],
     note: "ההמשך הזה הוא כל העניין.",
   },
   remember: {
     eyebrow: "02 · לזכור",
-    title: "YourLangCoach לא נותנת למילים חשובות להיעלם",
+    title: "Yuston לא נותנת למילים חשובות להיעלם",
     text: "אחרי ששמרת מילה, האפליקציה מחזירה אותה אליך בחזרות מרווחות, במרווחים שהולכים ומתרחבים.",
     highlight: "לא צריך לזכור מתי לחזור. האפליקציה זוכרת במקומך.",
     timeline: ["למידה", "20 דקות", "שעה", "9 שעות", "יום", "יומיים", "3 ימים", "7 ימים"],
@@ -326,7 +326,7 @@ export const homeHe: YlcHomeDict = {
   use: {
     eyebrow: "03 · להשתמש",
     title: "לדעת מילה זה לא אותו דבר כמו לדעת להשתמש בה.",
-    subtitle: "YourLangCoach עוזרת להעביר מילים מאוצר המילים הפסיבי לאקטיבי.",
+    subtitle: "Yuston עוזרת להעביר מילים מאוצר המילים הפסיבי לאקטיבי.",
     intro:
       "לזהות מילה בטקסט זה דבר אחד. להפיק אותה באופן טבעי בשיחה זה דבר אחר. אנה, מאמנת השפה מבוססת ה‑AI, מתרגלת דווקא עם המילים שבמילון שלך.",
     items: [
@@ -342,7 +342,7 @@ export const homeHe: YlcHomeDict = {
   },
   discovery: {
     title: "לא בטוח/ה מה ללמוד הלאה? המילון שלך יודע.",
-    text: "YourLangCoach יכולה להסתכל על אוצר המילים שכבר יש לך ולהציע מילים חדשות ושימושיות שממשיכות אותו — סביב טיולים, עבודה, אוכל, מערכות יחסים או יומיום. אפשר גם לבחור נושא ולבקש אוצר מילים עבורו.",
+    text: "Yuston יכולה להסתכל על אוצר המילים שכבר יש לך ולהציע מילים חדשות ושימושיות שממשיכות אותו — סביב טיולים, עבודה, אוכל, מערכות יחסים או יומיום. אפשר גם לבחור נושא ולבקש אוצר מילים עבורו.",
     note: "המילים החדשות נכנסות לאותו מעגל: לשמור → לזכור → לתרגל → להשתמש.",
   },
   workbook: {
@@ -362,9 +362,9 @@ export const homeHe: YlcHomeDict = {
     title: "מעגל אחד שהופך מילה שפגשת לחלק מהשפה שלך",
     steps: [
       { num: "01", label: "לאסוף", flow: "פוגשים → שומרים", text: "מילים משיעורים, שיחות, עבודה, מדיה ויומיום." },
-      { num: "02", label: "לזכור", flow: "חזרות מרווחות", text: "YourLangCoach מחזירה מילים חשובות לאורך זמן." },
+      { num: "02", label: "לזכור", flow: "חזרות מרווחות", text: "Yuston מחזירה מילים חשובות לאורך זמן." },
       { num: "03", label: "להשתמש", flow: "תרגול עם AI", text: "להשתמש במילים בשאלות, שיחות, סיפורים והקשרים אמיתיים." },
-      { num: "04", label: "להרחיב", flow: "מילים חדשות על בסיס מה שכבר יודעים", text: "YourLangCoach מציעה אוצר מילים שמתחבר למה שכבר יש לך." },
+      { num: "04", label: "להרחיב", flow: "מילים חדשות על בסיס מה שכבר יודעים", text: "Yuston מציעה אוצר מילים שמתחבר למה שכבר יש לך." },
     ],
     footer: "המילון שלך נעשה אישי יותר — ושימושי יותר — עם הזמן.",
   },
@@ -376,9 +376,9 @@ export const homeHe: YlcHomeDict = {
       { title: "אפליקציית כרטיסיות", text: "מוסיפים מילה → רואים את המילה → חוזרים עליה." },
       { title: "סיכום שיעור", text: "מקבלים מידע → מצופה ממך לחזור עליו." },
     ],
-    ylcTitle: "YourLangCoach",
+    ylcTitle: "Yuston",
     ylcText: "פוגשים משהו שימושי → שומרים → זוכרים לאורך זמן → משתמשים באופן פעיל → ממשיכים לבנות.",
-    footer: "YourLangCoach מחברת את החלקים למעגל למידה אחד רציף.",
+    footer: "Yuston מחברת את החלקים למעגל למידה אחד רציף.",
   },
   example: {
     eyebrow: "דוגמה אמיתית",
@@ -386,7 +386,7 @@ export const homeHe: YlcHomeDict = {
     intro: "לומד/ת עברית שומע/ת בשיעור את המילה להתמודד.",
     steps: [
       { label: "שמעת", text: "המילה עולה בשיעור או בשיחה." },
-      { label: "שמרת", text: "נגיעה אחת — YourLangCoach בונה את כרטיס המילה." },
+      { label: "שמרת", text: "נגיעה אחת — Yuston בונה את כרטיס המילה." },
       { label: "נזכרת", text: "האפליקציה מחזירה את המילה בחזרות מרווחות." },
       { label: "השתמשת", text: "אנה שואלת שאלה שדורשת בדיוק את המילה הזאת." },
       { label: "פגשת שוב", text: "אחר כך פוגשים אותה בהקשר חדש — והיא כבר שלך." },
@@ -407,7 +407,7 @@ export const homeHe: YlcHomeDict = {
     note: "אלה לא כלים נפרדים. הם עובדים יחד סביב הלמידה האישית שלך.",
   },
   why: {
-    eyebrow: "למה YourLangCoach",
+    eyebrow: "למה Yuston",
     title: "לא נבנתה כדי לתת עוד תרגילים — אלא כדי לעזור לך להשתמש בשפה.",
     items: [
       { title: "המילון האישי שלך", description: "המילים שבאמת פגשת ורוצה לזכור." },
@@ -420,7 +420,7 @@ export const homeHe: YlcHomeDict = {
   },
   outcome: {
     title: "פחות ״ראיתי את זה איפשהו״. יותר ״אני יודע/ת איך אומרים את זה״.",
-    text: "YourLangCoach בנויה סביב רעיון פשוט: שפה נעשית שלך דרך מפגשים חוזרים ושימוש פעיל.",
+    text: "Yuston בנויה סביב רעיון פשוט: שפה נעשית שלך דרך מפגשים חוזרים ושימוש פעיל.",
     lines: [
       "לא רק לזהות מילים.",
       "לא רק לשמור אותן.",
@@ -430,7 +430,7 @@ export const homeHe: YlcHomeDict = {
   finalCta: {
     title: "המילים שפגשת היום יכולות להיות המילים שתשתמש/י בהן מחר.",
     subtitle: "לשמור. לזכור. להשתמש.",
-    primary: "להוריד את YourLangCoach",
+    primary: "להוריד את Yuston",
     secondary: "לראות איך זה עובד",
   },
 };
@@ -440,7 +440,7 @@ export const homeRu: YlcHomeDict = {
     titleA: "Не просто учите слова. ",
     titleB: "Сделайте так, чтобы они стали вашими.",
     subtitle:
-      "YourLangCoach превращает слова, которые вы встречаете в реальной жизни, в активную часть вашего языка — с помощью персонального словаря, интервальных повторений и AI-практики.",
+      "Yuston превращает слова, которые вы встречаете в реальной жизни, в активную часть вашего языка — с помощью персонального словаря, интервальных повторений и AI-практики.",
     supporting:
       "Добавили слово → приложение поможет его запомнить → AI поможет начать им пользоваться.",
     downloadAndroid: "Скачать для Android",
@@ -486,7 +486,7 @@ export const homeRu: YlcHomeDict = {
       "Проблема в том, что большинство слов остаются в пассивном словаре: вы узнаёте их, когда видите или слышите, но они не приходят вам в голову, когда нужно самому что-то сказать.",
     ],
     highlight:
-      "YourLangCoach создан именно для этого перехода — от «я знаю это слово» к «я могу им пользоваться».",
+      "Yuston создан именно для этого перехода — от «я знаю это слово» к «я могу им пользоваться».",
   },
   capture: {
     eyebrow: "01 · Соберите",
@@ -514,13 +514,13 @@ export const homeRu: YlcHomeDict = {
     title: "Добавить слово — только первый шаг.",
     otherTitle: "Большинство приложений со словами",
     otherFlow: ["Слово", "Карточка", "Заучивание"],
-    ylcTitle: "YourLangCoach",
+    ylcTitle: "Yuston",
     ylcFlow: ["Слово", "Запомнить", "Использовать", "Встретить снова"],
     note: "Именно это продолжение и есть главное отличие.",
   },
   remember: {
     eyebrow: "02 · Запомните",
-    title: "YourLangCoach не даёт важным словам исчезнуть",
+    title: "Yuston не даёт важным словам исчезнуть",
     text: "После того как вы добавили слово, приложение возвращает его вам через интервальные повторения — со всё более широкими интервалами.",
     highlight: "Вам не нужно помнить, когда повторять. Приложение помнит за вас.",
     timeline: ["Изучение", "20 минут", "1 час", "9 часов", "1 день", "2 дня", "3 дня", "7 дней"],
@@ -531,7 +531,7 @@ export const homeRu: YlcHomeDict = {
     eyebrow: "03 · Используйте",
     title: "Знать слово — не значит уметь им пользоваться.",
     subtitle:
-      "YourLangCoach помогает перевести слова из пассивного словаря в активный.",
+      "Yuston помогает перевести слова из пассивного словаря в активный.",
     intro:
       "Узнать слово в тексте — одно. Свободно произнести его в разговоре — совсем другое. Анна, ваш AI-коуч по языку, практикуется именно со словами из вашего словаря.",
     items: [
@@ -548,7 +548,7 @@ export const homeRu: YlcHomeDict = {
   },
   discovery: {
     title: "Не знаете, что учить дальше? Ваш словарь подскажет.",
-    text: "YourLangCoach может посмотреть на слова, которые вы уже знаете, и предложить новые полезные — вокруг путешествий, работы, еды, отношений или повседневной жизни. Можно и самому выбрать тему и попросить слова по ней.",
+    text: "Yuston может посмотреть на слова, которые вы уже знаете, и предложить новые полезные — вокруг путешествий, работы, еды, отношений или повседневной жизни. Можно и самому выбрать тему и попросить слова по ней.",
     note: "Новые слова попадают в тот же цикл: сохранить → запомнить → практиковать → использовать.",
   },
   workbook: {
@@ -577,9 +577,9 @@ export const homeRu: YlcHomeDict = {
     title: "Один цикл, который превращает встреченное слово в часть вашего языка",
     steps: [
       { num: "01", label: "СОБЕРИТЕ", flow: "Встречайте → сохраняйте", text: "Слова из уроков, разговоров, работы, фильмов и повседневной жизни." },
-      { num: "02", label: "ЗАПОМНИТЕ", flow: "Интервальные повторения", text: "YourLangCoach возвращает важные слова со временем." },
+      { num: "02", label: "ЗАПОМНИТЕ", flow: "Интервальные повторения", text: "Yuston возвращает важные слова со временем." },
       { num: "03", label: "ИСПОЛЬЗУЙТЕ", flow: "AI-практика", text: "Используйте слова в вопросах, диалогах, историях и реальных ситуациях." },
-      { num: "04", label: "РАСШИРЯЙТЕ", flow: "Новые слова на основе уже изученного", text: "YourLangCoach предлагает слова, которые связаны с тем, что вы уже знаете." },
+      { num: "04", label: "РАСШИРЯЙТЕ", flow: "Новые слова на основе уже изученного", text: "Yuston предлагает слова, которые связаны с тем, что вы уже знаете." },
     ],
     footer: "Ваш словарь становится всё более личным — и всё более полезным.",
   },
@@ -591,10 +591,10 @@ export const homeRu: YlcHomeDict = {
       { title: "Приложение с карточками", text: "Добавили слово → увидели слово → повторили его." },
       { title: "Конспект урока", text: "Вы получили информацию → предполагается, что вы её повторите." },
     ],
-    ylcTitle: "YourLangCoach",
+    ylcTitle: "Yuston",
     ylcText:
       "Встретили что-то полезное → сохранили → запомнили со временем → активно использовали → выросли дальше.",
-    footer: "YourLangCoach соединяет части в один непрерывный цикл обучения.",
+    footer: "Yuston соединяет части в один непрерывный цикл обучения.",
   },
   example: {
     eyebrow: "Пример из жизни",
@@ -602,7 +602,7 @@ export const homeRu: YlcHomeDict = {
     intro: "Изучающий иврит слышит на уроке слово להתמודד.",
     steps: [
       { label: "Услышал", text: "Слово прозвучало на уроке или в разговоре." },
-      { label: "Сохранил", text: "Одно касание — YourLangCoach создаёт карточку слова." },
+      { label: "Сохранил", text: "Одно касание — Yuston создаёт карточку слова." },
       { label: "Вспомнил", text: "Приложение возвращает слово через интервальные повторения." },
       { label: "Использовал", text: "Анна задаёт вопрос, где нужно именно это слово." },
       { label: "Встретил снова", text: "Позже слово попадается в новом контексте — и оно уже ваше." },
@@ -623,7 +623,7 @@ export const homeRu: YlcHomeDict = {
     note: "Это не отдельные инструменты. Они работают вместе вокруг вашего личного обучения.",
   },
   why: {
-    eyebrow: "Почему YourLangCoach",
+    eyebrow: "Почему Yuston",
     title: "Создан не для того, чтобы дать вам больше упражнений. А чтобы помочь вам использовать язык.",
     items: [
       { title: "Ваш личный словарь", description: "Слова, которые вы действительно встретили и хотите запомнить." },
@@ -636,7 +636,7 @@ export const homeRu: YlcHomeDict = {
   },
   outcome: {
     title: "Меньше «я где-то это уже видел». Больше «я знаю, как это сказать».",
-    text: "YourLangCoach построен вокруг простой идеи: язык становится вашим через повторные встречи и активное использование.",
+    text: "Yuston построен вокруг простой идеи: язык становится вашим через повторные встречи и активное использование.",
     lines: [
       "Не просто узнавать слова.",
       "Не просто сохранять их.",
@@ -646,7 +646,7 @@ export const homeRu: YlcHomeDict = {
   finalCta: {
     title: "Слова, которые вы встретили сегодня, могут стать словами, которыми вы будете пользоваться завтра.",
     subtitle: "Сохраняйте их. Запоминайте. Используйте.",
-    primary: "Скачать YourLangCoach",
+    primary: "Скачать Yuston",
     secondary: "Посмотреть, как это работает",
   },
 };

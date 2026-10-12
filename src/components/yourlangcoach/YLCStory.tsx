@@ -215,8 +215,8 @@ const YLCStory = () => {
             </p>
             <div className="mx-auto mt-9 max-w-xl">
               <div className="grid grid-cols-2 items-start gap-4 sm:gap-6 px-3 sm:px-5 py-5">
-                <img src={reviewDashboard} alt="YourLangCoach review reminders" loading="lazy" className="w-full -rotate-3 translate-y-5 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
-                <img src={reviewSettings} alt="YourLangCoach review schedule" loading="lazy" className="w-full rotate-3 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
+                <img src={reviewDashboard} alt="Yuston review reminders" loading="lazy" className="w-full -rotate-3 translate-y-5 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
+                <img src={reviewSettings} alt="Yuston review schedule" loading="lazy" className="w-full rotate-3 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
               </div>
               <p className="mt-8 text-xs text-center text-[hsl(220,12%,55%)]">{h.example.caption}</p>
             </div>

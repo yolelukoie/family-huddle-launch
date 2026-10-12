@@ -110,7 +110,7 @@ const DeleteAccount = () => {
           <CardContent className="text-center">
             <Link to="/yourlangcoach">
               <Button variant="gradient" className="w-full">
-                Return to YourLangCoach
+                Return to Yuston
               </Button>
             </Link>
           </CardContent>
@@ -127,14 +127,14 @@ const DeleteAccount = () => {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to YourLangCoach
+          Back to Yuston
         </Link>
 
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl">Delete Your Account</CardTitle>
             <CardDescription>
-              Request permanent deletion of your YourLangCoach account and all associated data.
+              Request permanent deletion of your Yuston account and all associated data.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">

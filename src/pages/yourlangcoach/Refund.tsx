@@ -5,7 +5,7 @@ import { REFUND_TEXT } from "@/lib/yourlangcoach/content";
 const Refund = () => (
   <YLCLegalLayout
     title="Refund Policy"
-    description="How refunds and cancellations work for YourLangCoach subscriptions."
+    description="How refunds and cancellations work for Yuston subscriptions."
   >
     <LegalText text={REFUND_TEXT} />
   </YLCLegalLayout>

@@ -1,5 +1,5 @@
 /**
- * YourLangCoach — All editable copy lives here.
+ * Yuston — All editable copy lives here.
  *
  * Editing notes:
  * - App store links: replace ANDROID_URL / IPHONE_URL below.
@@ -13,7 +13,7 @@ export const IPHONE_URL = "https://apps.apple.com/app/id6765670414";
 export const SUPPORT_EMAIL = "support@familyhuddletasks.com";
 
 export const HERO = {
-  title: "YourLangCoach — learn a language in a way that actually fits you",
+  title: "Yuston — learn a language in a way that actually fits you",
   subtitle:
     "A language-learning app created by a language coach to help you build vocabulary, practice naturally, and become a stronger independent learner.",
   supporting:
@@ -24,7 +24,7 @@ export const HERO = {
 
 export const FLEX_SECTION = {
   title: "Learn your way, not one rigid way",
-  intro: "YourLangCoach gives you tools to learn in the style that works for you:",
+  intro: "Yuston gives you tools to learn in the style that works for you:",
   bullets: [
     "practice with Anna, your AI language coach",
     "save your own words and phrases",
@@ -95,7 +95,7 @@ export const PRICING = {
   title: "Simple pricing",
   plans: [
     {
-      name: "YourLangCoach Premium",
+      name: "Yuston Premium",
       price: "US$9.99",
       period: "/ month",
       tagline:
@@ -103,14 +103,14 @@ export const PRICING = {
       highlight: false,
     },
     {
-      name: "YourLangCoach Premium — Annual",
+      name: "Yuston Premium — Annual",
       price: "US$79.99",
       period: "/ year",
       tagline: "Best value. Two months free vs. monthly.",
       highlight: true,
     },
     {
-      name: "YourLangCoach Voice",
+      name: "Yuston Voice",
       price: "US$14.99",
       period: "/ month",
       tagline:
@@ -128,14 +128,14 @@ export const EFFECTIVE_DATE = "15.05.2026";
 export const TERMS_TEXT = `Terms of Use
 Effective date: ${EFFECTIVE_DATE}
 
-These Terms of Use ("Terms") govern your access to and use of YourLangCoach (the "Service").
+These Terms of Use ("Terms") govern your access to and use of Yuston (the "Service").
 
 The Service is owned and operated by Yana Sklyar, Tel Aviv, Israel ("we", "us", "our").
 
 By accessing or using the Service, you agree to these Terms. If you do not agree, do not use the Service.
 
 1. The Service
-YourLangCoach is a language-learning app that provides AI-assisted language practice, spaced repetition review, a personal dictionary, and a workbook for self-learning.
+Yuston is a language-learning app that provides AI-assisted language practice, spaced repetition review, a personal dictionary, and a workbook for self-learning.
 
 The Service is intended for personal, non-commercial use unless we explicitly agree otherwise in writing.
 
@@ -229,7 +229,7 @@ ${SUPPORT_EMAIL}`;
 export const PRIVACY_TEXT = `Privacy Policy
 Effective date: ${EFFECTIVE_DATE}
 
-This Privacy Policy explains how YourLangCoach ("the Service") handles information when you use the Service.
+This Privacy Policy explains how Yuston ("the Service") handles information when you use the Service.
 
 The Service is owned and operated by Yana Sklyar, Tel Aviv, Israel ("we", "us", "our").
 
@@ -334,7 +334,7 @@ ${SUPPORT_EMAIL}`;
 export const REFUND_TEXT = `Refund Policy
 Effective date: ${EFFECTIVE_DATE}
 
-This Refund Policy explains how refunds and cancellations work for YourLangCoach.
+This Refund Policy explains how refunds and cancellations work for Yuston.
 
 The Service is owned and operated by Yana Sklyar, Tel Aviv, Israel ("we", "us", "our").
 

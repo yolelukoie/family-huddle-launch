@@ -14,7 +14,7 @@ const OtherAppPromo = () => {
           <div className="relative flex flex-col md:flex-row items-center gap-6 md:gap-10 text-center md:text-left">
             <img
               src={ylcLogo}
-              alt="YourLangCoach logo"
+              alt="Yuston logo"
               className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover shadow-lg shrink-0"
             />
 
@@ -27,7 +27,7 @@ const OtherAppPromo = () => {
                 Want to see our other app, your personal language coach?
               </h2>
               <p className="text-white/70 text-base sm:text-lg">
-                Meet YourLangCoach — AI-guided practice, spaced repetition, and a personal dictionary to help you learn a language your way.
+                Meet Yuston — AI-guided practice, spaced repetition, and a personal dictionary to help you learn a language your way.
               </p>
             </div>
 

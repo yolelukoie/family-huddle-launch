@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // scripts/generate-social-pages.mjs
-// Post-build: generates social-preview HTML pages under dist/ for YourLangCoach routes.
+// Post-build: generates social-preview HTML pages under dist/ for Yuston routes.
 // Run automatically via the "build" npm script; can also be re-run standalone.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
@@ -17,29 +17,29 @@ export const PAGES = [
   {
     path: '/yourlangcoach',
     url: 'https://familyhuddletasks.com/yourlangcoach',
-    title: 'YourLangCoach — Learn a language your way',
+    title: 'Yuston — Learn a language your way',
     description:
-      'YourLangCoach is a language-learning app created by a language coach, with AI-guided practice, spaced repetition, a personal dictionary, and a workbook for flexible self-learning.',
+      'Yuston is a language-learning app created by a language coach, with AI-guided practice, spaced repetition, a personal dictionary, and a workbook for flexible self-learning.',
   },
   {
     path: '/yourlangcoach/tpp',
     url: 'https://familyhuddletasks.com/yourlangcoach/tpp',
-    title: 'Teacher Partner Program | YourLangCoach',
+    title: 'Teacher Partner Program | Yuston',
     description:
-      'Give all your students 1 month of YourLangCoach Premium — completely free. Lifetime Premium for you, no payment, no commitment, no student limit.',
+      'Give all your students 1 month of Yuston Premium — completely free. Lifetime Premium for you, no payment, no commitment, no student limit.',
   },
   {
     // Legacy alias: the 2026-09-13 redirect stub sent visitors here; canonical points at /tpp
     path: '/yourlangcoach/tpp/app',
     url: 'https://familyhuddletasks.com/yourlangcoach/tpp',
-    title: 'Teacher Partner Program | YourLangCoach',
+    title: 'Teacher Partner Program | Yuston',
     description:
-      'Give all your students 1 month of YourLangCoach Premium — completely free. Lifetime Premium for you, no payment, no commitment, no student limit.',
+      'Give all your students 1 month of Yuston Premium — completely free. Lifetime Premium for you, no payment, no commitment, no student limit.',
   },
   {
     path: '/yourlangcoach/tpp/join',
     url: 'https://familyhuddletasks.com/yourlangcoach/tpp/join',
-    title: 'Join the Teacher Partner Program | YourLangCoach',
+    title: 'Join the Teacher Partner Program | Yuston',
     description:
       'Lifetime Premium for you, one free month of Premium for every student. No payment, no commitment.',
   },
@@ -78,7 +78,7 @@ export function transformHtml(template, page) {
     `<title>${eTitle}</title>`,
     `<meta name="description" content="${eDesc}" />`,
     `<link rel="canonical" href="${eUrl}" />`,
-    `<meta property="og:site_name" content="YourLangCoach" />`,
+    `<meta property="og:site_name" content="Yuston" />`,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:url" content="${eUrl}" />`,
     `<meta property="og:title" content="${eTitle}" />`,
@@ -87,7 +87,7 @@ export function transformHtml(template, page) {
     `<meta property="og:image:type" content="image/png" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
-    `<meta property="og:image:alt" content="YourLangCoach logo" />`,
+    `<meta property="og:image:alt" content="Yuston logo" />`,
     `<meta property="og:locale" content="en_US" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${eTitle}" />`,

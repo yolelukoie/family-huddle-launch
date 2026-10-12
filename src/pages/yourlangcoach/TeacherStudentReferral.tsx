@@ -18,7 +18,7 @@ const TeacherStudentReferral = () => {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    document.title = "Your teacher invited you | YourLangCoach";
+    document.title = "Your teacher invited you | Yuston";
   }, []);
 
   useEffect(() => {
@@ -71,16 +71,16 @@ const TeacherStudentReferral = () => {
   };
 
   const headline = teacherName
-    ? `${teacherName} invites you to YourLangCoach — your first 30 days of Premium are free.`
-    : "Your teacher invites you to YourLangCoach — 30 days of Premium free.";
+    ? `${teacherName} invites you to Yuston — your first 30 days of Premium are free.`
+    : "Your teacher invites you to Yuston — 30 days of Premium free.";
 
   return (
     <div className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Link to="/yourlangcoach" className="flex items-center gap-2.5">
-            <img src={ylcLogo} alt="YourLangCoach logo" className="h-9 w-9 rounded-lg object-cover" />
-            <span className="font-display text-sm font-semibold sm:text-base">YourLangCoach</span>
+            <img src={ylcLogo} alt="Yuston logo" className="h-9 w-9 rounded-lg object-cover" />
+            <span className="font-display text-sm font-semibold sm:text-base">Yuston</span>
           </Link>
         </div>
       </header>

@@ -52,7 +52,7 @@ const SUCCESS = {
     orCode: "Or they can enter the code {CODE} right in the app.",
     accordion: "Ready-made message for students",
     copyMessage: "Copy message",
-    message: "Hi! I'm inviting you to practice with me on YourLangCoach. Use my link — you'll get 30 days of Premium for free: {LINK}\n\nIf the app asks for a teacher code, enter: {CODE}",
+    message: "Hi! I'm inviting you to practice with me on Yuston. Use my link — you'll get 30 days of Premium for free: {LINK}\n\nIf the app asks for a teacher code, enter: {CODE}",
   },
   ru: {
     title: "Вы в программе 🎉",
@@ -70,7 +70,7 @@ const SUCCESS = {
     orCode: "Или пусть введут код {CODE} прямо в приложении.",
     accordion: "Готовое сообщение для учеников",
     copyMessage: "Скопировать сообщение",
-    message: "Привет! Приглашаю тебя заниматься со мной в YourLangCoach. По моей ссылке — 30 дней Premium бесплатно: {LINK}\n\nЕсли приложение попросит код преподавателя, введи: {CODE}",
+    message: "Привет! Приглашаю тебя заниматься со мной в Yuston. По моей ссылке — 30 дней Premium бесплатно: {LINK}\n\nЕсли приложение попросит код преподавателя, введи: {CODE}",
   },
   he: {
     title: "את/ה בתוכנית 🎉",
@@ -88,7 +88,7 @@ const SUCCESS = {
     orCode: "או שיזינו את הקוד {CODE} ישירות באפליקציה.",
     accordion: "הודעה מוכנה לתלמידים",
     copyMessage: "העתקת ההודעה",
-    message: "היי! אני מזמין/ה אותך לתרגל איתי ב‑YourLangCoach. דרך הקישור שלי תקבל/י 30 ימי Premium בחינם: {LINK}\n\nאם האפליקציה מבקשת קוד מורה, הזן/י: {CODE}",
+    message: "היי! אני מזמין/ה אותך לתרגל איתי ב‑Yuston. דרך הקישור שלי תקבל/י 30 ימי Premium בחינם: {LINK}\n\nאם האפליקציה מבקשת קוד מורה, הזן/י: {CODE}",
   },
 } as const;
 
@@ -116,7 +116,7 @@ const TeacherPartnerJoinContent = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Join the Teacher Partner Program | YourLangCoach";
+    document.title = "Join the Teacher Partner Program | Yuston";
   }, []);
 
   // The form is shown at once; only an explicit "closed" from the server replaces it.
@@ -265,8 +265,8 @@ const TeacherPartnerJoinContent = () => {
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between gap-3 px-4 sm:px-6">
           <Link to="/yourlangcoach/tpp" className="flex min-w-0 items-center gap-2.5">
-            <img src={ylcLogo} alt="YourLangCoach logo" className="h-9 w-9 rounded-lg object-cover" />
-            <span className="hidden truncate font-display text-sm font-semibold sm:inline sm:text-base">YourLangCoach</span>
+            <img src={ylcLogo} alt="Yuston logo" className="h-9 w-9 rounded-lg object-cover" />
+            <span className="hidden truncate font-display text-sm font-semibold sm:inline sm:text-base">Yuston</span>
           </Link>
           <div className="flex items-center gap-2">
             <LanguageSwitcher />

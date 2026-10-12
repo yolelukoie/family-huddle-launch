@@ -5,7 +5,7 @@ import { PRIVACY_TEXT } from "@/lib/yourlangcoach/content";
 const Privacy = () => (
   <YLCLegalLayout
     title="Privacy Policy"
-    description="How YourLangCoach handles information when you use the Service."
+    description="How Yuston handles information when you use the Service."
   >
     <LegalText text={PRIVACY_TEXT} />
   </YLCLegalLayout>

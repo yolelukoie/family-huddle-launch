@@ -12,7 +12,7 @@ interface Props {
 
 const YLCLegalLayout = ({ title, description, children }: Props) => {
   useEffect(() => {
-    document.title = `${title} — YourLangCoach`;
+    document.title = `${title} — Yuston`;
     const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
       if (!el) {
@@ -23,7 +23,7 @@ const YLCLegalLayout = ({ title, description, children }: Props) => {
       el.content = content;
     };
     setMeta("description", description);
-    setMeta("og:title", `${title} — YourLangCoach`, "property");
+    setMeta("og:title", `${title} — Yuston`, "property");
     setMeta("og:description", description, "property");
   }, [title, description]);
 
@@ -37,7 +37,7 @@ const YLCLegalLayout = ({ title, description, children }: Props) => {
             className="inline-flex items-center gap-2 text-sm text-[hsl(220,12%,65%)] hover:text-[hsl(220,20%,92%)] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to YourLangCoach
+            Back to Yuston
           </Link>
 
           <article className="ylc-prose max-w-3xl mx-auto">{children}</article>

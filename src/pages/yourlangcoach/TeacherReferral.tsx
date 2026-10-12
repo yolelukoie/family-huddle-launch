@@ -11,7 +11,7 @@ const TeacherReferral = () => {
   const cleanCode = code.trim().toUpperCase();
 
   useEffect(() => {
-    document.title = "Your free month of YourLangCoach Premium";
+    document.title = "Your free month of Yuston Premium";
     if (cleanCode) {
       try {
         localStorage.setItem("ylc_teacher_code", cleanCode);
@@ -33,8 +33,8 @@ const TeacherReferral = () => {
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Link to="/yourlangcoach" className="flex items-center gap-2.5">
-            <img src={ylcLogo} alt="YourLangCoach logo" className="h-9 w-9 rounded-lg object-cover" />
-            <span className="font-display text-sm font-semibold sm:text-base">YourLangCoach</span>
+            <img src={ylcLogo} alt="Yuston logo" className="h-9 w-9 rounded-lg object-cover" />
+            <span className="font-display text-sm font-semibold sm:text-base">Yuston</span>
           </Link>
         </div>
       </header>
@@ -46,7 +46,7 @@ const TeacherReferral = () => {
             Your first month of Premium is on your teacher
           </h1>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            Keep learning between lessons — download YourLangCoach and enter your teacher code when you create your account.
+            Keep learning between lessons — download Yuston and enter your teacher code when you create your account.
           </p>
 
           <div className="mx-auto mt-8 w-fit rounded-2xl border border-border bg-card/60 px-8 py-6">

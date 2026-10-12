@@ -100,13 +100,13 @@ const YLCResetPassword = () => {
         <CardHeader className="text-center">
           <img
             src={ylcLogo}
-            alt="YourLangCoach logo"
+            alt="Yuston logo"
             className="mx-auto mb-4 h-16 w-16 rounded-2xl object-cover"
           />
           <CardTitle className="text-2xl font-bold text-foreground">
             Reset your password
           </CardTitle>
-          <p className="text-sm text-muted-foreground mt-1">YourLangCoach</p>
+          <p className="text-sm text-muted-foreground mt-1">Yuston</p>
         </CardHeader>
 
         <CardContent className="space-y-6">
@@ -134,7 +134,7 @@ const YLCResetPassword = () => {
                 Password updated successfully!
               </p>
               <p className="text-sm text-muted-foreground">
-                You can now return to the YourLangCoach app and sign in with your new password.
+                You can now return to the Yuston app and sign in with your new password.
               </p>
             </div>
           )}
@@ -142,7 +142,7 @@ const YLCResetPassword = () => {
           {pageState === "ready" && (
             <form onSubmit={handleSubmit} className="space-y-4">
               <p className="text-sm text-muted-foreground text-center">
-                Choose a new password for your YourLangCoach account.
+                Choose a new password for your Yuston account.
               </p>
 
               <div className="space-y-2">

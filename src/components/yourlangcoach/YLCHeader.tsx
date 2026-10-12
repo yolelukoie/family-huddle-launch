@@ -20,11 +20,11 @@ const YLCHeader = () => {
         <Link to="/yourlangcoach" className="flex items-center gap-2.5 group">
           <img
             src={ylcLogo}
-            alt="YourLangCoach logo"
+            alt="Yuston logo"
             className="w-9 h-9 rounded-xl object-cover"
           />
           <span className="hidden sm:inline font-display font-semibold text-base tracking-tight text-[hsl(220,20%,92%)]">
-            YourLangCoach
+            Yuston
           </span>
         </Link>
 
@@ -47,7 +47,7 @@ const YLCHeader = () => {
             <DropdownMenuTrigger asChild>
               <button
                 className="ylc-btn ylc-btn-primary text-sm px-4 py-2 rounded-lg inline-flex items-center gap-1.5"
-                aria-label="Download YourLangCoach"
+                aria-label="Download Yuston"
               >
                 {t.nav.download}
                 <ChevronDown className="w-4 h-4" />

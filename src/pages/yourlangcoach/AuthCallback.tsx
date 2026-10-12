@@ -81,7 +81,7 @@ const YLCAuthCallback = () => {
                 size="lg"
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
-                Open YourLangCoach
+                Open Yuston
               </Button>
               {showFallback && (
                 <p className="text-xs text-muted-foreground">

@@ -5,7 +5,7 @@ import { TERMS_TEXT } from "@/lib/yourlangcoach/content";
 const Terms = () => (
   <YLCLegalLayout
     title="Terms of Use"
-    description="Terms of Use governing access to and use of the YourLangCoach language-learning app."
+    description="Terms of Use governing access to and use of the Yuston language-learning app."
   >
     <LegalText text={TERMS_TEXT} />
   </YLCLegalLayout>

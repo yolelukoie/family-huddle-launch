@@ -4,7 +4,7 @@ const supabaseUrl = import.meta.env.VITE_YLC_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_YLC_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error("Missing YourLangCoach Supabase environment variables");
+  throw new Error("Missing Yuston Supabase environment variables");
 }
 
 // Separate storageKey so the YLC session does not collide with the Family Huddle one.

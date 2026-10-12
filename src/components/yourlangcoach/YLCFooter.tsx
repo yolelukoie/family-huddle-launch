@@ -14,11 +14,11 @@ const YLCFooter = () => {
             <Link to="/yourlangcoach" className="flex items-center gap-2.5 mb-3">
               <img
                 src={ylcLogo}
-                alt="YourLangCoach logo"
+                alt="Yuston logo"
                 className="w-9 h-9 rounded-xl object-cover"
               />
               <span className="font-display font-semibold text-base tracking-tight text-[hsl(220,20%,92%)]">
-                YourLangCoach
+                Yuston
               </span>
             </Link>
             <p className="text-sm text-[hsl(220,12%,60%)] max-w-sm">

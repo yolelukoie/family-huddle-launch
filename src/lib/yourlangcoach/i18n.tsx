@@ -22,7 +22,7 @@ const en = {
     ios: "iOS",
   },
   hero: {
-    titleA: "YourLangCoach — ",
+    titleA: "Yuston — ",
     titleB: "learn a language in a way that actually fits you",
     subtitle:
       "A language-learning app created by a language coach to help you build vocabulary, practice naturally, and become a stronger independent learner.",
@@ -35,7 +35,7 @@ const en = {
   flex: {
     eyebrow: "Built for flexible self-learning",
     title: "Learn your way, not one rigid way",
-    intro: "YourLangCoach gives you tools to learn in the style that works for you:",
+    intro: "Yuston gives you tools to learn in the style that works for you:",
     bullets: [
       "practice with Anna, your AI language coach",
       "save your own words and phrases",
@@ -55,7 +55,7 @@ const en = {
     ],
   },
   features: {
-    eyebrow: "What makes YourLangCoach different",
+    eyebrow: "What makes Yuston different",
     title: "Designed by a language coach",
     items: [
       { title: "Coaching, not just answers", description: "Anna helps you notice patterns, practice actively, and improve how you learn." },
@@ -68,7 +68,7 @@ const en = {
   pricing: {
     eyebrow: "Pricing",
     title: "Start building your own language",
-    subtitle: "Try Premium and get full access to AI practice and the YourLangCoach tools.",
+    subtitle: "Try Premium and get full access to AI practice and the Yuston tools.",
     bestValue: "Best value",
     fairUseBadge: "Subject to fair use",
     fairUseNote: "Voice usage is subject to fair use limits to maintain service quality.",
@@ -78,9 +78,9 @@ const en = {
     perMonth: "/ month",
     perYear: "/ year",
     plans: [
-      { name: "YourLangCoach Premium", tagline: "Full access to all core learning features. Includes 90 voice minutes per billing cycle." },
-      { name: "YourLangCoach Premium — Annual", tagline: "Best value. Two months free vs. monthly." },
-      { name: "YourLangCoach Voice", tagline: "Extended Voice for learners who want much more speaking practice. Includes 600 voice minutes per billing cycle." },
+      { name: "Yuston Premium", tagline: "Full access to all core learning features. Includes 90 voice minutes per billing cycle." },
+      { name: "Yuston Premium — Annual", tagline: "Best value. Two months free vs. monthly." },
+      { name: "Yuston Voice", tagline: "Extended Voice for learners who want much more speaking practice. Includes 600 voice minutes per billing cycle." },
     ],
     smallPrint: "Subscriptions renew automatically until canceled. Manage or cancel through the store where you purchased your subscription.",
   },
@@ -138,12 +138,12 @@ const en = {
     codeNoteA: "Students can also enter your code ",
     codeNoteB: " directly in the app.",
     whatsapp: "Share via WhatsApp",
-    openIphone: "Open YourLangCoach (iPhone)",
-    openAndroid: "Open YourLangCoach (Android)",
+    openIphone: "Open Yuston (iPhone)",
+    openAndroid: "Open Yuston (Android)",
     messageLabel: "Message for your students",
     messageHint: "Copy this ready-made message and send it wherever you normally talk with your students.",
     copyMessage: "Copy message",
-    whatsappText: "Here is your free month of YourLangCoach Premium:",
+    whatsappText: "Here is your free month of Yuston Premium:",
     alreadyRegistered: "You're already a Teacher Partner — here is your link again.",
     inboxTitle: "You're already a Teacher Partner",
     inboxBody: "This page doesn't show the codes of a partner who is already registered. We've emailed your student link and your personal Premium code to {EMAIL}.",
@@ -156,7 +156,7 @@ const en = {
     closedMailSubject: "I'd like to join the Teacher Partner Program",
     closedMailIntro: "Hi! I'd like to join the Teacher Partner Program. My details:",
     premiumCodeTitle: "Your personal Premium code",
-    premiumCodeBody: "This code gives YOU lifetime Premium access in the YourLangCoach app. Enter it in the app under Settings -> Teacher code. It works only once — it is personal, do NOT share or publish it.",
+    premiumCodeBody: "This code gives YOU lifetime Premium access in the Yuston app. Enter it in the app under Settings -> Teacher code. It works only once — it is personal, do NOT share or publish it.",
     premiumCodeWarning: "Share only your referral link/code with students.",
     copyCode: "Copy code",
     copySuccess: "Link copied",
@@ -183,7 +183,7 @@ export type YlcDict = typeof en;
 const he: YlcDict = {
   nav: { howItWorks: "איך זה עובד", features: "יכולות", pricing: "מחירים", download: "הורדה", android: "אנדרואיד", ios: "iOS" },
   hero: {
-    titleA: "YourLangCoach — ",
+    titleA: "Yuston — ",
     titleB: "ללמוד שפה בדרך שמתאימה בדיוק לך",
     subtitle: "אפליקציה ללימוד שפות שנוצרה על ידי מאמנת שפה, כדי לעזור לך להרחיב אוצר מילים, לתרגל באופן טבעי ולהפוך ללומד עצמאי וחזק יותר.",
     supporting: "תרגול בליווי AI, חזרות מרווחות, מילון אישי וחוברת עבודה גמישה — ללמוד בדרך שהכי מתאימה לך.",
@@ -194,7 +194,7 @@ const he: YlcDict = {
   flex: {
     eyebrow: "בנוי ללמידה עצמית גמישה",
     title: "ללמוד בדרך שלך, לא בדרך אחת נוקשה",
-    intro: "YourLangCoach נותנת לך כלים ללמוד בסגנון שמתאים לך:",
+    intro: "Yuston נותנת לך כלים ללמוד בסגנון שמתאים לך:",
     bullets: [
       "לתרגל עם אנה, מאמנת השפה שלך מבוססת AI",
       "לשמור מילים וביטויים משלך",
@@ -214,7 +214,7 @@ const he: YlcDict = {
     ],
   },
   features: {
-    eyebrow: "מה מייחד את YourLangCoach",
+    eyebrow: "מה מייחד את Yuston",
     title: "פותח על ידי מאמנת שפה",
     items: [
       { title: "ליווי, לא רק תשובות", description: "אנה עוזרת לך לזהות דפוסים, לתרגל באופן פעיל ולשפר את דרך הלמידה שלך." },
@@ -227,7 +227,7 @@ const he: YlcDict = {
   pricing: {
     eyebrow: "מחירים",
     title: "להתחיל לבנות את השפה שלך",
-    subtitle: "נסו את Premium וקבלו גישה מלאה לתרגול עם AI ולכל הכלים של YourLangCoach.",
+    subtitle: "נסו את Premium וקבלו גישה מלאה לתרגול עם AI ולכל הכלים של Yuston.",
     bestValue: "הכי משתלם",
     fairUseBadge: "בכפוף לשימוש הוגן",
     fairUseNote: "השימוש בקול כפוף למגבלות שימוש הוגן לשמירה על איכות השירות.",
@@ -237,9 +237,9 @@ const he: YlcDict = {
     perMonth: "/ לחודש",
     perYear: "/ לשנה",
     plans: [
-      { name: "YourLangCoach Premium", tagline: "גישה מלאה לכל יכולות הלמידה. כולל 90 דקות קוליות בכל מחזור חיוב." },
-      { name: "YourLangCoach Premium — שנתי", tagline: "הכי משתלם. חודשיים חינם לעומת מנוי חודשי." },
-      { name: "YourLangCoach Voice", tagline: "קול מורחב ללומדים שרוצים הרבה יותר תרגול דיבור. כולל 600 דקות קוליות בכל מחזור חיוב." },
+      { name: "Yuston Premium", tagline: "גישה מלאה לכל יכולות הלמידה. כולל 90 דקות קוליות בכל מחזור חיוב." },
+      { name: "Yuston Premium — שנתי", tagline: "הכי משתלם. חודשיים חינם לעומת מנוי חודשי." },
+      { name: "Yuston Voice", tagline: "קול מורחב ללומדים שרוצים הרבה יותר תרגול דיבור. כולל 600 דקות קוליות בכל מחזור חיוב." },
     ],
     smallPrint: "המנויים מתחדשים אוטומטית עד לביטול. ניתן לנהל או לבטל דרך החנות שבה רכשת את המנוי.",
   },
@@ -297,12 +297,12 @@ const he: YlcDict = {
     codeNoteA: "התלמידים יכולים גם להזין את הקוד שלך ",
     codeNoteB: " ישירות באפליקציה.",
     whatsapp: "שיתוף בוואטסאפ",
-    openIphone: "פתיחת YourLangCoach (אייפון)",
-    openAndroid: "פתיחת YourLangCoach (אנדרואיד)",
+    openIphone: "פתיחת Yuston (אייפון)",
+    openAndroid: "פתיחת Yuston (אנדרואיד)",
     messageLabel: "הודעה לתלמידים שלך",
     messageHint: "העתיקו את ההודעה המוכנה ושלחו אותה בדרך שבה אתם רגילים לתקשר עם התלמידים שלכם.",
     copyMessage: "העתקת ההודעה",
-    whatsappText: "הנה חודש Premium חינם ב‑YourLangCoach:",
+    whatsappText: "הנה חודש Premium חינם ב‑Yuston:",
     alreadyRegistered: "את/ה כבר מורה שותף — הנה הקישור שלך שוב.",
     inboxTitle: "את/ה כבר מורה שותף",
     inboxBody: "בעמוד הזה לא מוצגים קודים של שותף שכבר רשום. שלחנו את הקישור לתלמידים ואת קוד ה‑Premium האישי שלך למייל {EMAIL}.",
@@ -315,7 +315,7 @@ const he: YlcDict = {
     closedMailSubject: "אשמח להצטרף לתוכנית השותפות למורים",
     closedMailIntro: "שלום! אשמח להצטרף לתוכנית השותפות למורים. הפרטים שלי:",
     premiumCodeTitle: "הקוד האישי שלך ל‑Premium",
-    premiumCodeBody: "קוד זה נותן לך גישת Premium לכל החיים ב‑YourLangCoach. הזינו אותו באפליקציה בהגדרות -> קוד מורה. הקוד תקף פעם אחת בלבד — הוא אישי, אין לשתף או לפרסם אותו.",
+    premiumCodeBody: "קוד זה נותן לך גישת Premium לכל החיים ב‑Yuston. הזינו אותו באפליקציה בהגדרות -> קוד מורה. הקוד תקף פעם אחת בלבד — הוא אישי, אין לשתף או לפרסם אותו.",
     premiumCodeWarning: "שתפו רק את קישור ההפניה/קוד ההפניה עם התלמידים.",
     copyCode: "העתקת קוד",
     copySuccess: "הקישור הועתק",
@@ -340,7 +340,7 @@ const he: YlcDict = {
 const ru: YlcDict = {
   nav: { howItWorks: "Как это работает", features: "Возможности", pricing: "Цены", download: "Скачать", android: "Android", ios: "iOS" },
   hero: {
-    titleA: "YourLangCoach — ",
+    titleA: "Yuston — ",
     titleB: "изучайте язык так, как удобно именно вам",
     subtitle: "Приложение для изучения языков, созданное языковым коучем: расширяйте словарный запас, практикуйтесь естественно и становитесь увереннее в самостоятельном обучении.",
     supporting: "Практика с ИИ, интервальные повторения, личный словарь и гибкая рабочая тетрадь — учитесь так, как подходит именно вам.",
@@ -351,7 +351,7 @@ const ru: YlcDict = {
   flex: {
     eyebrow: "Создано для гибкого самообучения",
     title: "Учитесь по-своему, а не по жёсткой схеме",
-    intro: "YourLangCoach даёт инструменты для обучения в удобном вам стиле:",
+    intro: "Yuston даёт инструменты для обучения в удобном вам стиле:",
     bullets: [
       "практикуйтесь с Анной, вашим ИИ-коучем по языку",
       "сохраняйте свои слова и фразы",
@@ -371,7 +371,7 @@ const ru: YlcDict = {
     ],
   },
   features: {
-    eyebrow: "Чем отличается YourLangCoach",
+    eyebrow: "Чем отличается Yuston",
     title: "Создано языковым коучем",
     items: [
       { title: "Коучинг, а не только ответы", description: "Анна помогает замечать закономерности, активно практиковаться и улучшать сам процесс обучения." },
@@ -384,7 +384,7 @@ const ru: YlcDict = {
   pricing: {
     eyebrow: "Цены",
     title: "Начните строить свой собственный язык",
-    subtitle: "Попробуйте Premium и получите полный доступ к AI-практике и инструментам YourLangCoach.",
+    subtitle: "Попробуйте Premium и получите полный доступ к AI-практике и инструментам Yuston.",
     bestValue: "Выгоднее всего",
     fairUseBadge: "С учётом добросовестного использования",
     fairUseNote: "Голосовые минуты ограничены правилами добросовестного использования для сохранения качества сервиса.",
@@ -394,9 +394,9 @@ const ru: YlcDict = {
     perMonth: "/ месяц",
     perYear: "/ год",
     plans: [
-      { name: "YourLangCoach Premium", tagline: "Полный доступ ко всем основным возможностям. Включает 90 голосовых минут за расчётный период." },
-      { name: "YourLangCoach Premium — годовой", tagline: "Самый выгодный вариант. Два месяца бесплатно по сравнению с месячным." },
-      { name: "YourLangCoach Voice", tagline: "Расширенный голос для тех, кто хочет гораздо больше разговорной практики. Включает 600 голосовых минут за расчётный период." },
+      { name: "Yuston Premium", tagline: "Полный доступ ко всем основным возможностям. Включает 90 голосовых минут за расчётный период." },
+      { name: "Yuston Premium — годовой", tagline: "Самый выгодный вариант. Два месяца бесплатно по сравнению с месячным." },
+      { name: "Yuston Voice", tagline: "Расширенный голос для тех, кто хочет гораздо больше разговорной практики. Включает 600 голосовых минут за расчётный период." },
     ],
     smallPrint: "Подписки продлеваются автоматически до отмены. Управлять подпиской или отменить её можно в магазине, где вы её оформили.",
   },
@@ -454,12 +454,12 @@ const ru: YlcDict = {
     codeNoteA: "Ученики также могут ввести ваш код ",
     codeNoteB: " прямо в приложении.",
     whatsapp: "Поделиться в WhatsApp",
-    openIphone: "Открыть YourLangCoach (iPhone)",
-    openAndroid: "Открыть YourLangCoach (Android)",
+    openIphone: "Открыть Yuston (iPhone)",
+    openAndroid: "Открыть Yuston (Android)",
     messageLabel: "Сообщение для ваших учеников",
     messageHint: "Скопируйте готовое сообщение и отправьте его там, где вы обычно общаетесь с учениками.",
     copyMessage: "Копировать сообщение",
-    whatsappText: "Вот ваш бесплатный месяц YourLangCoach Premium:",
+    whatsappText: "Вот ваш бесплатный месяц Yuston Premium:",
     alreadyRegistered: "Вы уже партнёр-преподаватель — вот ваша ссылка снова.",
     inboxTitle: "Вы уже партнёр-преподаватель",
     inboxBody: "На этой странице мы не показываем коды уже зарегистрированного партнёра. Ссылку для учеников и ваш личный код Premium мы отправили на {EMAIL}.",
@@ -472,7 +472,7 @@ const ru: YlcDict = {
     closedMailSubject: "Хочу участвовать в программе для преподавателей",
     closedMailIntro: "Здравствуйте! Я хотел(а) бы участвовать в программе для преподавателей. Мои данные:",
     premiumCodeTitle: "Ваш персональный код Premium",
-    premiumCodeBody: "Этот код даёт ВАМ пожизненный доступ к Premium в приложении YourLangCoach. Введите его в приложении в разделе Настройки -> Код преподавателя. Код действует только один раз — он персональный, НЕ передавайте и не публикуйте его.",
+    premiumCodeBody: "Этот код даёт ВАМ пожизненный доступ к Premium в приложении Yuston. Введите его в приложении в разделе Настройки -> Код преподавателя. Код действует только один раз — он персональный, НЕ передавайте и не публикуйте его.",
     premiumCodeWarning: "Делитесь с учениками только своей реферальной ссылкой/кодом.",
     copyCode: "Копировать код",
     copySuccess: "Ссылка скопирована",

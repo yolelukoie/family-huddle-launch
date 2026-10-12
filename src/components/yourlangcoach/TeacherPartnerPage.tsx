@@ -69,8 +69,8 @@ const TeacherPartnerContent = () => {
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between gap-1.5 px-3 sm:gap-3 sm:px-6">
           <Link to="/yourlangcoach" className="flex min-w-0 items-center gap-2 sm:gap-2.5">
-            <img src={ylcLogo} alt="YourLangCoach logo" className="h-9 w-9 rounded-lg object-cover" />
-            <span className="truncate font-display text-sm font-semibold sm:text-base">YourLangCoach</span>
+            <img src={ylcLogo} alt="Yuston logo" className="h-9 w-9 rounded-lg object-cover" />
+            <span className="truncate font-display text-sm font-semibold sm:text-base">Yuston</span>
             <span className="hidden border-s border-border ps-3 text-xs text-muted-foreground lg:inline">{tp.headerTag}</span>
           </Link>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex" aria-label="Teacher Partner page">

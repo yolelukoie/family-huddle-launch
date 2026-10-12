@@ -57,13 +57,13 @@ const YLCAuthConfirm = () => {
         <CardHeader className="text-center pb-2">
           <img
             src={ylcLogo}
-            alt="YourLangCoach logo"
+            alt="Yuston logo"
             className="mx-auto mb-3 h-14 w-14 rounded-2xl object-cover"
           />
           <CardTitle className="text-xl font-bold text-foreground">
             {status === "loading" ? "Verifying your link…" : "Link invalid"}
           </CardTitle>
-          <p className="text-sm text-muted-foreground mt-1">YourLangCoach</p>
+          <p className="text-sm text-muted-foreground mt-1">Yuston</p>
         </CardHeader>
         <CardContent className="space-y-4">
           {status === "loading" && (

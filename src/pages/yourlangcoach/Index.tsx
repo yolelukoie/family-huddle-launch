@@ -12,7 +12,7 @@ import TeacherPartnerPromo from "@/components/yourlangcoach/TeacherPartnerPromo"
 import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
 
 const META_DESCRIPTION =
-  "YourLangCoach turns the words you meet in real life into language you can actually use: save a word in one tap, review it with spaced repetition, and practice it with AI.";
+  "Yuston turns the words you meet in real life into language you can actually use: save a word in one tap, review it with spaced repetition, and practice it with AI.";
 
 const YourLangCoachContent = () => {
   const { dir } = useYlcLang();
@@ -46,7 +46,7 @@ const YourLangCoachIndex = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "YourLangCoach — Turn the words you meet into words you use";
+    document.title = "Yuston — Turn the words you meet into words you use";
     const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
       if (!el) {
@@ -57,7 +57,7 @@ const YourLangCoachIndex = () => {
       el.content = content;
     };
     setMeta("description", META_DESCRIPTION);
-    setMeta("og:title", "YourLangCoach — Turn the words you meet into words you use", "property");
+    setMeta("og:title", "Yuston — Turn the words you meet into words you use", "property");
     setMeta("og:description", META_DESCRIPTION, "property");
     setMeta("og:type", "website", "property");
   }, []);
