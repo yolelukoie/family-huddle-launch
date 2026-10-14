@@ -17,13 +17,13 @@ const YLCHeader = () => {
   return (
     <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-        <Link to="/yourlangcoach" className="flex items-center gap-2.5 group">
+        <Link to="/yourlangcoach" className="flex items-center gap-3 group">
           <img
             src={ylcLogo}
             alt="Yuston logo"
-            className="w-9 h-9 rounded-xl object-cover"
+            className="w-10 h-10 md:w-11 md:h-11 rounded-xl object-cover ring-1 ring-[hsl(220,20%,25%)] shadow-[0_2px_12px_hsl(235,80%,60%,0.25)]"
           />
-          <span className="hidden sm:inline font-display font-semibold text-base tracking-tight text-[hsl(220,20%,92%)]">
+          <span className="font-display font-semibold text-lg md:text-xl tracking-tight text-[hsl(220,25%,96%)]">
             Yuston
           </span>
         </Link>
