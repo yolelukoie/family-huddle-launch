@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Research and polish main Yuston landing/pricing Russian and Hebrew translations without changing meaning or subscription terms.
+- [ ] Make Yuston recognizable in the browser title, favicon and link-preview metadata; verify before the next publication.
+
 - [x] Add `/yourlangcoach/tpp` and page-specific metadata.
 - [x] Build the full Teacher Partner Program content and conversion flow.
 - [x] Add real Workbook screenshots through the project asset flow.
