@@ -46,7 +46,7 @@ const YourLangCoachIndex = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Yuston — Turn the words you meet into words you use";
+    document.title = "Yuston — Learn words. Use them in conversation.";
     const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
       if (!el) {
@@ -57,9 +57,17 @@ const YourLangCoachIndex = () => {
       el.content = content;
     };
     setMeta("description", META_DESCRIPTION);
-    setMeta("og:title", "Yuston — Turn the words you meet into words you use", "property");
+    setMeta("og:title", document.title, "property");
     setMeta("og:description", META_DESCRIPTION, "property");
     setMeta("og:type", "website", "property");
+    setMeta("og:site_name", "Yuston", "property");
+    setMeta("og:url", "https://huddle-together-site.lovable.app/yourlangcoach", "property");
+    setMeta("twitter:title", document.title);
+    setMeta("twitter:description", META_DESCRIPTION);
+    const icon = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+    const touchIcon = document.querySelector<HTMLLinkElement>('link[rel="apple-touch-icon"]');
+    if (icon) icon.href = "/yourlangcoach/favicon.png";
+    if (touchIcon) touchIcon.href = "/yourlangcoach/apple-touch-icon.png";
   }, []);
 
   return (
