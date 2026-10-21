@@ -2,6 +2,8 @@ import { Mic, Sparkles, Bell, MessagesSquare, FolderOpen, Check, ArrowRight } fr
 import { useYlcLang } from "@/lib/yourlangcoach/i18n";
 import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg";
 import reviewSettings from "@/assets/ylc-review-settings.jpeg";
+import captureDictionary from "@/assets/ylc-capture-dictionary.jpeg";
+import captureCard from "@/assets/ylc-capture-card.jpeg";
 
 const Arrow = () => (
   <span aria-hidden="true" className="text-[hsl(220,12%,45%)] text-sm">
@@ -125,6 +127,13 @@ const YLCStory = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+
+            <div className="mx-auto mt-9 max-w-xl">
+              <div className="grid grid-cols-2 items-start gap-4 sm:gap-6 px-3 sm:px-5 py-5">
+                <img src={captureDictionary} alt="Yuston dictionary" loading="lazy" className="w-full -rotate-3 translate-y-5 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
+                <img src={captureCard} alt="Yuston word card" loading="lazy" className="w-full rotate-3 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
               </div>
             </div>
           </div>
