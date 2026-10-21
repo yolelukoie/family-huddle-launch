@@ -26,7 +26,7 @@ export const FLEX_SECTION = {
   title: "Learn your way, not one rigid way",
   intro: "Yuston gives you tools to learn in the style that works for you:",
   bullets: [
-    "practice with Anna, your AI language coach",
+    "practice with Yuston, your AI language coach",
     "save your own words and phrases",
     "review with spaced repetition",
     "upload materials into your workbook",
@@ -38,7 +38,7 @@ export const HOW_IT_WORKS = {
   title: "A simple system for steady progress",
   steps: [
     {
-      title: "Practice with Anna",
+      title: "Practice with Yuston",
       description:
         "Get guided language practice, grammar help, and coaching that adapts to your level.",
     },
@@ -66,7 +66,7 @@ export const FEATURES = {
     {
       title: "Coaching, not just answers",
       description:
-        "Anna helps you notice patterns, practice actively, and improve how you learn.",
+        "Yuston helps you notice patterns, practice actively, and improve how you learn.",
     },
     {
       title: "Flexible learning path",
@@ -250,7 +250,7 @@ B. Learning Profile
 C. Content You Create in the App
 - words and phrases saved in your dictionary
 - workbook uploads and materials
-- chat messages exchanged with Anna (the AI tutor)
+- chat messages exchanged with Yuston (the AI tutor)
 - voice recordings you make in the app when using voice input
 - grammar notes and learning history generated from your practice
 
@@ -271,14 +271,14 @@ We use information to:
 - comply with legal obligations.
 
 3. AI Processing and Third-Party AI Providers
-To power Anna (the AI tutor), generate dictionary cards, transcribe your voice, and read text aloud, the Service sends certain content to OpenAI, L.L.C. ("OpenAI"), a third-party AI provider, via OpenAI's API. Voice transcription uses OpenAI's Whisper service; spoken playback uses OpenAI's text-to-speech service.
+To power Yuston (the AI tutor), generate dictionary cards, transcribe your voice, and read text aloud, the Service sends certain content to OpenAI, L.L.C. ("OpenAI"), a third-party AI provider, via OpenAI's API. Voice transcription uses OpenAI's Whisper service; spoken playback uses OpenAI's text-to-speech service.
 
 What we send to OpenAI:
 - your chat messages and recent conversation history;
-- your profile (name, target language, level, interests, goals) so Anna can personalize replies;
+- your profile (name, target language, level, interests, goals) so Yuston can personalize replies;
 - words you add to your dictionary and grammar notes from previous chats;
 - voice recordings (transcribed and discarded — not used for training);
-- text you ask Anna to read aloud.
+- text you ask Yuston to read aloud.
 
 What we do NOT send to OpenAI: your email address, your password, your payment information, or device identifiers.
 

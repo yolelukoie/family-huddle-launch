@@ -37,7 +37,7 @@ const en = {
     title: "Learn your way, not one rigid way",
     intro: "Yuston gives you tools to learn in the style that works for you:",
     bullets: [
-      "practice with Anna, your AI language coach",
+      "practice with Yuston, your AI language coach",
       "save your own words and phrases",
       "review with spaced repetition",
       "upload materials into your workbook",
@@ -48,7 +48,7 @@ const en = {
     eyebrow: "How it works",
     title: "A simple system for steady progress",
     steps: [
-      { title: "Practice with Anna", description: "Get guided language practice, grammar help, and coaching that adapts to your level." },
+      { title: "Practice with Yuston", description: "Get guided language practice, grammar help, and coaching that adapts to your level." },
       { title: "Build your personal dictionary", description: "Save words and phrases you actually want to remember, not random textbook lists." },
       { title: "Review with spaced repetition", description: "Strengthen memory over time with structured review, so words stay with you longer." },
       { title: "Use your workbook", description: "Keep your own learning materials in one place and return to them whenever you need." },
@@ -58,7 +58,7 @@ const en = {
     eyebrow: "What makes Yuston different",
     title: "Designed by a language coach",
     items: [
-      { title: "Coaching, not just answers", description: "Anna helps you notice patterns, practice actively, and improve how you learn." },
+      { title: "Coaching, not just answers", description: "Yuston helps you notice patterns, practice actively, and improve how you learn." },
       { title: "Flexible learning path", description: "Use the app for vocabulary, grammar, speaking, self-study, or all of them together." },
       { title: "Spaced repetition that reinforces memory", description: "Review timing is designed to help words come back before you forget them." },
       { title: "Your own content matters", description: "Your dictionary and workbook are built around the language you actually want to learn." },
@@ -112,7 +112,7 @@ const en = {
     title: "Become a Teacher Partner",
     intro: "Lifetime Premium for you, one free month of Premium for every student. No payment, no commitment.",
     name: "Name",
-    namePlaceholder: "Anna Cohen",
+    namePlaceholder: "Yuston Cohen",
     email: "Email",
     emailPlaceholder: "you@example.com",
     languages: "What language(s) do you teach?",
@@ -196,7 +196,7 @@ const he: YlcDict = {
     title: "ללמוד בדרך שלך, לא בדרך אחת נוקשה",
     intro: "Yuston נותנת לך כלים ללמוד בסגנון שמתאים לך:",
     bullets: [
-      "לתרגל עם אנה, מאמנת השפה שלך מבוססת AI",
+      "לתרגל עם יוסטון, מאמן השפה שלך מבוסס AI",
       "לשמור מילים וביטויים משלך",
       "לחזור בעזרת חזרות מרווחות",
       "להעלות חומרים לחוברת העבודה",
@@ -207,7 +207,7 @@ const he: YlcDict = {
     eyebrow: "איך זה עובד",
     title: "שיטה פשוטה להתקדמות יציבה",
     steps: [
-      { title: "לתרגל עם אנה", description: "תרגול מודרך, עזרה בדקדוק וליווי שמתאים את עצמו לרמה שלך." },
+      { title: "לתרגל עם יוסטון", description: "תרגול מודרך, עזרה בדקדוק וליווי שמתאים את עצמו לרמה שלך." },
       { title: "לבנות מילון אישי", description: "לשמור מילים וביטויים שבאמת חשוב לך לזכור, לא רשימות אקראיות מספר לימוד." },
       { title: "לחזור עם חזרות מרווחות", description: "לחזק את הזיכרון לאורך זמן בעזרת חזרה מובנית, כך שהמילים נשארות איתך." },
       { title: "להשתמש בחוברת העבודה", description: "לשמור את כל חומרי הלימוד במקום אחד ולחזור אליהם מתי שצריך." },
@@ -217,7 +217,7 @@ const he: YlcDict = {
     eyebrow: "מה מייחד את Yuston",
     title: "פותח על ידי מאמנת שפה",
     items: [
-      { title: "ליווי, לא רק תשובות", description: "אנה עוזרת לך לזהות דפוסים, לתרגל באופן פעיל ולשפר את דרך הלמידה שלך." },
+      { title: "ליווי, לא רק תשובות", description: "יוסטון עוזר לך לזהות דפוסים, לתרגל באופן פעיל ולשפר את דרך הלמידה שלך." },
       { title: "מסלול למידה גמיש", description: "אוצר מילים, דקדוק, דיבור, לימוד עצמי — או הכול יחד." },
       { title: "חזרות מרווחות שמחזקות זיכרון", description: "תזמון החזרות נועד להחזיר מילים לפני שהן נשכחות." },
       { title: "התוכן שלך חשוב", description: "המילון וחוברת העבודה נבנים סביב השפה שאתה באמת רוצה ללמוד." },
@@ -271,7 +271,7 @@ const he: YlcDict = {
     title: "להצטרף כמורה שותף",
     intro: "Premium לכל החיים עבורך, וחודש Premium חינם לכל תלמיד. בלי תשלום, בלי התחייבות.",
     name: "שם",
-    namePlaceholder: "אנה כהן",
+    namePlaceholder: "יוסטון כהן",
     email: "אימייל",
     emailPlaceholder: "you@example.com",
     languages: "אילו שפות את/ה מלמד/ת?",
@@ -353,7 +353,7 @@ const ru: YlcDict = {
     title: "Учитесь по-своему, а не по жёсткой схеме",
     intro: "Yuston даёт инструменты для обучения в удобном вам стиле:",
     bullets: [
-      "практикуйтесь с Анной, вашим ИИ-коучем по языку",
+      "практикуйтесь с Юстоном, вашим ИИ-коучем по языку",
       "сохраняйте свои слова и фразы",
       "повторяйте с интервальными повторениями",
       "загружайте материалы в рабочую тетрадь",
@@ -364,7 +364,7 @@ const ru: YlcDict = {
     eyebrow: "Как это работает",
     title: "Простая система стабильного прогресса",
     steps: [
-      { title: "Практика с Анной", description: "Управляемая практика языка, помощь с грамматикой и коучинг под ваш уровень." },
+      { title: "Практика с Юстоном", description: "Управляемая практика языка, помощь с грамматикой и коучинг под ваш уровень." },
       { title: "Личный словарь", description: "Сохраняйте слова и фразы, которые действительно хотите запомнить, а не случайные списки из учебника." },
       { title: "Интервальные повторения", description: "Повторение по структуре укрепляет память, и слова остаются с вами дольше." },
       { title: "Рабочая тетрадь", description: "Держите свои учебные материалы в одном месте и возвращайтесь к ним, когда нужно." },
@@ -374,7 +374,7 @@ const ru: YlcDict = {
     eyebrow: "Чем отличается Yuston",
     title: "Создано языковым коучем",
     items: [
-      { title: "Коучинг, а не только ответы", description: "Анна помогает замечать закономерности, активно практиковаться и улучшать сам процесс обучения." },
+      { title: "Коучинг, а не только ответы", description: "Юстон помогает замечать закономерности, активно практиковаться и улучшать сам процесс обучения." },
       { title: "Гибкий путь обучения", description: "Лексика, грамматика, речь, самостоятельные занятия — или всё сразу." },
       { title: "Интервальные повторения для памяти", description: "Время повторений подобрано так, чтобы слова возвращались до того, как забудутся." },
       { title: "Ваш собственный контент важен", description: "Словарь и рабочая тетрадь строятся вокруг языка, который вы действительно учите." },
@@ -428,7 +428,7 @@ const ru: YlcDict = {
     title: "Стать партнёром-преподавателем",
     intro: "Premium навсегда для вас и бесплатный месяц Premium каждому ученику. Без оплаты и без обязательств.",
     name: "Имя",
-    namePlaceholder: "Анна Коэн",
+    namePlaceholder: "Юстон Коэн",
     email: "Эл. почта",
     emailPlaceholder: "you@example.com",
     languages: "Какие языки вы преподаёте?",
