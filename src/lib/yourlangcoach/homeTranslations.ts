@@ -96,7 +96,7 @@ export const homeEn = {
     subtitle:
       "Yuston helps move words from your passive vocabulary into your active one.",
     intro:
-      "Recognising a word on a page is one thing. Producing it naturally in a conversation is another. Anna, your AI language coach, practises with the words in your own dictionary.",
+      "Recognising a word on a page is one thing. Producing it naturally in a conversation is another. Yuston, your AI language coach, practises with the words in your own dictionary.",
     items: [
       "Asks questions built around words from your dictionary",
       "Creates realistic situations where those words naturally belong",
@@ -187,7 +187,7 @@ export const homeEn = {
       { label: "Heard it", text: "The word comes up in a lesson or a conversation." },
       { label: "Saved it", text: "One tap — Yuston builds the word card." },
       { label: "Recalled it", text: "The app brings the word back through spaced repetition." },
-      { label: "Used it", text: "Anna asks a question where you need that exact word." },
+      { label: "Used it", text: "Yuston asks a question where you need that exact word." },
       { label: "Met it again", text: "Later you run into it in a new context — and it’s yours." },
     ],
     caption: "Your review reminders and schedule, inside the app.",
@@ -197,7 +197,7 @@ export const homeEn = {
     title: "Your language. Your words. Your pace.",
     items: [
       "Build your vocabulary",
-      "Practise with Anna",
+      "Practise with Yuston",
       "Review with spaced repetition",
       "Discover new vocabulary",
       "Keep your learning materials",
@@ -328,7 +328,7 @@ export const homeHe: YlcHomeDict = {
     title: "להכיר מילה זה לא אותו דבר כמו לדעת להשתמש בה.",
     subtitle: "Yuston עוזרת להעביר מילים מאוצר המילים הפסיבי לאקטיבי.",
     intro:
-      "לזהות מילה בטקסט זה דבר אחד. להיזכר בה ולהשתמש בה בשיחה זה כבר משהו אחר. אנה, מאמנת השפה שלך המבוססת על AI, עוזרת לתרגל את המילים שבמילון האישי שלך.",
+      "לזהות מילה בטקסט זה דבר אחד. להיזכר בה ולהשתמש בה בשיחה זה כבר משהו אחר. יוסטון, מאמן השפה שלך המבוסס על AI, עוזר לתרגל את המילים שבמילון האישי שלך.",
     items: [
       "שואלת שאלות שבנויות על מילים מהמילון שלך",
       "יוצרת מצבים מהחיים שבהם טבעי להשתמש במילים האלה",
@@ -388,7 +388,7 @@ export const homeHe: YlcHomeDict = {
       { label: "שמעת", text: "המילה עולה בשיעור או בשיחה." },
       { label: "שמרת", text: "לחיצה אחת — Yuston יוצרת כרטיס למילה." },
       { label: "נזכרת", text: "האפליקציה מחזירה את המילה בחזרות מרווחות." },
-      { label: "השתמשת", text: "אנה שואלת שאלה שדורשת בדיוק את המילה הזאת." },
+      { label: "השתמשת", text: "יוסטון שואל שאלה שדורשת בדיוק את המילה הזאת." },
       { label: "פגשת שוב", text: "בהמשך המילה מופיעה במצב אחר — וכבר ברור איך להשתמש בה." },
     ],
     caption: "התזכורות ולוח הזמנים לחזרות, מתוך האפליקציה.",
@@ -398,7 +398,7 @@ export const homeHe: YlcHomeDict = {
     title: "השפה שלך. המילים שלך. הקצב שלך.",
     items: [
       "לבנות אוצר מילים",
-      "לתרגל עם אנה",
+      "לתרגל עם יוסטון",
       "לחזור עם חזרות מרווחות",
       "לגלות מילים חדשות",
       "לשמור חומרי לימוד",
@@ -533,7 +533,7 @@ export const homeRu: YlcHomeDict = {
     subtitle:
       "Yuston помогает перевести слова из пассивного словарного запаса в активный.",
     intro:
-      "Узнать слово в тексте — одно. Вспомнить его в разговоре — совсем другое. Анна, ваш языковой помощник на основе ИИ, помогает тренироваться со словами из вашего словаря.",
+      "Узнать слово в тексте — одно. Вспомнить его в разговоре — совсем другое. Юстон, ваш языковой помощник на основе ИИ, помогает тренироваться со словами из вашего словаря.",
     items: [
       "Задаёт вопросы со словами из вашего словаря",
       "Создаёт реалистичные ситуации, где эти слова уместны",
@@ -604,7 +604,7 @@ export const homeRu: YlcHomeDict = {
       { label: "Услышали", text: "Слово прозвучало на уроке или в разговоре." },
       { label: "Сохранили", text: "Одно касание — Yuston создаёт карточку слова." },
       { label: "Вспомнили", text: "Приложение напоминает повторить слово через определённые промежутки времени." },
-      { label: "Использовали", text: "Анна задаёт вопрос, где нужно именно это слово." },
+      { label: "Использовали", text: "Юстон задаёт вопрос, где нужно именно это слово." },
       { label: "Встретили снова", text: "Позже слово встречается в другой ситуации — и вы уже знаете, как его использовать." },
     ],
     caption: "Напоминания и расписание повторений — внутри приложения.",
@@ -614,7 +614,7 @@ export const homeRu: YlcHomeDict = {
     title: "Ваш язык. Ваши слова. Ваш темп.",
     items: [
       "Собирать словарь",
-      "Практиковаться с Анной",
+      "Практиковаться с Юстоном",
       "Повторять по интервалам",
       "Открывать новые слова",
       "Сохранять учебные материалы",
