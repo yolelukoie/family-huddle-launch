@@ -79,16 +79,10 @@ const en = {
     perYear: "/ year",
     plans: [
       { name: "Yuston Premium", tagline: "Full access to all core learning features. Includes 90 voice minutes per billing cycle." },
-      { name: "Yuston Premium — Annual", tagline: "Best value. Two months free vs. monthly." },
+      { name: "Yuston Premium — Annual", tagline: "Best value. Works out to about $9 a month." },
       { name: "Yuston Voice", tagline: "Extended Voice for learners who want much more speaking practice. Includes 600 voice minutes per billing cycle." },
     ],
     smallPrint: "Subscriptions renew automatically until canceled. Manage or cancel through the store where you purchased your subscription.",
-  },
-  tppPromo: {
-    eyebrow: "Teacher Partner Program",
-    title: "Are you a language teacher?",
-    text: "We have a special offer for you and your students.",
-    cta: "See the offer",
   },
   fhPromo: {
     badge: "Also from our team",
@@ -238,21 +232,15 @@ const he: YlcDict = {
     perYear: "/ לשנה",
     plans: [
       { name: "Yuston Premium", tagline: "גישה לכל כלי הלמידה, כולל 90 דקות תרגול בשיחה בכל תקופת מנוי." },
-      { name: "Yuston Premium — שנתי", tagline: "הכי משתלם. חודשיים חינם לעומת מנוי חודשי." },
+      { name: "Yuston Premium — שנתי", tagline: "הכי משתלם. יוצא בערך $9 לחודש." },
       { name: "Yuston Voice", tagline: "למי שרוצים לדבר יותר: 600 דקות תרגול בשיחה בכל תקופת מנוי." },
     ],
     smallPrint: "המנויים מתחדשים אוטומטית עד לביטול. אפשר לנהל או לבטל את המנוי דרך החנות שבה הוא נרכש.",
   },
-  tppPromo: {
-    eyebrow: "תוכנית שותפות למורים",
-    title: "את/ה מורה לשפות?",
-    text: "יש לנו הצעה מיוחדת עבורך ועבור התלמידים שלך.",
-    cta: "לצפייה בהצעה",
-  },
   fhPromo: {
     badge: "עוד אפליקציה שלנו",
-    title: "לנהל את המשימות המשפחתיות יחד עם Family Huddle",
-    text: "הכירו את Family Huddle — משימות, יעדים ופרסים משותפים שמקרבים משפחות וחברים.",
+    title: "משימות הבית, ביחד, עם Family Huddle",
+    text: "הכירו את Family Huddle: משימות, יעדים ופרסים משותפים שמקרבים משפחה וחברים.",
     cta: "להכיר את האפליקציה",
   },
   footer: {
@@ -395,16 +383,10 @@ const ru: YlcDict = {
     perYear: "/ год",
     plans: [
       { name: "Yuston Premium", tagline: "Все основные возможности для изучения языка и 90 минут разговорной практики за каждый период подписки." },
-      { name: "Yuston Premium — годовой", tagline: "Выгоднее ежемесячной оплаты: два месяца бесплатно." },
+      { name: "Yuston Premium — годовой", tagline: "Выгоднее ежемесячной оплаты: выходит около $9 в месяц." },
       { name: "Yuston Voice", tagline: "Для тех, кто хочет больше говорить: 600 минут разговорной практики за каждый период подписки." },
     ],
     smallPrint: "Подписки продлеваются автоматически до отмены. Управлять подпиской или отменить её можно в магазине, где вы её оформили.",
-  },
-  tppPromo: {
-    eyebrow: "Программа для преподавателей",
-    title: "Вы преподаёте языки?",
-    text: "У нас есть специальное предложение для вас и ваших учеников.",
-    cta: "Посмотреть предложение",
   },
   fhPromo: {
     badge: "Ещё одно наше приложение",

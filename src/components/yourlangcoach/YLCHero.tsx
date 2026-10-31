@@ -2,8 +2,9 @@ import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
 import { useYlcLang } from "@/lib/yourlangcoach/i18n";
 
 const YLCHero = () => {
-  const { t } = useYlcLang();
+  const { t, dir } = useYlcLang();
   const h = t.home.hero;
+  const arrow = dir === "rtl" ? "←" : "→";
 
   return (
     <section className="ylc-hero relative overflow-hidden pt-20 md:pt-28 pb-16 md:pb-24">
@@ -15,14 +16,11 @@ const YLCHero = () => {
           <h1 className="font-display font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight text-[hsl(220,25%,95%)] text-balance">
             {h.titleA}
             <span className="ylc-text-gradient">{h.titleB}</span>
+            {h.titleC}
           </h1>
 
-          <p className="mt-6 text-lg md:text-xl text-[hsl(220,15%,78%)] text-balance">
+          <p className="mt-6 text-lg md:text-xl text-[hsl(220,15%,78%)] text-balance whitespace-pre-line">
             {h.subtitle}
-          </p>
-
-          <p className="mt-5 text-base text-[hsl(220,14%,68%)] max-w-2xl mx-auto">
-            {h.supporting}
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
@@ -46,9 +44,25 @@ const YLCHero = () => {
             </a>
           </div>
 
-          <p className="mt-9 text-sm font-medium tracking-wide text-[hsl(220,14%,62%)]">
-            {h.shortLine}
-          </p>
+          <p className="mt-4 text-sm text-[hsl(220,14%,62%)]">{h.note}</p>
+
+          <div
+            className="mt-10 mx-auto max-w-3xl flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-y-1.5 sm:gap-x-2.5 sm:gap-y-2"
+            aria-label={h.cycle.steps.join(", ")}
+          >
+            {h.cycle.steps.map((step) => (
+              <span key={step} className="contents">
+                <span className="max-w-full px-4 py-2 rounded-full text-center text-[0.95rem] text-[hsl(220,25%,95%)] bg-[hsl(235,40%,14%)]/70 border border-[hsl(235,40%,30%)]">
+                  {step}
+                </span>
+                <span className="font-semibold text-[hsl(235,60%,75%)]" aria-hidden="true">
+                  <span className="sm:hidden">↓</span>
+                  <span className="hidden sm:inline">{arrow}</span>
+                </span>
+              </span>
+            ))}
+            <span className="text-center text-[0.95rem] text-[hsl(220,14%,62%)]">{h.cycle.tail}</span>
+          </div>
         </div>
       </div>
     </section>

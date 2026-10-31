@@ -8,7 +8,6 @@ import YLCFinalCta from "@/components/yourlangcoach/YLCFinalCta";
 import YLCFeatures from "@/components/yourlangcoach/YLCFeatures";
 import YLCPricing from "@/components/yourlangcoach/YLCPricing";
 import FamilyHuddlePromo from "@/components/yourlangcoach/FamilyHuddlePromo";
-import TeacherPartnerPromo from "@/components/yourlangcoach/TeacherPartnerPromo";
 import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
 
 const META_DESCRIPTION =
@@ -25,7 +24,6 @@ const YourLangCoachContent = () => {
         <YLCStory />
         <YLCSystem />
         <YLCFeatures />
-        <TeacherPartnerPromo />
         <YLCPricing />
         <YLCFinalCta />
         <FamilyHuddlePromo />

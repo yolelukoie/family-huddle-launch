@@ -96,7 +96,7 @@ export const PRICING = {
   plans: [
     {
       name: "Yuston Premium",
-      price: "US$9.99",
+      price: "US$14.99",
       period: "/ month",
       tagline:
         "Full access to all core learning features. Includes 90 voice minutes per billing cycle.",
@@ -104,14 +104,14 @@ export const PRICING = {
     },
     {
       name: "Yuston Premium — Annual",
-      price: "US$79.99",
+      price: "US$109.99",
       period: "/ year",
-      tagline: "Best value. Two months free vs. monthly.",
+      tagline: "Best value. Works out to about $9 a month.",
       highlight: true,
     },
     {
       name: "Yuston Voice",
-      price: "US$14.99",
+      price: "US$29.99",
       period: "/ month",
       tagline:
         "Extended Voice for learners who want much more speaking practice. Includes 600 voice minutes per billing cycle.",
