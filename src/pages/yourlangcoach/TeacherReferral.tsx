@@ -3,15 +3,19 @@ import { Link, useParams } from "react-router-dom";
 import { Apple, Check, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
+import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
+import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
 import ylcLogo from "@/assets/yuston-icon.png";
 import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
 
-const TeacherReferral = () => {
+const TeacherReferralContent = () => {
+  const { t, dir } = useYlcLang();
+  const tr = t.invite;
   const { code = "" } = useParams();
   const cleanCode = code.trim().toUpperCase();
 
   useEffect(() => {
-    document.title = "Your free month of Yuston Premium";
+    document.title = tr.teacherDocTitle;
     if (cleanCode) {
       try {
         localStorage.setItem("ylc_teacher_code", cleanCode);
@@ -19,51 +23,47 @@ const TeacherReferral = () => {
         // storage may be unavailable in private mode
       }
     }
-  }, [cleanCode]);
+  }, [cleanCode, tr.teacherDocTitle]);
 
-  const perks = [
-    "1 month of Premium free",
-    "Spaced repetition for everything you learn in your lessons",
-    "A personal Workbook for notes, photos and PDFs",
-    "AI practice while Premium is active",
-  ];
+  const perks = tr.perks;
 
   return (
-    <div className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
+    <div dir={dir} className="ylc-theme tpp-theme min-h-screen bg-background text-foreground">
       <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
-        <div className="container flex h-16 items-center px-4 sm:px-6">
+        <div className="container flex h-16 items-center justify-between gap-3 px-4 sm:px-6">
           <Link to="/yourlangcoach" className="flex items-center gap-2.5">
             <img src={ylcLogo} alt="Yuston logo" className="h-9 w-9 rounded-lg object-cover" />
             <span className="font-display text-sm font-semibold sm:text-base">Yuston</span>
           </Link>
+          <LanguageSwitcher />
         </div>
       </header>
 
       <main className="container px-4 py-14 sm:px-6 md:py-20">
         <div className="mx-auto w-full max-w-2xl text-center">
-          <p className="ylc-eyebrow">Invited by your teacher</p>
+          <p className="ylc-eyebrow">{tr.eyebrow}</p>
           <h1 className="mt-3 font-display text-3xl font-semibold leading-tight md:text-5xl">
-            Your first month of Premium is on your teacher
+            {tr.teacherTitle}
           </h1>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            Keep learning between lessons — download Yuston and enter your teacher code when you create your account.
+            {tr.teacherText}
           </p>
 
           <div className="mx-auto mt-8 w-fit rounded-2xl border border-border bg-card/60 px-8 py-6">
-            <p className="text-sm text-muted-foreground">Your teacher code</p>
-            <p className="mt-1 font-display text-3xl font-semibold tracking-[0.2em] text-primary">{cleanCode}</p>
+            <p className="text-sm text-muted-foreground">{tr.codeLabel}</p>
+            <p dir="ltr" className="mt-1 font-display text-3xl font-semibold tracking-[0.2em] text-primary">{cleanCode}</p>
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button asChild size="lg" className="rounded-lg">
-              <a href={IPHONE_URL} target="_blank" rel="noopener noreferrer"><Apple /> Download for iPhone</a>
+              <a href={IPHONE_URL} target="_blank" rel="noopener noreferrer"><Apple /> {tr.downloadIphone}</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-lg">
-              <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer"><Smartphone /> Download for Android</a>
+              <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer"><Smartphone /> {tr.downloadAndroid}</a>
             </Button>
           </div>
 
-          <ul className="mx-auto mt-10 grid max-w-lg gap-3 text-left">
+          <ul className="mx-auto mt-10 grid max-w-lg gap-3 text-start">
             {perks.map((perk) => (
               <li key={perk} className="flex items-start gap-3 rounded-xl border border-border bg-card/50 p-4">
                 <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
@@ -78,5 +78,11 @@ const TeacherReferral = () => {
     </div>
   );
 };
+
+const TeacherReferral = () => (
+  <YlcLangProvider>
+    <TeacherReferralContent />
+  </YlcLangProvider>
+);
 
 export default TeacherReferral;

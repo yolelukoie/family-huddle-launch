@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { ensureYlcFonts } from "@/lib/yourlangcoach/fonts";
 import { Link } from "react-router-dom";
 import { SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
 import { useYlcLang } from "@/lib/yourlangcoach/i18n";
@@ -5,6 +7,7 @@ import ylcLogo from "@/assets/yuston-icon.png";
 
 const YLCFooter = () => {
   const { t } = useYlcLang();
+  useEffect(ensureYlcFonts, []);
 
   return (
     <footer className="ylc-footer border-t border-border mt-16">

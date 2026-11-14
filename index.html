@@ -17,6 +17,18 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Yuston — Learn words. Use them in conversation." />
     <meta name="twitter:description" content="Remember words from everyday life and use them in conversation, with a personal dictionary, spaced repetition and AI practice." />
+    <script>
+      // Yuston pages: load the app's fonts before first paint (Bricolage Grotesque + Inter). Family Huddle pages
+      // only need Bricolage for the Yuston promo card; keep in step with src/lib/yourlangcoach/fonts.ts.
+      (function () {
+        var ylc = location.pathname.indexOf("/yourlangcoach") === 0;
+        var l = document.createElement("link");
+        l.id = ylc ? "ylc-fonts" : "ylc-promo-font";
+        l.rel = "stylesheet";
+        l.href = "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@" + (ylc ? "400;500;600;700;800&family=Inter:wght@400;500;600;700" : "700") + "&display=swap";
+        document.head.appendChild(l);
+      })();
+    </script>
   </head>
 
   <body>

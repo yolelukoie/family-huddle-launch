@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { ensureYlcFonts } from "@/lib/yourlangcoach/fonts";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
@@ -13,6 +15,7 @@ import ylcLogo from "@/assets/yuston-icon.png";
 
 const YLCHeader = () => {
   const { t } = useYlcLang();
+  useEffect(ensureYlcFonts, []);
 
   return (
     <header className="ylc-header sticky top-0 z-50 backdrop-blur-md">
