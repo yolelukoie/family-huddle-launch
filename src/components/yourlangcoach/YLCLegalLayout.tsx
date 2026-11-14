@@ -34,7 +34,7 @@ const YLCLegalLayout = ({ title, description, children }: Props) => {
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16">
           <Link
             to="/yourlangcoach"
-            className="inline-flex items-center gap-2 text-sm text-[hsl(220,12%,65%)] hover:text-[hsl(220,20%,92%)] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Yuston

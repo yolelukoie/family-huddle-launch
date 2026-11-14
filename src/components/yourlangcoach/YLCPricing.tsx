@@ -14,7 +14,7 @@ const YLCPricing = () => {
   return (
     <section
       id="pricing"
-      className="relative py-20 md:py-24 border-t border-[hsl(220,20%,12%)] overflow-hidden"
+      className="relative py-20 md:py-24 border-t border-border overflow-hidden"
     >
       <div className="ylc-glow ylc-glow-3" aria-hidden="true" />
 
@@ -22,10 +22,10 @@ const YLCPricing = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 md:mb-14">
             <p className="ylc-eyebrow">{t.pricing.eyebrow}</p>
-            <h2 className="font-display font-semibold text-3xl md:text-4xl text-[hsl(220,25%,95%)] mt-3">
+            <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mt-3">
               {t.pricing.title}
             </h2>
-            <p className="text-[hsl(220,15%,72%)] mt-4 max-w-2xl mx-auto">
+            <p className="text-[hsl(var(--ylc-ink-2))] mt-4 max-w-2xl mx-auto">
               {t.pricing.subtitle}
             </p>
           </div>
@@ -51,25 +51,25 @@ const YLCPricing = () => {
                     </span>
                   )}
 
-                  <h3 className="font-display font-semibold text-lg text-[hsl(220,25%,93%)]">
+                  <h3 className="font-display font-semibold text-lg text-foreground">
                     {copy.name}
                   </h3>
 
                   <div className="mt-4 flex items-baseline gap-1" dir="ltr">
-                    <span className="font-display font-bold text-4xl text-[hsl(220,25%,96%)]">
+                    <span className="font-display font-bold text-4xl text-foreground">
                       {plan.price}
                     </span>
-                    <span className="text-[hsl(220,12%,60%)] text-sm">
+                    <span className="text-muted-foreground text-sm">
                       {plan.period.includes("year") ? t.pricing.perYear : t.pricing.perMonth}
                     </span>
                   </div>
 
-                  <p className="mt-3 text-sm text-[hsl(220,12%,68%)] leading-relaxed min-h-[3rem]">
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed min-h-[3rem]">
                     {copy.tagline}
                   </p>
 
                   {plan.fairUse && (
-                    <p className="mt-2 text-xs text-[hsl(220,12%,55%)]">{t.pricing.fairUseNote}</p>
+                    <p className="mt-2 text-xs text-muted-foreground">{t.pricing.fairUseNote}</p>
                   )}
 
                   <DropdownMenu>
@@ -83,13 +83,13 @@ const YLCPricing = () => {
                         <ChevronDown className="w-4 h-4" />
                       </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="min-w-[10rem] bg-[hsl(222,30%,8%)] border-[hsl(220,20%,13%)] text-[hsl(220,20%,92%)]">
+                    <DropdownMenuContent className="min-w-[10rem] bg-popover ylc-vars border-border text-foreground">
                       <DropdownMenuItem asChild>
                         <a
                           href={ANDROID_URL}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="cursor-pointer focus:bg-[hsl(235,60%,18%)] focus:text-[hsl(235,90%,78%)]"
+                          className="cursor-pointer focus:bg-[hsl(var(--ylc-fill))] focus:text-primary"
                         >
                           {t.nav.android}
                         </a>
@@ -99,7 +99,7 @@ const YLCPricing = () => {
                           href={IPHONE_URL}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="cursor-pointer focus:bg-[hsl(235,60%,18%)] focus:text-[hsl(235,90%,78%)]"
+                          className="cursor-pointer focus:bg-[hsl(var(--ylc-fill))] focus:text-primary"
                         >
                           {t.nav.ios}
                         </a>
@@ -108,12 +108,12 @@ const YLCPricing = () => {
                   </DropdownMenu>
 
                   <ul className="mt-6 space-y-2.5">
-                    <li className="flex items-start gap-2 text-sm text-[hsl(220,12%,72%)]">
-                      <Check className="w-4 h-4 mt-0.5 text-[hsl(235,80%,72%)] flex-shrink-0" />
+                    <li className="flex items-start gap-2 text-sm text-[hsl(var(--ylc-ink-2))]">
+                      <Check className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
                       <span>{t.pricing.cancelAnytime}</span>
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-[hsl(220,12%,72%)]">
-                      <Check className="w-4 h-4 mt-0.5 text-[hsl(235,80%,72%)] flex-shrink-0" />
+                    <li className="flex items-start gap-2 text-sm text-[hsl(var(--ylc-ink-2))]">
+                      <Check className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
                       <span>{t.pricing.autoRenew}</span>
                     </li>
                   </ul>
@@ -122,7 +122,7 @@ const YLCPricing = () => {
             })}
           </div>
 
-          <p className="mt-10 text-center text-xs text-[hsl(220,12%,55%)] max-w-2xl mx-auto">
+          <p className="mt-10 text-center text-xs text-muted-foreground max-w-2xl mx-auto">
             {t.pricing.smallPrint}
           </p>
         </div>

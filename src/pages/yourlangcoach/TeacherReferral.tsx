@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Apple, Check, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
-import ylcLogo from "@/assets/yourlangcoach-logo.png";
+import ylcLogo from "@/assets/yuston-icon.png";
 import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
 
 const TeacherReferral = () => {

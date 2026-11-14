@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
-import ylcLogo from "@/assets/yourlangcoach-logo.png";
+import ylcLogo from "@/assets/yuston-icon.png";
 import workbookGrid from "@/assets/ylc-workbook-grid.jpeg";
 import workbookEditor from "@/assets/ylc-workbook-editor.jpeg";
 import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg";

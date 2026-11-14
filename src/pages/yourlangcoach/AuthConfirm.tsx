@@ -3,7 +3,7 @@ import { ylcSupabase } from "@/integrations/supabase/ylc-client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertTriangle, Loader2 } from "lucide-react";
-import ylcLogo from "@/assets/yourlangcoach-logo.png";
+import ylcLogo from "@/assets/yuston-icon.png";
 
 type Status = "loading" | "error";
 

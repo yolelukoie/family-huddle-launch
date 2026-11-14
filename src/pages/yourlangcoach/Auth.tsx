@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertTriangle, Mail, KeyRound, CheckCircle2 } from "lucide-react";
-import ylcLogo from "@/assets/yourlangcoach-logo.png";
+import ylcLogo from "@/assets/yuston-icon.png";
 
 type View = "sign-in" | "sign-up" | "forgot";
 

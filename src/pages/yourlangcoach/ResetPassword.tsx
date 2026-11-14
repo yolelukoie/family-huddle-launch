@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, AlertTriangle } from "lucide-react";
-import ylcLogo from "@/assets/yourlangcoach-logo.png";
+import ylcLogo from "@/assets/yuston-icon.png";
 
 type PageState = "loading" | "ready" | "success" | "error";
 

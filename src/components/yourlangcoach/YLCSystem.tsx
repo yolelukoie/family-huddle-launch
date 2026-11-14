@@ -5,11 +5,11 @@ const YLCSystem = () => {
   const h = t.home;
 
   return (
-      <section id="how-it-works" className="py-20 md:py-24 border-t border-[hsl(220,20%,12%)] scroll-mt-16">
+      <section id="how-it-works" className="py-20 md:py-24 border-t border-border scroll-mt-16">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10 md:mb-12">
-              <h2 className="font-display font-semibold text-3xl md:text-4xl text-[hsl(220,25%,95%)] mt-3 text-balance">
+              <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mt-3 text-balance">
                 {h.system.eyebrow}
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">{h.example.title}</p>

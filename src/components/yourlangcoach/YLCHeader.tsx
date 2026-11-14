@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import ylcLogo from "@/assets/yourlangcoach-logo.png";
+import ylcLogo from "@/assets/yuston-icon.png";
 
 const YLCHeader = () => {
   const { t } = useYlcLang();
@@ -21,21 +21,21 @@ const YLCHeader = () => {
           <img
             src={ylcLogo}
             alt="Yuston logo"
-            className="w-10 h-10 md:w-11 md:h-11 rounded-xl object-cover ring-1 ring-[hsl(220,20%,25%)] shadow-[0_2px_12px_hsl(235,80%,60%,0.25)]"
+            className="w-10 h-10 md:w-11 md:h-11 rounded-xl object-cover"
           />
-          <span className="font-display font-semibold text-lg md:text-xl tracking-tight text-[hsl(220,25%,96%)]">
+          <span className="font-display font-semibold text-lg md:text-xl tracking-tight text-foreground">
             Yuston
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm text-[hsl(220,12%,65%)]">
-          <a href="#how-it-works" className="hover:text-[hsl(220,20%,92%)] transition-colors">
+        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+          <a href="#how-it-works" className="hover:text-foreground transition-colors">
             {t.nav.howItWorks}
           </a>
-          <a href="#features" className="hover:text-[hsl(220,20%,92%)] transition-colors">
+          <a href="#features" className="hover:text-foreground transition-colors">
             {t.nav.features}
           </a>
-          <a href="#pricing" className="hover:text-[hsl(220,20%,92%)] transition-colors">
+          <a href="#pricing" className="hover:text-foreground transition-colors">
             {t.nav.pricing}
           </a>
         </nav>
@@ -55,14 +55,14 @@ const YLCHeader = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="min-w-[10rem] bg-[hsl(222,30%,8%)] border-[hsl(220,20%,13%)] text-[hsl(220,20%,92%)]"
+              className="min-w-[10rem] bg-popover ylc-vars border-border text-foreground"
             >
               <DropdownMenuItem asChild>
                 <a
                   href={ANDROID_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer focus:bg-[hsl(235,60%,18%)] focus:text-[hsl(235,90%,78%)]"
+                  className="cursor-pointer focus:bg-[hsl(var(--ylc-fill))] focus:text-primary"
                 >
                   {t.nav.android}
                 </a>
@@ -72,7 +72,7 @@ const YLCHeader = () => {
                   href={IPHONE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer focus:bg-[hsl(235,60%,18%)] focus:text-[hsl(235,90%,78%)]"
+                  className="cursor-pointer focus:bg-[hsl(var(--ylc-fill))] focus:text-primary"
                 >
                   {t.nav.ios}
                 </a>

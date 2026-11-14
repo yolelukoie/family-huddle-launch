@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
 import { useYlcLang } from "@/lib/yourlangcoach/i18n";
-import ylcLogo from "@/assets/yourlangcoach-logo.png";
+import ylcLogo from "@/assets/yuston-icon.png";
 
 const YLCFooter = () => {
   const { t } = useYlcLang();
 
   return (
-    <footer className="ylc-footer border-t border-[hsl(220,20%,15%)] mt-16">
+    <footer className="ylc-footer border-t border-border mt-16">
       <div className="container mx-auto px-4 sm:px-6 py-12">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div>
@@ -17,15 +17,15 @@ const YLCFooter = () => {
                 alt="Yuston logo"
                 className="w-9 h-9 rounded-xl object-cover"
               />
-              <span className="font-display font-semibold text-base tracking-tight text-[hsl(220,20%,92%)]">
+              <span className="font-display font-semibold text-base tracking-tight text-foreground">
                 Yuston
               </span>
             </Link>
-            <p className="text-sm text-[hsl(220,12%,60%)] max-w-sm">
+            <p className="text-sm text-muted-foreground max-w-sm">
               {t.footer.needHelp}{" "}
               <a
                 href={`mailto:${SUPPORT_EMAIL}`}
-                className="text-[hsl(235,90%,78%)] hover:underline"
+                className="text-primary hover:underline"
               >
                 {SUPPORT_EMAIL}
               </a>
@@ -35,32 +35,32 @@ const YLCFooter = () => {
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
             <Link
               to="/yourlangcoach/terms"
-              className="text-[hsl(220,12%,70%)] hover:text-[hsl(220,20%,92%)] transition-colors"
+              className="text-[hsl(var(--ylc-ink-2))] hover:text-foreground transition-colors"
             >
               {t.footer.terms}
             </Link>
             <Link
               to="/yourlangcoach/privacy"
-              className="text-[hsl(220,12%,70%)] hover:text-[hsl(220,20%,92%)] transition-colors"
+              className="text-[hsl(var(--ylc-ink-2))] hover:text-foreground transition-colors"
             >
               {t.footer.privacy}
             </Link>
             <Link
               to="/yourlangcoach/refund"
-              className="text-[hsl(220,12%,70%)] hover:text-[hsl(220,20%,92%)] transition-colors"
+              className="text-[hsl(var(--ylc-ink-2))] hover:text-foreground transition-colors"
             >
               {t.footer.refund}
             </Link>
             <Link
               to="/yourlangcoach/delete-account"
-              className="text-[hsl(220,12%,70%)] hover:text-[hsl(220,20%,92%)] transition-colors"
+              className="text-[hsl(var(--ylc-ink-2))] hover:text-foreground transition-colors"
             >
               {t.footer.deleteAccount}
             </Link>
           </nav>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-[hsl(220,20%,15%)] text-xs text-[hsl(220,10%,50%)]">
+        <div className="mt-10 pt-6 border-t border-border text-xs text-muted-foreground">
           © {new Date().getFullYear()} Family Huddle. {t.footer.rights}
         </div>
       </div>

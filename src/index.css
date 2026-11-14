@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
 /* Family Huddle Design System - Calming cyan/sky-blue palette */
 
@@ -208,36 +208,103 @@
 }
 
 /* ==========================================================================
-   YourLangCoach — scoped dark/elegant theme
-   Applied only inside .ylc-theme wrapper. Does not affect Family Huddle.
+   Yuston (YourLangCoach): "paper and ink", the app's own design
+   (~/GitHub/yourlangcoach src/index.css and brand/README.md, 2026-11-07).
+   Three colours: paper, ink and the coach colour (Yuston green). Light is the
+   default; the visitor's system dark mode switches to the app's dark scheme
+   (warm black, neon green that may glow softly). No gradients, no glow in light.
+   Applied only inside .ylc-theme (and .ylc-vars for portalled menus).
+   Does not affect Family Huddle.
    ========================================================================== */
+.ylc-theme,
+.ylc-vars {
+  --background: 48 38% 97%;          /* paper #FBFAF6 */
+  --foreground: 45 8% 10%;           /* ink #1C1B18 */
+  --card: 0 0% 100%;
+  --card-foreground: 45 8% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 45 8% 10%;
+  --primary: 157 49% 24%;            /* Yuston #1F5A43 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 45 22% 93%;
+  --secondary-foreground: 45 8% 10%;
+  --muted: 45 22% 93%;
+  --muted-foreground: 42 5% 41%;     /* #6E6B64 */
+  --accent: 45 22% 93%;
+  --accent-foreground: 45 8% 10%;
+  --destructive: 358 65% 52%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 42 17% 88%;              /* #E6E3DC */
+  --input: 42 17% 88%;
+  --ring: 157 49% 24%;
+  --radius: 1rem;
+  --ylc-ink-2: 45 6% 27%;            /* body copy between ink and muted */
+  --ylc-fill: 147 24% 91%;           /* coach fill #E3EEE8 */
+  --ylc-warm: 15 57% 49%;            /* the app's second coach colour (Anna) */
+  --ylc-bezel: 45 8% 10%;
+  --ylc-glow: none;
+  --ylc-shadow: 0 1px 2px hsl(45 8% 10% / 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  .ylc-theme,
+  .ylc-vars {
+    --background: 40 7% 8%;          /* #161513 */
+    --foreground: 42 32% 92%;        /* #F1EDE4 */
+    --card: 36 9% 11%;               /* #1F1D1A */
+    --card-foreground: 42 32% 92%;
+    --popover: 36 9% 11%;
+    --popover-foreground: 42 32% 92%;
+    --primary: 155 60% 57%;          /* Yuston neon #4ED39B */
+    --primary-foreground: 40 7% 8%;
+    --secondary: 34 9% 16%;
+    --secondary-foreground: 42 32% 92%;
+    --muted: 34 9% 16%;
+    --muted-foreground: 39 8% 58%;   /* #9C968B */
+    --accent: 34 9% 16%;
+    --accent-foreground: 42 32% 92%;
+    --destructive: 358 82% 62%;
+    --border: 34 9% 18%;
+    --input: 34 9% 18%;
+    --ring: 155 60% 57%;
+    --ylc-ink-2: 40 14% 78%;
+    --ylc-fill: 155 60% 57% / 0.12;
+    --ylc-warm: 17 100% 72%;
+    --ylc-bezel: 34 9% 22%;
+    --ylc-glow: 0 0 10px hsl(155 60% 57% / 0.45), 0 0 32px hsl(155 60% 57% / 0.25);
+    --ylc-shadow: none;
+  }
+}
+
 .ylc-theme {
-  background: hsl(222 35% 5%);
-  color: hsl(220 20% 92%);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
   font-family: 'Inter', system-ui, sans-serif;
+  color-scheme: light dark;
+}
+
+.ylc-theme .font-display,
+.ylc-vars .font-display,
+.ylc-theme h1,
+.ylc-theme h2,
+.ylc-theme h3 {
+  font-family: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
 }
 
 .ylc-theme ::selection {
-  background: hsl(235 70% 55% / 0.4);
-  color: hsl(220 25% 98%);
+  background: hsl(var(--primary) / 0.22);
+  color: hsl(var(--foreground));
 }
 
 /* Header */
 .ylc-header {
-  background: hsl(222 35% 5% / 0.7);
-  border-bottom: 1px solid hsl(220 20% 12%);
+  background: hsl(var(--background) / 0.88);
+  border-bottom: 1px solid hsl(var(--border));
 }
 
 /* Footer */
 .ylc-footer {
-  background: hsl(222 35% 4%);
-}
-
-/* Logo mark */
-.ylc-logo-mark {
-  background: linear-gradient(135deg, hsl(235 85% 65%), hsl(265 75% 65%));
-  color: hsl(0 0% 100%);
-  box-shadow: 0 4px 16px -4px hsl(235 85% 65% / 0.5);
+  background: hsl(var(--background));
 }
 
 /* Eyebrow label */
@@ -246,16 +313,18 @@
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: hsl(235 60% 75%);
-  font-weight: 500;
+  color: hsl(var(--primary));
+  font-weight: 600;
 }
 
-/* Gradient accent text */
+/* Accent words: the coach colour, never a gradient; in dark mode the neon glows softly */
 .ylc-text-gradient {
-  background: linear-gradient(135deg, hsl(235 90% 75%), hsl(275 80% 75%));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: hsl(var(--primary));
+}
+@media (prefers-color-scheme: dark) {
+  .ylc-text-gradient {
+    text-shadow: 0 0 18px hsl(var(--primary) / 0.35);
+  }
 }
 
 /* Buttons */
@@ -263,96 +332,64 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
 }
 
 .ylc-btn-primary {
-  background: linear-gradient(135deg, hsl(235 85% 62%), hsl(265 75% 62%));
-  color: hsl(0 0% 100%);
-  box-shadow: 0 8px 24px -8px hsl(235 85% 62% / 0.6);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-weight: 600;
 }
 .ylc-btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 32px -8px hsl(235 85% 62% / 0.7);
-  filter: brightness(1.08);
+  filter: brightness(1.12);
+  box-shadow: var(--ylc-glow);
 }
 
 .ylc-btn-secondary {
-  background: hsl(220 20% 12%);
-  color: hsl(220 20% 92%);
-  border: 1px solid hsl(220 20% 18%);
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
 }
 .ylc-btn-secondary:hover {
-  background: hsl(220 20% 15%);
-  border-color: hsl(235 60% 50%);
+  border-color: hsl(var(--primary) / 0.6);
 }
 
-/* Card surface */
+/* Card surface: paper card, a hairline, no shadow */
 .ylc-card {
-  background: linear-gradient(180deg, hsl(222 30% 8%), hsl(222 32% 6%));
-  border: 1px solid hsl(220 20% 13%);
-  box-shadow: 0 4px 20px -8px hsl(0 0% 0% / 0.5);
-  transition: all 0.25s ease;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  box-shadow: var(--ylc-shadow);
+  transition: border-color 0.2s ease;
 }
 .ylc-card:hover {
-  border-color: hsl(235 40% 30%);
-  box-shadow: 0 8px 32px -8px hsl(235 80% 50% / 0.25);
-  transform: translateY(-2px);
+  border-color: hsl(var(--primary) / 0.35);
 }
 
+/* Highlighted card: like a selected option in the app (coach fill, coach-colour outline) */
 .ylc-card-highlight {
-  border-color: hsl(235 60% 45%);
-  background: linear-gradient(180deg, hsl(235 30% 10%), hsl(222 32% 6%));
-  box-shadow: 0 0 0 1px hsl(235 70% 55% / 0.3), 0 8px 32px -8px hsl(235 80% 50% / 0.4);
+  background: hsl(var(--ylc-fill));
+  border-color: hsl(var(--primary) / 0.45);
 }
 
 /* Icon wrapper */
 .ylc-icon-wrap {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, hsl(235 60% 18%), hsl(265 50% 18%));
-  color: hsl(235 90% 78%);
-  border: 1px solid hsl(235 40% 25%);
-}
-
-/* Numbered step badge */
-.ylc-step-number {
-  position: absolute;
-  top: -12px;
-  right: 16px;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: hsl(222 35% 5%);
-  border: 1px solid hsl(235 50% 35%);
-  color: hsl(235 90% 78%);
-  font-size: 0.75rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Bullet dot */
-.ylc-bullet-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, hsl(235 90% 70%), hsl(265 80% 70%));
-  flex-shrink: 0;
+  background: hsl(var(--ylc-fill));
+  color: hsl(var(--primary));
 }
 
 /* Badges */
 .ylc-badge {
-  background: linear-gradient(135deg, hsl(235 85% 62%), hsl(265 75% 62%));
-  color: hsl(0 0% 100%);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -363,9 +400,9 @@
 }
 
 .ylc-badge-soft {
-  background: hsl(220 20% 12%);
-  color: hsl(235 70% 78%);
-  border: 1px solid hsl(235 40% 30%);
+  background: hsl(var(--card));
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--primary) / 0.4);
   font-size: 0.7rem;
   font-weight: 500;
   padding: 0.3rem 0.7rem;
@@ -373,56 +410,29 @@
   white-space: nowrap;
 }
 
-/* Radial glow accents */
+/* The old neon glows are gone: the app is flat paper */
 .ylc-glow {
-  position: absolute;
-  pointer-events: none;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.5;
-  z-index: 0;
-}
-.ylc-glow-1 {
-  top: -150px;
-  left: -100px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, hsl(235 85% 55% / 0.5), transparent 70%);
-}
-.ylc-glow-2 {
-  top: 50px;
-  right: -150px;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, hsl(275 75% 55% / 0.4), transparent 70%);
-}
-.ylc-glow-3 {
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 400px;
-  background: radial-gradient(ellipse, hsl(235 80% 50% / 0.25), transparent 70%);
+  display: none;
 }
 
 /* Prose for legal pages */
 .ylc-prose {
-  color: hsl(220 15% 78%);
+  color: hsl(var(--ylc-ink-2));
   line-height: 1.7;
 }
 .ylc-prose h1 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 2.25rem;
-  font-weight: 600;
-  color: hsl(220 25% 95%);
+  font-weight: 700;
+  color: hsl(var(--foreground));
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
 .ylc-prose h2 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
-  color: hsl(220 25% 92%);
+  color: hsl(var(--foreground));
   margin-top: 2.25rem;
   margin-bottom: 0.75rem;
 }
@@ -431,131 +441,80 @@
 }
 .ylc-prose ul {
   list-style: disc;
-  padding-left: 1.5rem;
+  padding-inline-start: 1.5rem;
   margin-bottom: 1rem;
 }
 .ylc-prose li {
   margin-bottom: 0.4rem;
 }
 .ylc-prose a {
-  color: hsl(235 90% 75%);
+  color: hsl(var(--primary));
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 .ylc-prose a:hover {
-  color: hsl(235 95% 85%);
+  filter: brightness(1.15);
 }
 .ylc-prose strong {
-  color: hsl(220 25% 92%);
+  color: hsl(var(--foreground));
   font-weight: 600;
 }
 .ylc-prose .not-prose {
   margin: 1.5rem 0;
 }
 
-/* Shadcn primitive overrides scoped to .ylc-theme so auth/delete pages match site */
-.ylc-theme [data-radix-popper-content-wrapper],
-.ylc-theme {
-  --background: 222 35% 5%;
-  --foreground: 220 20% 92%;
-  --card: 222 30% 8%;
-  --card-foreground: 220 20% 92%;
-  --popover: 222 30% 8%;
-  --popover-foreground: 220 20% 92%;
-  --primary: 235 85% 65%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 220 20% 12%;
-  --secondary-foreground: 220 20% 92%;
-  --muted: 220 20% 12%;
-  --muted-foreground: 220 12% 65%;
-  --accent: 235 60% 18%;
-  --accent-foreground: 235 90% 78%;
-  --destructive: 0 70% 55%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 220 20% 15%;
-  --input: 220 20% 15%;
-  --ring: 235 85% 65%;
-}
-
-/* Card surface in YLC theme */
-.ylc-theme [class*="rounded-lg"][class*="border"][class*="bg-card"],
-.ylc-theme .bg-card {
-  background: linear-gradient(180deg, hsl(222 30% 8%), hsl(222 32% 6%));
-  border-color: hsl(220 20% 13%);
-  box-shadow: 0 8px 32px -12px hsl(0 0% 0% / 0.6);
-}
-
 /* Inputs in YLC theme */
 .ylc-theme input,
 .ylc-theme textarea {
-  background: hsl(222 30% 7%);
-  border-color: hsl(220 20% 18%);
-  color: hsl(220 20% 92%);
+  background: hsl(var(--card));
+  border-color: hsl(var(--input));
+  color: hsl(var(--foreground));
 }
 .ylc-theme input::placeholder,
 .ylc-theme textarea::placeholder {
-  color: hsl(220 12% 50%);
+  color: hsl(var(--muted-foreground));
 }
 .ylc-theme input:focus-visible,
 .ylc-theme textarea:focus-visible {
-  border-color: hsl(235 70% 55%);
-  box-shadow: 0 0 0 2px hsl(235 70% 55% / 0.25);
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
 }
 
-/* Primary button gradient inside YLC theme */
+/* Primary buttons inside YLC theme: solid coach colour */
 .ylc-theme button[class*="bg-primary"]:not([class*="bg-primary/"]) {
-  background: linear-gradient(135deg, hsl(235 85% 62%), hsl(265 75% 62%));
-  color: hsl(0 0% 100%);
-  box-shadow: 0 8px 24px -8px hsl(235 85% 62% / 0.5);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
   border: none;
 }
 .ylc-theme button[class*="bg-primary"]:not([class*="bg-primary/"]):hover {
-  filter: brightness(1.08);
+  filter: brightness(1.12);
 }
 
-/* Outline / ghost buttons subtle on dark */
+/* Outline buttons */
 .ylc-theme button[class*="border"][class*="bg-background"],
 .ylc-theme button[class*="variant-outline"] {
-  background: hsl(222 30% 9%);
-  border-color: hsl(220 20% 18%);
-  color: hsl(220 20% 92%);
+  background: hsl(var(--card));
+  border-color: hsl(var(--border));
+  color: hsl(var(--foreground));
 }
 .ylc-theme button[class*="border"][class*="bg-background"]:hover {
-  background: hsl(220 20% 14%);
-  border-color: hsl(235 50% 40%);
+  border-color: hsl(var(--primary) / 0.6);
 }
 
 /* Alert default (info) inside YLC */
 .ylc-theme [role="alert"]:not([class*="destructive"]) {
-  background: hsl(222 30% 9%);
-  border-color: hsl(220 20% 18%);
-  color: hsl(220 20% 88%);
+  background: hsl(var(--card));
+  border-color: hsl(var(--border));
+  color: hsl(var(--foreground));
 }
 
-/* Teacher Partner Program — purple-led extension of YourLangCoach with a warm partner accent */
+/* Teacher Partner Program: the same paper and ink; the partner accent is the app's warm coach colour */
 .tpp-theme {
-  --background: 222 35% 5%;
-  --foreground: 220 20% 92%;
-  --card: 222 30% 8%;
-  --card-foreground: 220 20% 92%;
-  --popover: 222 30% 8%;
-  --popover-foreground: 220 20% 92%;
-  --primary: 245 82% 68%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 220 20% 12%;
-  --secondary-foreground: 220 20% 92%;
-  --muted: 220 20% 12%;
-  --muted-foreground: 220 12% 65%;
-  --accent: 253 55% 18%;
-  --accent-foreground: 245 90% 82%;
-  --border: 220 20% 15%;
-  --input: 220 20% 15%;
-  --ring: 245 82% 68%;
-  --tpp-gold: 38 84% 67%;
-  --tpp-amber: 38 84% 60%;
-  --tpp-amber-text: 38 90% 72%;
-  --tpp-amber-bg: 38 84% 60% / 0.12;
-  --tpp-amber-border: 38 84% 60% / 0.45;
+  --tpp-gold: var(--ylc-warm);
+  --tpp-amber: var(--ylc-warm);
+  --tpp-amber-text: var(--ylc-warm);
+  --tpp-amber-bg: 15 57% 49% / 0.1;
+  --tpp-amber-border: 15 57% 49% / 0.45;
 }
 
 .tpp-theme .container {
@@ -563,19 +522,7 @@
 }
 
 .tpp-theme .ylc-eyebrow {
-  color: hsl(var(--tpp-gold));
   letter-spacing: 0.11em;
-}
-
-.tpp-theme .ylc-icon-wrap {
-  background: hsl(var(--accent));
-  border-color: hsl(var(--primary) / 0.3);
-  color: hsl(var(--accent-foreground));
-}
-
-.tpp-theme .ylc-header {
-  background: hsl(var(--background) / 0.88);
-  border-color: hsl(var(--border));
 }
 
 .tpp-premium-code {
@@ -589,20 +536,16 @@
 .tpp-warning-note {
   background-color: hsl(var(--tpp-amber-bg));
   border-color: hsl(var(--tpp-amber-border));
-  color: hsl(38 80% 88%);
+  color: hsl(var(--foreground));
 }
 
 .tpp-theme button[class*="bg-primary"] {
-  background: linear-gradient(135deg, hsl(235 85% 62%), hsl(265 75% 62%));
+  background: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
-  box-shadow: 0 12px 30px -16px hsl(var(--primary) / 0.7);
 }
 
 .tpp-hero {
-  background:
-    linear-gradient(180deg, hsl(var(--background) / 0.3), hsl(var(--background))),
-    radial-gradient(ellipse at 18% 8%, hsl(var(--primary) / 0.22), transparent 48%),
-    radial-gradient(ellipse at 82% 22%, hsl(var(--tpp-gold) / 0.07), transparent 34%);
+  background: hsl(var(--background));
 }
 
 .tpp-flow-item {
@@ -620,9 +563,8 @@
 .tpp-review-preview {
   border: 1px solid hsl(var(--primary) / 0.35);
   border-radius: 0.5rem;
-  background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--accent) / 0.55));
+  background: hsl(var(--ylc-fill));
   padding: 1.5rem;
-  box-shadow: 0 24px 60px -42px hsl(var(--primary) / 0.85);
 }
 
 .tpp-review-track {
@@ -639,7 +581,7 @@
   left: 7%;
   right: 7%;
   height: 2px;
-  background: linear-gradient(90deg, hsl(var(--tpp-gold)), hsl(var(--primary)));
+  background: hsl(var(--primary) / 0.45);
 }
 
 .tpp-review-step {
@@ -694,7 +636,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, hsl(var(--accent) / 0.8), hsl(var(--background)));
+  background: hsl(var(--ylc-fill));
   border: 1px solid hsl(var(--border));
   border-radius: 0.5rem;
   overflow: hidden;
@@ -704,9 +646,9 @@
   position: absolute;
   width: min(48%, 300px);
   overflow: hidden;
-  border: 7px solid hsl(225 22% 12%);
+  border: 7px solid hsl(var(--ylc-bezel));
   border-radius: 2rem;
-  box-shadow: 0 30px 70px -24px hsl(0 0% 0% / 0.8);
+  box-shadow: 0 30px 60px -30px hsl(45 8% 10% / 0.45);
 }
 
 .tpp-phone img {
@@ -728,7 +670,7 @@
 }
 
 .tpp-offer {
-  background: linear-gradient(110deg, hsl(var(--primary) / 0.11), transparent 52%);
+  background: hsl(var(--ylc-fill));
 }
 
 .tpp-comparison {
@@ -744,7 +686,7 @@
 
 .tpp-comparison-active {
   border-color: hsl(var(--primary) / 0.45);
-  background: linear-gradient(145deg, hsl(var(--primary) / 0.14), hsl(var(--card)));
+  background: hsl(var(--ylc-fill));
 }
 
 .tpp-inline-flow {
@@ -775,7 +717,7 @@
 
 .tpp-discovery {
   border-block: 1px solid hsl(var(--primary) / 0.3);
-  background: linear-gradient(90deg, hsl(var(--primary) / 0.09), transparent);
+  background: hsl(var(--ylc-fill));
   padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 
@@ -795,7 +737,7 @@
 
 .tpp-system-phase-active {
   border-color: hsl(var(--primary) / 0.5);
-  background: linear-gradient(160deg, hsl(var(--primary) / 0.14), hsl(var(--card)));
+  background: hsl(var(--ylc-fill));
 }
 
 .tpp-system-row {
@@ -851,7 +793,7 @@
     right: auto;
     width: 2px;
     height: auto;
-    background: linear-gradient(180deg, hsl(var(--tpp-gold)), hsl(var(--primary)));
+    background: hsl(var(--primary) / 0.45);
   }
 
   .tpp-review-step {

@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
-import ylcLogo from "@/assets/yourlangcoach-logo.png";
+import ylcLogo from "@/assets/yuston-icon.png";
 import { IPHONE_URL, ANDROID_URL, SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
 import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
 import {

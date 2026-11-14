@@ -13,13 +13,13 @@ const YLCHero = () => {
 
       <div className="container mx-auto px-4 sm:px-6 relative">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="font-display font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight text-[hsl(220,25%,95%)] text-balance">
+          <h1 className="font-display font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight text-foreground text-balance">
             {h.titleA}
             <span className="ylc-text-gradient">{h.titleB}</span>
             {h.titleC}
           </h1>
 
-          <p className="mt-6 text-lg md:text-xl text-[hsl(220,15%,78%)] text-balance whitespace-pre-line">
+          <p className="mt-6 text-lg md:text-xl text-[hsl(var(--ylc-ink-2))] text-balance whitespace-pre-line">
             {h.subtitle}
           </p>
 
@@ -44,7 +44,7 @@ const YLCHero = () => {
             </a>
           </div>
 
-          <p className="mt-4 text-sm text-[hsl(220,14%,62%)]">{h.note}</p>
+          <p className="mt-4 text-sm text-muted-foreground">{h.note}</p>
 
           <div
             className="mt-10 mx-auto max-w-3xl flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-y-1.5 sm:gap-x-2.5 sm:gap-y-2"
@@ -52,16 +52,16 @@ const YLCHero = () => {
           >
             {h.cycle.steps.map((step) => (
               <span key={step} className="contents">
-                <span className="max-w-full px-4 py-2 rounded-full text-center text-[0.95rem] text-[hsl(220,25%,95%)] bg-[hsl(235,40%,14%)]/70 border border-[hsl(235,40%,30%)]">
+                <span className="max-w-full px-4 py-2 rounded-full text-center text-[0.95rem] text-foreground bg-card border border-border">
                   {step}
                 </span>
-                <span className="font-semibold text-[hsl(235,60%,75%)]" aria-hidden="true">
+                <span className="font-semibold text-primary" aria-hidden="true">
                   <span className="sm:hidden">↓</span>
                   <span className="hidden sm:inline">{arrow}</span>
                 </span>
               </span>
             ))}
-            <span className="text-center text-[0.95rem] text-[hsl(220,14%,62%)]">{h.cycle.tail}</span>
+            <span className="text-center text-[0.95rem] text-muted-foreground">{h.cycle.tail}</span>
           </div>
         </div>
       </div>

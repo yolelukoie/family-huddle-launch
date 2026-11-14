@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Apple, Check, Copy, Loader2, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
-import ylcLogo from "@/assets/yourlangcoach-logo.png";
+import ylcLogo from "@/assets/yuston-icon.png";
 import { ylcSupabase } from "@/integrations/supabase/ylc-client";
 import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
 import { iosCodeMarker, isIosDevice } from "@/lib/yourlangcoach/iosCodeMarker";
