@@ -117,6 +117,12 @@ export const homeEn = {
     text: "Yuston can look at the vocabulary you already have and suggest useful new words that naturally build on it — around travel, work, food, relationships or everyday life. You can also pick a topic and ask for vocabulary for it.",
     note: "New words then enter the same loop: save → remember → practise → use.",
   },
+  grammar: {
+    title: "A grammar exercise on whatever you ask for",
+    text: "Ask Yuston for an exercise on whatever keeps tripping you up, say the past tense, and he builds it right there in the chat. You get your score the moment you send your answers, and then he goes through each mistake with you and suggests what to do next.",
+    altExercise: "Grammar exercise card in a chat with Yuston",
+    altReview: "Exercise results and Yuston’s review of the mistakes",
+  },
   workbook: {
     eyebrow: "04 · Keep context",
     title: "Your learning — in one place",
@@ -352,6 +358,12 @@ export const homeHe: YlcHomeDict = {
     text: "Yuston מציע מילים חדשות ושימושיות לפי המילון שלך: טיולים, עבודה, אוכל, מערכות יחסים, חיי היום־יום. אפשר גם לבחור נושא ולבקש מילים בדיוק עליו.",
     note: "גם המילים החדשות נכנסות לאותו מעגל: שומרים, זוכרים, מתרגלים, משתמשים.",
   },
+  grammar: {
+    title: "תרגיל דקדוק על הנושא שביקשת",
+    text: "מבקשים מיוסטון תרגיל על נושא שמתבלבלים בו, נגיד זמן עבר, והוא מכין אותו ישר בצ׳אט. שולחים את התשובות ומיד רואים את התוצאה, ואז יוסטון עובר על כל טעות ומציע איך להמשיך.",
+    altExercise: "כרטיס של תרגיל דקדוק בצ׳אט עם יוסטון",
+    altReview: "תוצאות התרגיל וההסבר של יוסטון על הטעויות",
+  },
   workbook: {
     eyebrow: "04 · חומרי לימוד",
     title: "כל חומרי הלימוד שלך, במקום אחד",
@@ -369,9 +381,9 @@ export const homeHe: YlcHomeDict = {
     title: "מעגל אחד שהופך מילה שפגשת לחלק מהשפה שלך",
     steps: [
       { num: "01", label: "לאסוף", flow: "פוגשים → שומרים", text: "מילים משיעורים, שיחות, עבודה, מדיה ויומיום." },
-      { num: "02", label: "לזכור", flow: "חזרות מרווחות", text: "Yuston מחזירה מילים חשובות לאורך זמן." },
+      { num: "02", label: "לזכור", flow: "חזרות מרווחות", text: "Yuston מחזיר מילים חשובות לאורך זמן." },
       { num: "03", label: "להשתמש", flow: "תרגול עם AI", text: "להשתמש במילים בשאלות, שיחות, סיפורים והקשרים אמיתיים." },
-      { num: "04", label: "להרחיב", flow: "מילים חדשות על בסיס מה שכבר יודעים", text: "Yuston מציעה אוצר מילים שמתחבר למה שכבר יש לך." },
+      { num: "04", label: "להרחיב", flow: "מילים חדשות על בסיס מה שכבר יודעים", text: "Yuston מציע אוצר מילים שמתחבר למה שכבר יש לך." },
     ],
     footer: "המילון שלך נעשה אישי יותר — ושימושי יותר — עם הזמן.",
   },
@@ -385,7 +397,7 @@ export const homeHe: YlcHomeDict = {
     ],
     ylcTitle: "Yuston",
     ylcText: "פוגשים משהו שימושי → שומרים → זוכרים לאורך זמן → משתמשים באופן פעיל → ממשיכים לבנות.",
-    footer: "Yuston מחברת את החלקים למעגל למידה אחד רציף.",
+    footer: "Yuston מחבר את החלקים למעגל למידה אחד רציף.",
   },
   example: {
     eyebrow: "דוגמה אמיתית",
@@ -560,6 +572,12 @@ export const homeRu: YlcHomeDict = {
     title: "Не знаете, что учить дальше? Ваш словарь подскажет.",
     text: "Yuston предлагает новые полезные слова на основе вашего словаря — о путешествиях, работе, еде, отношениях и повседневной жизни. Можно также выбрать тему и попросить подобрать слова по ней.",
     note: "Новые слова проходят тот же путь: сохранить → запомнить → потренироваться → использовать в речи.",
+  },
+  grammar: {
+    title: "Упражнение по грамматике на тему, которую назовёте вы",
+    text: "Попросите у Юстона упражнение на тему, в которой путаетесь, например на прошедшее время, и он соберёт его прямо в чате. Результат виден сразу, как только вы отправите ответы, а потом Юстон разберёт каждую ошибку и предложит, что делать дальше.",
+    altExercise: "Карточка упражнения по грамматике в чате с Юстоном",
+    altReview: "Итог упражнения и разбор ошибок от Юстона",
   },
   workbook: {
     eyebrow: "04 · Сохраните контекст",

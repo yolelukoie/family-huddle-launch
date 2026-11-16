@@ -1,9 +1,21 @@
-import { Mic, Sparkles, Bell, MessagesSquare, FolderOpen, Check, ArrowRight } from "lucide-react";
+import { Mic, Sparkles, Bell, MessagesSquare, FolderOpen, Check, ArrowRight, ListChecks } from "lucide-react";
 import { useYlcLang } from "@/lib/yourlangcoach/i18n";
 import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg";
 import reviewSettings from "@/assets/ylc-review-settings.jpeg";
 import captureDictionary from "@/assets/ylc-capture-dictionary.jpeg";
 import captureCard from "@/assets/ylc-capture-card.jpeg";
+import grammarExerciseEn from "@/assets/ylc-grammar-exercise-en.jpeg";
+import grammarExerciseRu from "@/assets/ylc-grammar-exercise-ru.jpeg";
+import grammarExerciseHe from "@/assets/ylc-grammar-exercise-he.jpeg";
+import grammarReviewEn from "@/assets/ylc-grammar-review-en.jpeg";
+import grammarReviewRu from "@/assets/ylc-grammar-review-ru.jpeg";
+import grammarReviewHe from "@/assets/ylc-grammar-review-he.jpeg";
+
+const GRAMMAR_SHOTS = {
+  en: [grammarExerciseEn, grammarReviewEn],
+  ru: [grammarExerciseRu, grammarReviewRu],
+  he: [grammarExerciseHe, grammarReviewHe],
+} as const;
 
 const Arrow = () => (
   <span aria-hidden="true" className="text-muted-foreground text-sm">
@@ -12,8 +24,9 @@ const Arrow = () => (
 );
 
 const YLCStory = () => {
-  const { t } = useYlcLang();
+  const { t, lang } = useYlcLang();
   const h = t.home;
+  const [grammarExercise, grammarReview] = GRAMMAR_SHOTS[lang] ?? GRAMMAR_SHOTS.en;
 
   return (
     <>
@@ -279,6 +292,27 @@ const YLCStory = () => {
               </h3>
               <p className="text-[hsl(var(--ylc-ink-2))] mt-3">{h.discovery.text}</p>
               <p className="text-sm text-primary mt-4">{h.discovery.note}</p>
+            </div>
+
+            {/* Grammar exercises */}
+            <div className="ylc-card rounded-2xl p-6 md:p-8 mt-6">
+              <div className="flex items-start gap-3">
+                <div className="ylc-icon-wrap shrink-0">
+                  <ListChecks className="w-5 h-5" strokeWidth={1.6} />
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold text-xl md:text-2xl text-foreground">
+                    {h.grammar.title}
+                  </h3>
+                  <p className="text-[hsl(var(--ylc-ink-2))] mt-3">{h.grammar.text}</p>
+                </div>
+              </div>
+              <div className="mx-auto mt-6 max-w-xl">
+                <div className="grid grid-cols-2 items-start gap-4 sm:gap-6 px-3 sm:px-5 py-5">
+                  <img src={grammarExercise} alt={h.grammar.altExercise} loading="lazy" className="w-full -rotate-3 translate-y-5 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
+                  <img src={grammarReview} alt={h.grammar.altReview} loading="lazy" className="w-full rotate-3 rounded-xl border border-border shadow-xl motion-reduce:transform-none" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
