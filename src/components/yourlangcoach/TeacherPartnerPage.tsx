@@ -8,13 +8,29 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
+import ThemeToggle from "@/components/yourlangcoach/ThemeToggle";
 import ylcLogo from "@/assets/yuston-icon.png";
 import workbookGrid from "@/assets/ylc-workbook-grid.jpeg";
 import workbookEditor from "@/assets/ylc-workbook-editor.jpeg";
 import reviewDashboard from "@/assets/ylc-review-dashboard.jpeg";
 import reviewSettings from "@/assets/ylc-review-settings.jpeg";
+import coachSuggestsWords from "@/assets/ylc-coach-suggests-words.jpeg";
+import dictionarySuggested from "@/assets/ylc-dictionary-suggested.jpeg";
+import grammarExerciseEn from "@/assets/ylc-grammar-exercise-en.jpeg";
+import grammarExerciseRu from "@/assets/ylc-grammar-exercise-ru.jpeg";
+import grammarExerciseHe from "@/assets/ylc-grammar-exercise-he.jpeg";
+import grammarReviewEn from "@/assets/ylc-grammar-review-en.jpeg";
+import grammarReviewRu from "@/assets/ylc-grammar-review-ru.jpeg";
+import grammarReviewHe from "@/assets/ylc-grammar-review-he.jpeg";
 import { SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
-import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
+import { YlcLangProvider, useYlcLang, type YlcLang } from "@/lib/yourlangcoach/i18n";
+
+// The grammar exercise in the page's language (the same shots as the home page).
+const GRAMMAR_SHOTS: Record<YlcLang, [string, string]> = {
+  en: [grammarExerciseEn, grammarReviewEn],
+  ru: [grammarExerciseRu, grammarReviewRu],
+  he: [grammarExerciseHe, grammarReviewHe],
+};
 
 const SIGNUP_URL = "/yourlangcoach/tpp/join";
 const stepIcons = [CircleDot, RefreshCw, MessageCircleMore, NotebookTabs];
@@ -59,8 +75,9 @@ const Flow = ({ items, quiet = false }: { items: string[]; quiet?: boolean }) =>
 );
 
 const TeacherPartnerContent = () => {
-  const { t, dir } = useYlcLang();
+  const { t, dir, lang } = useYlcLang();
   const tp = t.tpp;
+  const [grammarExercise, grammarReview] = GRAMMAR_SHOTS[lang] ?? GRAMMAR_SHOTS.en;
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -78,7 +95,7 @@ const TeacherPartnerContent = () => {
             <a href="#teacher-benefits" className="transition-colors hover:text-foreground">{tp.navBenefits}</a>
             <a href="#faq" className="transition-colors hover:text-foreground">{tp.navFaq}</a>
           </nav>
-          <div className="flex items-center gap-1 sm:gap-2"><LanguageSwitcher /><PartnerCTA compact className="h-9 px-2 text-xs sm:px-4 sm:text-sm" /></div>
+          <div className="flex items-center gap-1 sm:gap-2"><ThemeToggle /><LanguageSwitcher /><PartnerCTA compact className="h-9 px-2 text-xs sm:px-4 sm:text-sm" /></div>
         </div>
       </header>
 
@@ -136,6 +153,7 @@ const TeacherPartnerContent = () => {
             <div className="mx-auto mt-12 grid max-w-5xl auto-rows-min gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
               {tp.loopLabels.map((label, index) => { const Icon = stepIcons[index]; return <div key={label} className="flex flex-col bg-card p-5"><span className="text-sm text-primary">0{index + 1}</span><Icon className="mt-3 h-6 w-6 text-primary" /><p className="mt-2 font-display text-lg font-semibold">{label}</p></div>; })}
             </div>
+            <div className="mx-auto mt-10 max-w-3xl border-s-2 border-primary ps-5"><h3 className="font-display text-xl font-semibold">{tp.nameTitle}</h3><p className="mt-2 leading-relaxed text-muted-foreground">{tp.nameText}</p></div>
           </div>
         </section>
 
@@ -171,7 +189,14 @@ const TeacherPartnerContent = () => {
               <div><SectionHeading eyebrow={tp.activeEyebrow} title={tp.activeTitle} intro={tp.activeIntro} /><p className="mt-8 font-display text-2xl font-semibold text-primary md:text-3xl">{tp.activeCallout}</p><div className="mt-7"><Flow items={tp.activeFlow} /></div></div>
               <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">{tp.activeItems.map((item) => <div key={item} className="flex gap-3 bg-card p-5 text-sm"><Check className="h-5 w-5 shrink-0 text-primary" />{item}</div>)}</div>
             </div>
-            <div className="tpp-discovery mt-14 grid gap-6 lg:grid-cols-[auto_1fr] lg:items-start"><div className="ylc-icon-wrap"><Lightbulb /></div><div><h3 className="font-display text-2xl font-semibold">{tp.discoveryTitle}</h3><p className="mt-4 max-w-4xl leading-relaxed text-muted-foreground">{tp.discoveryText}</p><p className="mt-4 font-medium text-foreground">{tp.discoveryNote}</p></div></div>
+            <div className="tpp-discovery mt-14 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+              <div><div className="ylc-icon-wrap"><Lightbulb /></div><h3 className="mt-5 font-display text-2xl font-semibold">{tp.discoveryTitle}</h3><p className="mt-4 max-w-4xl leading-relaxed text-muted-foreground">{tp.discoveryText}</p><p className="mt-4 font-medium text-foreground">{tp.discoveryNote}</p></div>
+              <div className="tpp-product-stage"><figure className="tpp-phone tpp-phone-back"><img src={coachSuggestsWords} alt={tp.discoveryTitle} loading="lazy" /></figure><figure className="tpp-phone tpp-phone-front"><img src={dictionarySuggested} alt="Yuston dictionary" loading="lazy" /></figure></div>
+            </div>
+            <div className="mt-14 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+              <div><div className="ylc-icon-wrap"><CircleDot /></div><h3 className="mt-5 font-display text-2xl font-semibold">{tp.grammarTitle}</h3><p className="mt-4 leading-relaxed text-muted-foreground">{tp.grammarText}</p></div>
+              <div className="tpp-product-stage"><figure className="tpp-phone tpp-phone-back"><img src={grammarExercise} alt={tp.grammarAltExercise} loading="lazy" /></figure><figure className="tpp-phone tpp-phone-front"><img src={grammarReview} alt={tp.grammarAltReview} loading="lazy" /></figure></div>
+            </div>
           </div>
         </section>
 

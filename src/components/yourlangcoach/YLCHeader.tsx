@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
 import { useYlcLang } from "@/lib/yourlangcoach/i18n";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
+import ThemeToggle from "@/components/yourlangcoach/ThemeToggle";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -44,7 +45,7 @@ const YLCHeader = () => {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <LanguageSwitcher />
+          <ThemeToggle /><LanguageSwitcher />
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

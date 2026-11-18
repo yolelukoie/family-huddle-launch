@@ -14,10 +14,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/yourlangcoach/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<script>try{if(localStorage.getItem("ylc-theme")==="dark")document.documentElement.dataset.ylcTheme="dark"}catch(e){}</script>
 <style>
   /* Yuston "paper and ink" (the app's design): paper, ink, Yuston green; dark follows the system */
-  :root { color-scheme: light dark; --paper:#FBFAF6; --ink:#1C1B18; --ink2:#46443F; --muted:#6E6B64; --line:#E6E3DC; --coach:#1F5A43; }
-  @media (prefers-color-scheme: dark) { :root { --paper:#161513; --ink:#F1EDE4; --ink2:#CFC9BD; --muted:#9C968B; --line:#2C2925; --coach:#4ED39B; } }
+  :root { color-scheme: light; --paper:#FBFAF6; --ink:#1C1B18; --ink2:#46443F; --muted:#6E6B64; --line:#E6E3DC; --coach:#1F5A43; }
+  html[data-ylc-theme="dark"] { color-scheme: dark; --paper:#161513; --ink:#F1EDE4; --ink2:#CFC9BD; --muted:#9C968B; --line:#2C2925; --coach:#4ED39B; }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--paper); color:var(--ink); font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height:1.75; }
   .wrap { max-width: 780px; margin:0 auto; padding: 48px 20px 80px; }

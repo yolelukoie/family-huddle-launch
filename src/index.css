@@ -246,9 +246,10 @@
   --ylc-shadow: 0 1px 2px hsl(45 8% 10% / 0.04);
 }
 
-@media (prefers-color-scheme: dark) {
-  .ylc-theme,
-  .ylc-vars {
+/* Dark scheme: chosen with the header toggle (html[data-ylc-theme="dark"]); light is the default */
+@media all {
+  html[data-ylc-theme="dark"] .ylc-theme,
+  html[data-ylc-theme="dark"] .ylc-vars {
     --background: 40 7% 8%;          /* #161513 */
     --foreground: 42 32% 92%;        /* #F1EDE4 */
     --card: 36 9% 11%;               /* #1F1D1A */
@@ -280,7 +281,10 @@
   background: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: 'Inter', system-ui, sans-serif;
-  color-scheme: light dark;
+  color-scheme: light;
+}
+html[data-ylc-theme="dark"] .ylc-theme {
+  color-scheme: dark;
 }
 
 .ylc-theme .font-display,
@@ -321,8 +325,8 @@
 .ylc-text-gradient {
   color: hsl(var(--primary));
 }
-@media (prefers-color-scheme: dark) {
-  .ylc-text-gradient {
+@media all {
+  html[data-ylc-theme="dark"] .ylc-text-gradient {
     text-shadow: 0 0 18px hsl(var(--primary) / 0.35);
   }
 }

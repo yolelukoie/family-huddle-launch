@@ -113,8 +113,8 @@ export const homeEn = {
     flow: ["See it", "Understand it", "Recall it", "Use it", "Use it again"],
   },
   discovery: {
-    title: "Not sure what to learn next? Your dictionary knows.",
-    text: "Yuston can look at the vocabulary you already have and suggest useful new words that naturally build on it — around travel, work, food, relationships or everyday life. You can also pick a topic and ask for vocabulary for it.",
+    title: "Not sure what to learn next? Ask Yuston.",
+    text: "Yuston the coach looks at the words you already have and suggests useful new ones that build on them — around travel, work, food, relationships or everyday life. Or just ask him for words on a topic, and he adds them to your dictionary.",
     note: "New words then enter the same loop: save → remember → practise → use.",
   },
   grammar: {
@@ -354,8 +354,8 @@ export const homeHe: YlcHomeDict = {
     flow: ["רואים", "מבינים", "נזכרים", "משתמשים", "ושוב משתמשים"],
   },
   discovery: {
-    title: "לא בטוחים מה ללמוד עכשיו? המילון שלך יעזור לבחור.",
-    text: "Yuston מציע מילים חדשות ושימושיות לפי המילון שלך: טיולים, עבודה, אוכל, מערכות יחסים, חיי היום־יום. אפשר גם לבחור נושא ולבקש מילים בדיוק עליו.",
+    title: "לא בטוחים מה ללמוד עכשיו? יוסטון יציע.",
+    text: "יוסטון מסתכל על המילים שכבר יש לך ומציע מילים חדשות ושימושיות שמתחברות אליהן: טיולים, עבודה, אוכל, מערכות יחסים, חיי היום־יום. אפשר גם פשוט לבקש ממנו מילים על נושא מסוים, והוא יוסיף אותן למילון שלך.",
     note: "גם המילים החדשות נכנסות לאותו מעגל: שומרים, זוכרים, מתרגלים, משתמשים.",
   },
   grammar: {
@@ -569,8 +569,8 @@ export const homeRu: YlcHomeDict = {
     flow: ["Увидеть", "Понять", "Вспомнить", "Употребить", "Употребить снова"],
   },
   discovery: {
-    title: "Не знаете, что учить дальше? Ваш словарь подскажет.",
-    text: "Yuston предлагает новые полезные слова на основе вашего словаря — о путешествиях, работе, еде, отношениях и повседневной жизни. Можно также выбрать тему и попросить подобрать слова по ней.",
+    title: "Не знаете, что учить дальше? Спросите Юстона.",
+    text: "Юстон смотрит на слова, которые у вас уже есть, и предлагает новые полезные, которые с ними связаны: о путешествиях, работе, еде, отношениях, повседневной жизни. А можно просто попросить у него слова на нужную тему, и он добавит их в ваш словарь.",
     note: "Новые слова проходят тот же путь: сохранить → запомнить → потренироваться → использовать в речи.",
   },
   grammar: {

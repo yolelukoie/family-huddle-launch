@@ -20,6 +20,8 @@ const en = {
     download: "Download",
     android: "Android",
     ios: "iOS",
+    themeDark: "Switch to dark theme",
+    themeLight: "Switch to light theme",
   },
   hero: {
     titleA: "Yuston — ",
@@ -199,7 +201,7 @@ const en = {
 export type YlcDict = typeof en;
 
 const he: YlcDict = {
-  nav: { howItWorks: "איך זה עובד", features: "יכולות", pricing: "מחירים", download: "הורדה", android: "אנדרואיד", ios: "iOS" },
+  nav: { howItWorks: "איך זה עובד", features: "יכולות", pricing: "מחירים", download: "הורדה", android: "אנדרואיד", ios: "iOS", themeDark: "מעבר למצב כהה", themeLight: "מעבר למצב בהיר" },
   hero: {
     titleA: "Yuston — ",
     titleB: "ללמוד שפה בדרך שמתאימה בדיוק לך",
@@ -374,7 +376,7 @@ const he: YlcDict = {
 };
 
 const ru: YlcDict = {
-  nav: { howItWorks: "Как это работает", features: "Возможности", pricing: "Цены", download: "Скачать", android: "Android", ios: "iOS" },
+  nav: { howItWorks: "Как это работает", features: "Возможности", pricing: "Цены", download: "Скачать", android: "Android", ios: "iOS", themeDark: "Тёмная тема", themeLight: "Светлая тема" },
   hero: {
     titleA: "Yuston — ",
     titleB: "изучайте язык так, как удобно именно вам",

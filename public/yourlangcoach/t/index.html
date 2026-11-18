@@ -20,12 +20,13 @@
     <meta name="twitter:description" content="Your teacher invites you to Yuston — 30 days of Premium free." />
     <meta name="twitter:image" content="https://familyhuddletasks.com/yourlangcoach/og-logo.png" />
 
+    <script>try{if(localStorage.getItem("ylc-theme")==="dark")document.documentElement.dataset.ylcTheme="dark"}catch(e){}</script>
     <style>
-      :root { color-scheme: light dark; }
       body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
              background: #FBFAF6; color: #1C1B18; font-family: Inter, system-ui, sans-serif; }
       a { color: #1F5A43; }
-      @media (prefers-color-scheme: dark) { body { background: #161513; color: #F1EDE4; } a { color: #4ED39B; } }
+      html[data-ylc-theme="dark"] body { background: #161513; color: #F1EDE4; }
+      html[data-ylc-theme="dark"] a { color: #4ED39B; }
     </style>
   </head>
   <body>

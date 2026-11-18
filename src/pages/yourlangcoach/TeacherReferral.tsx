@@ -4,6 +4,7 @@ import { Apple, Check, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
+import ThemeToggle from "@/components/yourlangcoach/ThemeToggle";
 import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
 import ylcLogo from "@/assets/yuston-icon.png";
 import { ANDROID_URL, IPHONE_URL } from "@/lib/yourlangcoach/content";
@@ -35,7 +36,10 @@ const TeacherReferralContent = () => {
             <img src={ylcLogo} alt="Yuston logo" className="h-9 w-9 rounded-lg object-cover" />
             <span className="font-display text-sm font-semibold sm:text-base">Yuston</span>
           </Link>
-          <LanguageSwitcher />
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <LanguageSwitcher />
+          </div>
         </div>
       </header>
 

@@ -22,6 +22,7 @@
       // only need Bricolage for the Yuston promo card; keep in step with src/lib/yourlangcoach/fonts.ts.
       (function () {
         var ylc = location.pathname.indexOf("/yourlangcoach") === 0;
+        try { if (localStorage.getItem("ylc-theme") === "dark") document.documentElement.dataset.ylcTheme = "dark"; } catch (e) {}
         var l = document.createElement("link");
         l.id = ylc ? "ylc-fonts" : "ylc-promo-font";
         l.rel = "stylesheet";

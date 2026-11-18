@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import YLCFooter from "@/components/yourlangcoach/YLCFooter";
 import LanguageSwitcher from "@/components/yourlangcoach/LanguageSwitcher";
+import ThemeToggle from "@/components/yourlangcoach/ThemeToggle";
 import ylcLogo from "@/assets/yuston-icon.png";
 import { IPHONE_URL, ANDROID_URL, SUPPORT_EMAIL } from "@/lib/yourlangcoach/content";
 import { YlcLangProvider, useYlcLang } from "@/lib/yourlangcoach/i18n";
@@ -269,7 +270,7 @@ const TeacherPartnerJoinContent = () => {
             <span className="hidden truncate font-display text-sm font-semibold sm:inline sm:text-base">Yuston</span>
           </Link>
           <div className="flex items-center gap-2">
-            <LanguageSwitcher />
+            <ThemeToggle /><LanguageSwitcher />
             <Button asChild variant="ghost" size="sm">
               <Link to="/yourlangcoach/tpp"><ArrowLeft className="rtl:rotate-180" /> {tj.back}</Link>
             </Button>
