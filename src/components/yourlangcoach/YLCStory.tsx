@@ -73,8 +73,16 @@ const YLCStory = () => {
         </div>
       </section>
 
+      {/* "How it works" (header link, hero and final buttons land here): the numbered blocks below */}
+      <div id="how-it-works" className="border-t border-border scroll-mt-16 pt-20 md:pt-24">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
+          <h2 className="font-display font-semibold text-4xl md:text-6xl leading-tight text-foreground">{t.nav.howItWorks}</h2>
+          <div aria-hidden="true" className="mx-auto mt-6 h-1 w-16 rounded-full bg-primary" />
+        </div>
+      </div>
+
       {/* Capture */}
-      <section className="py-20 md:py-24 border-t border-border">
+      <section className="pt-12 md:pt-14 pb-20 md:pb-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="max-w-2xl mx-auto text-center">

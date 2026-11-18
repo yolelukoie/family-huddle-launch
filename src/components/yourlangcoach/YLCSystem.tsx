@@ -5,7 +5,7 @@ const YLCSystem = () => {
   const h = t.home;
 
   return (
-      <section id="how-it-works" className="py-20 md:py-24 border-t border-border scroll-mt-16">
+      <section id="whole-system" className="py-20 md:py-24 border-t border-border scroll-mt-16">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10 md:mb-12">

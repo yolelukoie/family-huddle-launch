@@ -147,7 +147,7 @@ const TeacherPartnerContent = () => {
           </div>
         </section>
 
-        <section id="how-it-works" className="scroll-mt-20 border-b border-border py-20 md:py-28">
+        <section id="learning-loop" className="scroll-mt-20 border-b border-border py-20 md:py-28">
           <div className="container px-4 sm:px-6">
             <SectionHeading eyebrow={tp.loopEyebrow} title={tp.loopTitle} intro={tp.loopIntro} centered />
             <div className="mx-auto mt-12 grid max-w-5xl auto-rows-min gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
@@ -157,7 +157,12 @@ const TeacherPartnerContent = () => {
           </div>
         </section>
 
-        <section className="border-b border-border py-20 md:py-28">
+        {/* "How it works" (header link and hero button land here): the step-by-step blocks below */}
+        <div id="how-it-works" className="container scroll-mt-20 px-4 pt-20 text-center sm:px-6 md:pt-28">
+          <h2 className="font-display text-4xl font-semibold leading-tight text-foreground md:text-6xl">{tp.navHow}</h2>
+          <div aria-hidden="true" className="mx-auto mt-6 h-1 w-16 rounded-full bg-primary" />
+        </div>
+        <section className="border-b border-border pb-20 pt-12 md:pb-28 md:pt-14">
           <div className="container px-4 sm:px-6">
             <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div><SectionHeading eyebrow={tp.captureEyebrow} title={tp.captureTitle} intro={tp.captureIntro} />
